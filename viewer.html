@@ -505,15 +505,16 @@ function calcP() {
   const row = items.find(r => r.brand === b && r.model === m && r.storage === storage && r.color === color);
   if (!row || !cost || cost <= 0) { document.getElementById('cres').innerHTML = ''; document.getElementById('csave').style.display = 'none'; return; }
   const md = mid(row), pLo = row.lo - cost, pHi = row.hi - cost, pM = md - cost, pp = pM / cost;
+  const ppLo = pLo / cost, ppHi = pHi / cost;
   const v = pp >= 0.05 ? 'น่าซื้อ' : pp >= 0 ? 'กำไรน้อย' : 'ขาดทุน';
   const pc = pp >= 0.05 ? 'pg2' : pp >= 0 ? 'pa' : 'pr3';
-  const vc = pp >= 0.05 ? 'gn' : pp >= 0 ? 'am' : 'rd';
+  const cLo = ppLo >= 0 ? 'gn' : 'rd', cHi = ppHi >= 0 ? 'gn' : 'rd', vc = pp >= 0.05 ? 'gn' : pp >= 0 ? 'am' : 'rd';
   document.getElementById('cres').innerHTML = `<div class="rcard">
     <div class="rh"><span style="font-size:14px;font-weight:500">${m} ${storage}</span><span class="pill ${pc}">${v}</span></div>
     <div class="mg">
-      <div class="mc"><div class="ml">กำไรต่ำสุด</div><div class="mv ${pLo >= 0 ? 'gn' : 'rd'}">${pLo >= 0 ? '+' : ''}฿${fmt(pLo)}</div></div>
-      <div class="mc"><div class="ml">กำไรสูงสุด</div><div class="mv ${pHi >= 0 ? 'gn' : 'rd'}">${pHi >= 0 ? '+' : ''}฿${fmt(pHi)}</div></div>
-      <div class="mc"><div class="ml">% กำไร (กลาง)</div><div class="mv ${vc}">${pct(pp)}</div></div>
+      <div class="mc"><div class="ml">% กำไร (ต่ำสุด)</div><div class="mv ${cLo}">${ppLo >= 0 ? '+' : ''}${pct(ppLo)}</div><div style="font-size:12px;color:var(--text3)">${pLo >= 0 ? '+' : ''}฿${fmt(pLo)}</div></div>
+      <div class="mc"><div class="ml">% กำไร (สูงสุด)</div><div class="mv ${cHi}">${ppHi >= 0 ? '+' : ''}${pct(ppHi)}</div><div style="font-size:12px;color:var(--text3)">${pHi >= 0 ? '+' : ''}฿${fmt(pHi)}</div></div>
+      <div class="mc"><div class="ml">% กำไร (กลาง)</div><div class="mv ${vc}">${pp >= 0 ? '+' : ''}${pct(pp)}</div><div style="font-size:12px;color:var(--text3)">${pM >= 0 ? '+' : ''}฿${fmt(pM)}</div></div>
       <div class="mc"><div class="ml">ต้นทุน</div><div class="mv">฿${fmt(cost)}</div></div>
     </div></div>`;
   document.getElementById('csave').style.display = 'block';
@@ -622,19 +623,25 @@ function renderPort() {
   const curItems = DB.snapshots[curSnap].items;
   el.innerHTML = port.map(e => {
     const cur = curItems.find(r => r.model === e.model && r.storage === e.storage) || { lo: e.lo, hi: e.hi };
-    const md = mid(cur), pf = md - e.cost, p = pf / e.cost;
-    const c = p >= 0.05 ? 'gn' : p >= 0 ? 'am' : 'rd';
-    const pl = p >= 0.05 ? 'pg2' : p >= 0 ? 'pa' : 'pr3';
+    const pfLo = cur.lo - e.cost, pfHi = cur.hi - e.cost;
+    const ppLo = pfLo / e.cost, ppHi = pfHi / e.cost;
+    const ppMid = (pfLo + pfHi) / 2 / e.cost;
+    const pl = ppMid >= 0.05 ? 'pg2' : ppMid >= 0 ? 'pa' : 'pr3';
+    const cLo = ppLo >= 0 ? 'gn' : 'rd', cHi = ppHi >= 0 ? 'gn' : 'rd';
     return `<div class="hi">
       <div class="hd">${e.date}</div>
       <div class="hm">${e.model} ${e.storage}</div>
-      <div class="hrw">
-        <span>ทุน ฿${fmt(e.cost)}</span>
-        <span>ราคาปัจจุบัน ฿${fmt(cur.lo)}–฿${fmt(cur.hi)}</span>
+      <div class="hrw" style="margin-bottom:4px">
+        <span style="color:var(--text3)">ทุน ฿${fmt(e.cost)}</span>
+        <span class="pill ${pl}">${ppMid >= 0.05 ? 'น่าซื้อ' : ppMid >= 0 ? 'พอได้' : 'ขาดทุน'}</span>
       </div>
-      <div class="hrw" style="margin-top:3px">
-        <span class="${c}">${pf >= 0 ? '+' : ''}฿${fmt(pf)} (${pct(p)})</span>
-        <span class="pill ${pl}">${p >= 0.05 ? 'น่าซื้อ' : p >= 0 ? 'พอได้' : 'ขาดทุน'}</span>
+      <div class="hrw">
+        <span style="font-size:11px;color:var(--text3)">ต่ำสุด ฿${fmt(cur.lo)}</span>
+        <span class="${cLo}" style="font-weight:600">${ppLo >= 0 ? '+' : ''}${pct(ppLo)}<span style="font-weight:400;color:var(--text3)"> (${pfLo >= 0 ? '+' : ''}฿${fmt(pfLo)})</span></span>
+      </div>
+      <div class="hrw" style="margin-top:2px">
+        <span style="font-size:11px;color:var(--text3)">สูงสุด ฿${fmt(cur.hi)}</span>
+        <span class="${cHi}" style="font-weight:600">${ppHi >= 0 ? '+' : ''}${pct(ppHi)}<span style="font-weight:400;color:var(--text3)"> (${pfHi >= 0 ? '+' : ''}฿${fmt(pfHi)})</span></span>
       </div>
     </div>`;
   }).join('');

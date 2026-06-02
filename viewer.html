@@ -211,7 +211,10 @@ function loadDB() {
 
 async function fetchRemoteDB() {
   try {
-    const res = await fetch('prices_db.json?v=' + Date.now());
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 4000);
+    const res = await fetch('prices_db.json?v=' + Date.now(), { signal: controller.signal });
+    clearTimeout(timer);
     if (!res.ok) return null;
     return await res.json();
   } catch(e) { return null; }
@@ -954,15 +957,15 @@ function parseModelLine(line, section) {
 }
 
 // ======== START ========
-(async () => {
-  // Try to load latest data from GitHub Pages (prices_db.json)
-  const remote = await fetchRemoteDB();
+// Load immediately with SEED_DB, then silently refresh if remote available
+init();
+fetchRemoteDB().then(remote => {
   if (remote && remote.snapshots && remote.snapshots.length > 0) {
     DB = remote;
     curSnap = DB.snapshots.length - 1;
+    init();
   }
-  init();
-})();
+}).catch(() => {});
 </script>
 </body>
 </html>

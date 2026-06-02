@@ -228,7 +228,7 @@ async function saveDB(db) {
   if (!token) return { ok: false, msg: 'ไม่มี Token — บันทึกเฉพาะใน browser นี้' };
   try {
     // Get current file SHA
-    const metaRes = await fetch(\`https://api.github.com/repos/\${GH_REPO}/contents/\${GH_FILE}\`, {
+    const metaRes = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`, {
       headers: { Authorization: 'token ' + token }
     });
     const meta = await metaRes.json();
@@ -237,8 +237,8 @@ async function saveDB(db) {
     // Encode content
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(db, null, 2))));
     const d = new Date();
-    const msg = \`อัปเดตราคา \${d.getDate()}/\${d.getMonth()+1}/\${d.getFullYear()}\`;
-    const putRes = await fetch(\`https://api.github.com/repos/\${GH_REPO}/contents/\${GH_FILE}\`, {
+    const msg = `อัปเดตราคา ${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
+    const putRes = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`, {
       method: 'PUT',
       headers: { Authorization: 'token ' + token, 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: msg, content, sha })

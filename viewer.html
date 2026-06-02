@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>ราคารับซื้อมือถือ</title>
+<style>
+:root{--bg:#fff;--bg2:#f5f5f4;--text:#1a1a18;--text2:#5f5e5a;--text3:#88877f;--bd:rgba(0,0,0,0.12);--bd2:rgba(0,0,0,0.22);--g-bg:#eaf3de;--g-t:#27500a;--a-bg:#faeeda;--a-t:#633806;--r-bg:#fcebeb;--r-t:#791f1f;--r:8px;--rl:12px}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1c1a;--bg2:#252523;--text:#e8e6df;--text2:#9c9a92;--text3:#6e6d67;--bd:rgba(255,255,255,0.1);--bd2:rgba(255,255,255,0.2);--g-bg:#173404;--g-t:#c0dd97;--a-bg:#412402;--a-t:#fac775;--r-bg:#501313;--r-t:#f09595}}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--text)}
+.app{max-width:480px;margin:0 auto}
+.hdr{padding:14px 16px 0}
+.hdr h1{font-size:17px;font-weight:600}
+.hdr .sub{font-size:11px;color:var(--text3);margin-top:2px}
+.badge{display:inline-block;background:var(--g-bg);color:var(--g-t);font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+.date-row{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.date-row span{font-size:11px;color:var(--text3)}
+.date-btn{padding:3px 10px;font-size:11px;border-radius:20px;border:0.5px solid var(--bd2);background:none;cursor:pointer;color:var(--text2)}
+.date-btn.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.tabs{display:flex;border-bottom:0.5px solid var(--bd);margin:10px 0 0;overflow-x:auto}
+.tab{flex:1;min-width:60px;padding:9px 4px;font-size:12px;text-align:center;cursor:pointer;color:var(--text2);border:none;background:none;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:500}
+.pg{display:none;padding:12px 16px 40px}.pg.active{display:block}
+.sw{position:relative;margin-bottom:10px}
+.sw input{width:100%;padding:8px 12px 8px 32px;font-size:14px;border:0.5px solid var(--bd2);border-radius:var(--r);background:var(--bg2);color:var(--text)}
+.si{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;pointer-events:none}
+.frow{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:9px}
+.fb{padding:4px 9px;font-size:11px;border-radius:20px;border:0.5px solid var(--bd2);background:none;cursor:pointer;color:var(--text2)}
+.fb.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.srow{display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.srow span{font-size:12px;color:var(--text2);white-space:nowrap}
+.srow select{flex:1;padding:5px 8px;font-size:12px;border:0.5px solid var(--bd2);border-radius:var(--r);background:var(--bg2);color:var(--text)}
+.pr{display:flex;align-items:center;padding:9px 0;border-bottom:0.5px solid var(--bd);cursor:pointer;gap:8px}
+.pr:last-child{border-bottom:none}
+.pi{flex:1;min-width:0}
+.pm{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ps{font-size:11px;color:var(--text3);margin-top:1px}
+.pv{text-align:right;flex-shrink:0}
+.pp{font-size:13px;font-weight:500}
+.pr2{font-size:11px;color:var(--text3)}
+.pill{display:inline-block;padding:2px 6px;border-radius:20px;font-size:11px;font-weight:500}
+.pg2{background:var(--g-bg);color:var(--g-t)}.pa{background:var(--a-bg);color:var(--a-t)}.pr3{background:var(--r-bg);color:var(--r-t)}
+.lbl{font-size:12px;font-weight:500;color:var(--text2);margin:13px 0 5px}
+select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px solid var(--bd2);border-radius:var(--r);background:var(--bg);color:var(--text);appearance:none}
+.pdisp{background:var(--bg2);border-radius:var(--r);padding:9px 12px;font-size:13px;color:var(--text2)}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+.mc{background:var(--bg2);border-radius:var(--r);padding:11px}
+.ml{font-size:11px;color:var(--text3);margin-bottom:3px}
+.mv{font-size:19px;font-weight:600}
+.gn{color:#27500a}.rd{color:#791f1f}.am{color:#633806}
+@media(prefers-color-scheme:dark){.gn{color:#c0dd97}.rd{color:#f09595}.am{color:#fac775}}
+.rcard{border:0.5px solid var(--bd);border-radius:var(--rl);padding:14px;margin-top:13px}
+.rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+.sbtn{width:100%;padding:12px;margin-top:11px;font-size:15px;font-weight:500;background:var(--text);color:var(--bg);border:none;border-radius:var(--r);cursor:pointer}
+.hi{padding:11px 0;border-bottom:0.5px solid var(--bd)}.hi:last-child{border-bottom:none}
+.hd{font-size:11px;color:var(--text3);margin-bottom:2px}
+.hm{font-size:14px;font-weight:500;margin-bottom:3px}
+.hrw{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text2)}
+.empty{text-align:center;padding:36px 0;color:var(--text3);font-size:14px}
+.tbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+/* Change indicator */
+.chg{font-size:10px;font-weight:600;margin-left:4px}
+.chg-up{color:#27500a}.chg-dn{color:#791f1f}
+@media(prefers-color-scheme:dark){.chg-up{color:#c0dd97}.chg-dn{color:#f09595}}
+/* History price page */
+.hist-item{padding:11px 0;border-bottom:0.5px solid var(--bd)}
+.hist-item:last-child{border-bottom:none}
+.hist-date{font-size:11px;color:var(--text3);margin-bottom:3px}
+.hist-name{font-size:13px;font-weight:500;margin-bottom:4px}
+.hist-prices{display:flex;justify-content:space-between;align-items:center}
+.hist-price-val{font-size:14px;font-weight:600}
+.hist-delta{font-size:12px;font-weight:500}
+/* Price trend per model */
+.trend-card{border:0.5px solid var(--bd);border-radius:var(--rl);padding:14px;margin-bottom:12px}
+.trend-title{font-size:14px;font-weight:600;margin-bottom:10px}
+.trend-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid var(--bd)}
+.trend-row:last-child{border-bottom:none}
+.trend-d{font-size:12px;color:var(--text2)}
+.trend-p{font-size:13px;font-weight:500;text-align:right}
+.trend-chg{font-size:11px;margin-top:1px;text-align:right}
+/* Section header in list */
+.sec-hdr{font-size:12px;font-weight:600;color:var(--text3);padding:10px 0 4px;letter-spacing:0.3px;text-transform:uppercase}
+/* Import modal */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:100;align-items:flex-end}
+.overlay.open{display:flex}
+.modal{background:var(--bg);border-radius:16px 16px 0 0;padding:20px 16px 36px;width:100%;max-height:90vh;overflow-y:auto}
+.modal h2{font-size:16px;font-weight:600;margin-bottom:4px}
+.modal p{font-size:12px;color:var(--text3);margin-bottom:12px}
+.modal textarea{width:100%;height:200px;padding:10px;font-size:12px;border:0.5px solid var(--bd2);border-radius:var(--r);background:var(--bg2);color:var(--text);font-family:monospace;resize:vertical}
+.modal-btns{display:flex;gap:8px;margin-top:10px}
+.modal-btns button{flex:1;padding:12px;font-size:14px;font-weight:500;border:none;border-radius:var(--r);cursor:pointer}
+.btn-cancel{background:var(--bg2);color:var(--text2)}
+.btn-ok{background:var(--text);color:var(--bg)}
+.fab{position:fixed;bottom:24px;right:24px;width:52px;height:52px;border-radius:50%;background:var(--text);color:var(--bg);border:none;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.parse-result{background:var(--bg2);border-radius:var(--r);padding:10px;margin-top:8px;font-size:12px;color:var(--text2)}
+.parse-result.ok{background:var(--g-bg);color:var(--g-t)}
+.parse-result.err{background:var(--r-bg);color:var(--r-t)}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="hdr">
+  <h1>ราคารับซื้อมือถือ <span class="badge" id="cur-date-badge">—</span></h1>
+  <div class="sub" id="cur-sub">—</div>
+  <div class="date-row" id="date-row"></div>
+</div>
+<div class="tabs">
+  <button class="tab active" onclick="showTab('all')">ทั้งหมด</button>
+  <button class="tab" onclick="showTab('calc')">คำนวณ</button>
+  <button class="tab" onclick="showTab('trend')">ราคาย้อนหลัง</button>
+  <button class="tab" onclick="showTab('port')">บันทึก</button>
+</div>
+
+<!-- ทั้งหมด -->
+<div id="pg-all" class="pg active">
+  <div class="sw"><span class="si">🔍</span><input type="search" id="q" placeholder="ค้นหา..." oninput="renderAll()"></div>
+  <div class="frow" id="bfilters"></div>
+  <div class="srow"><span>เรียง</span>
+    <select id="sortsel" onchange="renderAll()">
+      <option value="name">ชื่อ A→Z</option>
+      <option value="lo">ราคา น้อย→มาก</option>
+      <option value="hi">ราคา มาก→น้อย</option>
+      <option value="profit">กำไร% มาก→น้อย</option>
+    </select>
+  </div>
+  <div id="all-list"></div>
+</div>
+
+<!-- คำนวณ -->
+<div id="pg-calc" class="pg">
+  <div class="lbl">แบรนด์</div><select class="full" id="cb" onchange="onB()"><option value="">-- เลือก --</option></select>
+  <div class="lbl">รุ่น</div><select class="full" id="cm" onchange="onM()"><option value="">-- เลือก --</option></select>
+  <div class="lbl">ความจำ/สี</div><select class="full" id="cs" onchange="onS()"><option value="">-- เลือก --</option></select>
+  <div id="cinfo" style="display:none">
+    <div class="lbl">ราคารับซื้อ</div><div class="pdisp" id="cpd">—</div>
+    <div class="lbl">ต้นทุน (฿)</div><input type="number" class="full" id="cc" placeholder="เช่น 23000" oninput="calcP()">
+    <div id="cres"></div>
+    <button class="sbtn" id="csave" style="display:none" onclick="savePort()">💾 บันทึก</button>
+  </div>
+</div>
+
+<!-- ราคาย้อนหลัง -->
+<div id="pg-trend" class="pg">
+  <div class="sw"><span class="si">🔍</span><input type="search" id="tq" placeholder="ค้นหารุ่น..." oninput="renderTrend()"></div>
+  <div class="frow" id="tbfilters"></div>
+  <div id="trend-list"></div>
+</div>
+
+<!-- บันทึก -->
+<div id="pg-port" class="pg">
+  <div class="tbar">
+    <span style="font-size:14px;font-weight:500" id="port-count">0 รายการ</span>
+    <button onclick="clrPort()" style="font-size:12px;color:var(--r-t);background:none;border:none;cursor:pointer">ลบทั้งหมด</button>
+  </div>
+  <div id="port-list"><div class="empty">ยังไม่มีรายการ</div></div>
+</div>
+</div>
+
+<!-- FAB + Import Modal -->
+<button class="fab" onclick="openImport()" title="นำเข้าราคาใหม่">+</button>
+
+<div class="overlay" id="overlay" onclick="closeImportOutside(event)">
+  <div class="modal">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <h2>นำเข้าราคาใหม่</h2>
+      <button onclick="resetDB()" style="font-size:11px;color:var(--r-t);background:none;border:none;cursor:pointer;padding:4px 0">🔄 รีเซ็ตข้อมูล</button>
+    </div>
+    <p>วางข้อความที่ร้านส่งมา แล้วกด "แยกวิเคราะห์"</p>
+    <textarea id="import-text" placeholder="25 May 26&#10;...&#10;13 128&#10;white black 17,500-18,000&#10;..."></textarea>
+    <div id="parse-res"></div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeImport()">ยกเลิก</button>
+      <button class="btn-ok" onclick="parseImport()">แยกวิเคราะห์</button>
+    </div>
+    <div id="import-confirm" style="display:none">
+      <div class="lbl">วันที่ (เช่น 2026-06-01)</div>
+      <input type="date" class="full" id="import-date">
+      <div class="lbl">ร้าน</div>
+      <input type="text" class="full" id="import-source" placeholder="ร้าน A" value="ร้าน A">
+      <button class="sbtn" onclick="confirmImport()">💾 บันทึกลงฐานข้อมูล</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ======== DATA ========
+const DB_KEY = 'ph_db_v1';
+const PORT_KEY = 'ph_port_v1';
+
+const SEED_DB = {"snapshots": [{"id": "2026-05-14", "date": "14/05/2569", "date_iso": "2026-05-14", "source": "ร้าน A", "items": [{"brand": "iPhone", "model": "iPhone 13", "storage": "128GB", "color": "White/Black", "lo": 16000, "hi": 16500}, {"brand": "iPhone", "model": "iPhone 14", "storage": "128GB", "color": "Blue/White/Black", "lo": 17000, "hi": 17500}, {"brand": "iPhone", "model": "iPhone 15", "storage": "128GB", "color": "Green/Blue/Pink/Black", "lo": 20500, "hi": 21200}, {"brand": "iPhone", "model": "iPhone 16", "storage": "128GB", "color": "Green/Blue/Pink/Black/White", "lo": 24000, "hi": 24500}, {"brand": "iPhone", "model": "iPhone 16", "storage": "256GB", "color": "Pink/Green/White/Black", "lo": 25000, "hi": 25500}, {"brand": "iPhone", "model": "iPhone 16+", "storage": "128GB", "color": "Pink/Black/Blue/White/Green", "lo": 25500, "hi": 26000}, {"brand": "iPhone", "model": "iPhone 16+", "storage": "256GB", "color": "Pink/Blue/Green/Black/White", "lo": 27500, "hi": 28000}, {"brand": "iPhone", "model": "iPhone 17e", "storage": "8/256GB", "color": "Pink/Black/White", "lo": 19500, "hi": 20000}, {"brand": "iPhone", "model": "iPhone 17", "storage": "256GB", "color": "White/Blue/Purple/Green/Black", "lo": 26700, "hi": 27000}, {"brand": "iPhone", "model": "iPhone 17 Pro", "storage": "256GB", "color": "Silver/Blue", "lo": 40000, "hi": 40400}, {"brand": "iPhone", "model": "iPhone 17 Pro", "storage": "256GB Orange", "color": "Orange", "lo": 40500, "hi": 40500}, {"brand": "iPhone", "model": "iPhone 17 Pro", "storage": "512GB", "color": "White/Orange", "lo": 45500, "hi": 46000}, {"brand": "iPhone", "model": "iPhone 17 Pro", "storage": "512GB Blue", "color": "Blue", "lo": 43500, "hi": 44000}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "256GB", "color": "White", "lo": 45000, "hi": 45500}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "256GB Orange", "color": "Orange", "lo": 45200, "hi": 45700}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "256GB Blue", "color": "Blue", "lo": 45000, "hi": 45500}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "512GB", "color": "Orange/Blue", "lo": 50500, "hi": 51000}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "512GB White", "color": "White", "lo": 51800, "hi": 52500}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "1TB White", "color": "White", "lo": 59500, "hi": 60000}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "1TB", "color": "Orange/Blue", "lo": 59000, "hi": 59500}, {"brand": "iPhone", "model": "iPhone Air", "storage": "256GB", "color": "Gold/White", "lo": 26500, "hi": 27000}, {"brand": "iPhone", "model": "iPhone Air", "storage": "256GB", "color": "Blue/Black", "lo": 26000, "hi": 26500}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "WiFi 128GB", "color": "Blue/White", "lo": 11000, "hi": 11400}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "WiFi 128GB Pink", "color": "Pink", "lo": 11300, "hi": 11600}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "WiFi 256GB", "color": "White/Blue/Pink", "lo": 14500, "hi": 14800}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "SIM 128GB", "color": "White/Blue/Pink", "lo": 15000, "hi": 16000}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "SIM 256GB", "color": "White/Blue/Pink", "lo": 17000, "hi": 17500}, {"brand": "iPad", "model": "iPad Mini 7", "storage": "WiFi 128GB", "color": "White/Purple/Blue/Black", "lo": 12000, "hi": 12500}, {"brand": "iPad", "model": "iPad Mini 7", "storage": "WiFi 256GB", "color": "Purple/Black/White/Blue", "lo": 15500, "hi": 16000}, {"brand": "iPad", "model": "iPad Air 7 11\"", "storage": "WiFi 128GB", "color": "Black/Purple/Blue/White", "lo": 17000, "hi": 17500}, {"brand": "iPad", "model": "iPad Air 7 11\"", "storage": "WiFi 256GB", "color": "Blue/Black/Purple/White", "lo": 20300, "hi": 20800}, {"brand": "iPad", "model": "iPad Air 7 11\"", "storage": "SIM 128GB", "color": "Purple/White/Blue/Black", "lo": 19000, "hi": 19500}, {"brand": "iPad", "model": "iPad Air 7 11\"", "storage": "SIM 256GB", "color": "Black/Purple/White/Blue", "lo": 24000, "hi": 24500}, {"brand": "iPad", "model": "iPad Air 7 13\"", "storage": "WiFi 128GB", "color": "Black/Purple/White/Blue", "lo": 20500, "hi": 21000}, {"brand": "iPad", "model": "iPad Air 8 M4 11\"", "storage": "WiFi 128GB", "color": "Black/Blue/Purple/White", "lo": 18700, "hi": 19300}, {"brand": "iPad", "model": "iPad Air 8 M4 11\"", "storage": "WiFi 256GB", "color": "Black/Purple/Blue/White", "lo": 22800, "hi": 23400}, {"brand": "Accessories", "model": "Adapter Apple", "storage": "-", "color": "-", "lo": 450, "hi": 480}, {"brand": "Accessories", "model": "สาย C-Lightning IP14", "storage": "-", "color": "-", "lo": 500, "hi": 550}, {"brand": "Accessories", "model": "สาย C-C IP15", "storage": "-", "color": "-", "lo": 480, "hi": 500}, {"brand": "Accessories", "model": "หูฟัง IP15", "storage": "-", "color": "-", "lo": 480, "hi": 500}, {"brand": "Accessories", "model": "หูฟัง IP14", "storage": "-", "color": "-", "lo": 480, "hi": 500}, {"brand": "Accessories", "model": "Adapter Samsung 25W", "storage": "-", "color": "ศูนย์ไทย", "lo": 250, "hi": 300}, {"brand": "Accessories", "model": "Apple Pencil USB-C", "storage": "-", "color": "-", "lo": 1500, "hi": 1900}, {"brand": "Accessories", "model": "Apple Pencil Pro", "storage": "-", "color": "-", "lo": 2500, "hi": 2700}, {"brand": "Accessories", "model": "AirPods 4th", "storage": "-", "color": "-", "lo": 2500, "hi": 2700}, {"brand": "Accessories", "model": "AirPods 4th ANC", "storage": "-", "color": "-", "lo": 3500, "hi": 3700}, {"brand": "Accessories", "model": "AirPods Pro 3", "storage": "-", "color": "-", "lo": 5500, "hi": 5700}, {"brand": "Samsung", "model": "Galaxy A06 5G", "storage": "4/64GB", "color": "Black/Green", "lo": 1900, "hi": 2100}, {"brand": "Samsung", "model": "Galaxy A06 5G", "storage": "6/128GB", "color": "Black/Green", "lo": 2800, "hi": 3200}, {"brand": "Samsung", "model": "Galaxy A07", "storage": "4/64GB", "color": "Black/Blue", "lo": 2000, "hi": 2200}, {"brand": "Samsung", "model": "Galaxy A07", "storage": "4/128GB", "color": "Black/Green", "lo": 2600, "hi": 2800}, {"brand": "Samsung", "model": "Galaxy A17 5G", "storage": "8/128GB", "color": "Black/Blue", "lo": 5000, "hi": 5300}, {"brand": "Samsung", "model": "Galaxy A17", "storage": "8/256GB", "color": "Black/Blue", "lo": 6100, "hi": 6300}, {"brand": "Samsung", "model": "Galaxy Tab A11", "storage": "SIM 5/64GB", "color": "Gray", "lo": 3300, "hi": 3500}, {"brand": "Samsung", "model": "Galaxy Tab A11", "storage": "WiFi", "color": "", "lo": 5300, "hi": 5700}, {"brand": "Samsung", "model": "Galaxy Tab A11", "storage": "SIM", "color": "Gray", "lo": 7000, "hi": 7300}, {"brand": "Samsung", "model": "Galaxy A26", "storage": "8/256GB", "color": "Black/Green", "lo": 6500, "hi": 6700}, {"brand": "Samsung", "model": "Galaxy A36", "storage": "8/256GB", "color": "คละสี", "lo": 6800, "hi": 7300}, {"brand": "Samsung", "model": "Galaxy A56", "storage": "12/256GB", "color": "Black/Purple/Green", "lo": 10200, "hi": 10400}, {"brand": "Samsung", "model": "Galaxy S25 FE", "storage": "128GB", "color": "คละสี", "lo": 15000, "hi": 15500}, {"brand": "Samsung", "model": "Galaxy S25 Ultra", "storage": "256GB", "color": "คละสี", "lo": 27500, "hi": 28000}, {"brand": "Samsung", "model": "Galaxy S26 Ultra", "storage": "256GB", "color": "คละสี", "lo": 33500, "hi": 34300}, {"brand": "Samsung", "model": "Galaxy S26 Ultra", "storage": "512GB", "color": "คละสี", "lo": 37000, "hi": 37500}, {"brand": "OPPO", "model": "OPPO A6x", "storage": "4/64GB", "color": "คละสี", "lo": 2400, "hi": 2600}, {"brand": "OPPO", "model": "OPPO A6x", "storage": "4/128GB", "color": "คละสี", "lo": 2800, "hi": 3000}, {"brand": "OPPO", "model": "OPPO A6t 4G", "storage": "4/64GB", "color": "Blue/Purple", "lo": 2400, "hi": 2600}, {"brand": "OPPO", "model": "OPPO A6t", "storage": "4/128GB", "color": "Blue/Purple", "lo": 2900, "hi": 3100}, {"brand": "OPPO", "model": "OPPO A6 Pro 5G", "storage": "6/128GB", "color": "คละสี", "lo": 5800, "hi": 6200}, {"brand": "OPPO", "model": "OPPO A6 Pro 5G", "storage": "8/256GB", "color": "คละสี", "lo": 6500, "hi": 7200}, {"brand": "OPPO", "model": "OPPO Reno 15f", "storage": "8/256GB", "color": "คละสี", "lo": 11000, "hi": 11300}, {"brand": "OPPO", "model": "OPPO Reno 15f", "storage": "12/256GB", "color": "คละสี", "lo": 12000, "hi": 12300}, {"brand": "OPPO", "model": "OPPO Reno 15", "storage": "12/256GB", "color": "คละสี", "lo": 14000, "hi": 14500}, {"brand": "Vivo", "model": "Vivo Y04s", "storage": "4/64GB", "color": "คละสี", "lo": 2000, "hi": 2300}, {"brand": "Vivo", "model": "Vivo Y05 4G", "storage": "4/64GB", "color": "คละสี", "lo": 2700, "hi": 3000}, {"brand": "Vivo", "model": "Vivo Y05 4G", "storage": "4/128GB", "color": "คละสี", "lo": 2800, "hi": 3400}, {"brand": "Vivo", "model": "Vivo Y21d", "storage": "4/128GB", "color": "คละสี", "lo": 3000, "hi": 3300}, {"brand": "Vivo", "model": "Vivo Y21d", "storage": "6/128GB", "color": "คละสี", "lo": 3500, "hi": 3700}, {"brand": "Vivo", "model": "Vivo Y21d", "storage": "6/256GB", "color": "คละสี", "lo": 4000, "hi": 4200}, {"brand": "Vivo", "model": "Vivo V60 Lite", "storage": "8/256GB", "color": "คละสี", "lo": 6800, "hi": 7000}, {"brand": "Vivo", "model": "Vivo V70 FE", "storage": "8/256GB", "color": "คละสี", "lo": 9200, "hi": 9500}, {"brand": "Vivo", "model": "Vivo V7 FE", "storage": "12/256GB", "color": "คละสี", "lo": 10500, "hi": 11000}, {"brand": "Vivo", "model": "Vivo V70", "storage": "8/256GB", "color": "คละสี", "lo": 12500, "hi": 13000}, {"brand": "Vivo", "model": "Vivo V70", "storage": "12/256GB", "color": "คละสี", "lo": 14000, "hi": 14500}, {"brand": "Redmi", "model": "Redmi A5", "storage": "3/64GB", "color": "คละสี", "lo": 1500, "hi": 2000}, {"brand": "Redmi", "model": "Redmi 15c", "storage": "6/128GB", "color": "คละสี", "lo": 2300, "hi": 2700}, {"brand": "Redmi", "model": "Redmi 15c", "storage": "8/256GB", "color": "คละสี", "lo": 2800, "hi": 3000}, {"brand": "Redmi", "model": "Redmi Note 15 4G", "storage": "8/256GB", "color": "คละสี", "lo": 4000, "hi": 4500}, {"brand": "Redmi", "model": "Redmi Note 15 5G", "storage": "8/256GB", "color": "คละสี", "lo": 5000, "hi": 5500}]}, {"id": "2026-05-25", "date": "25/05/2569", "date_iso": "2026-05-25", "source": "ร้าน A", "items": [{"brand": "iPhone", "model": "iPhone 13", "storage": "128GB", "color": "White/Black", "lo": 17500, "hi": 18000}, {"brand": "iPhone", "model": "iPhone 14", "storage": "128GB", "color": "Blue/White/Black", "lo": 18000, "hi": 18500}, {"brand": "iPhone", "model": "iPhone 15", "storage": "128GB", "color": "Green/Blue/Pink/Black", "lo": 20500, "hi": 21000}, {"brand": "iPhone", "model": "iPhone 16", "storage": "128GB", "color": "Green/Blue/Pink/Black/White", "lo": 24000, "hi": 24500}, {"brand": "iPhone", "model": "iPhone 16", "storage": "256GB", "color": "Pink/Green/White/Black", "lo": 25000, "hi": 25500}, {"brand": "iPhone", "model": "iPhone 16+", "storage": "128GB", "color": "Pink/Black/Blue/White/Green", "lo": 25500, "hi": 26000}, {"brand": "iPhone", "model": "iPhone 16+", "storage": "256GB", "color": "Pink/Blue/Green/Black/White", "lo": 27500, "hi": 28000}, {"brand": "iPhone", "model": "iPhone 17e", "storage": "8/256GB", "color": "Pink/Black/White", "lo": 19500, "hi": 20500}, {"brand": "iPhone", "model": "iPhone 17", "storage": "256GB", "color": "Green/Blue/White/Purple/Black", "lo": 26700, "hi": 27200}, {"brand": "iPhone", "model": "iPhone 17 Pro", "storage": "256GB", "color": "Silver/Blue", "lo": 40000, "hi": 40400}, {"brand": "iPhone", "model": "iPhone 17 Pro", "storage": "256GB Orange", "color": "Orange", "lo": 40500, "hi": 40500}, {"brand": "iPhone", "model": "iPhone 17 Pro", "storage": "512GB", "color": "White/Orange", "lo": 46000, "hi": 46500}, {"brand": "iPhone", "model": "iPhone 17 Pro", "storage": "512GB Blue", "color": "Blue", "lo": 44000, "hi": 44500}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "256GB", "color": "White/Blue", "lo": 45000, "hi": 45500}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "256GB Orange", "color": "Orange", "lo": 45200, "hi": 45700}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "512GB", "color": "Orange/Blue", "lo": 50500, "hi": 51000}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "512GB White", "color": "White", "lo": 51800, "hi": 52500}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "1TB White", "color": "White", "lo": 59500, "hi": 60000}, {"brand": "iPhone", "model": "iPhone 17 Pro Max", "storage": "1TB", "color": "Orange/Blue", "lo": 59000, "hi": 59500}, {"brand": "iPhone", "model": "iPhone Air", "storage": "256GB", "color": "Gold/White", "lo": 26500, "hi": 27000}, {"brand": "iPhone", "model": "iPhone Air", "storage": "256GB Blue/Black", "color": "Blue/Black", "lo": 26000, "hi": 26500}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "WiFi 128GB", "color": "Pink", "lo": 11300, "hi": 11600}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "WiFi 128GB Blue", "color": "Blue/White", "lo": 11000, "hi": 11400}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "WiFi 256GB", "color": "White/Blue/Pink", "lo": 14500, "hi": 15000}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "SIM 128GB", "color": "White/Blue/Pink", "lo": 15000, "hi": 16000}, {"brand": "iPad", "model": "iPad Gen 11", "storage": "SIM 256GB", "color": "White/Blue/Pink", "lo": 17000, "hi": 17500}, {"brand": "iPad", "model": "iPad Mini 7", "storage": "WiFi 128GB", "color": "White/Purple/Blue/Black", "lo": 12000, "hi": 12700}, {"brand": "iPad", "model": "iPad Mini 7", "storage": "WiFi 256GB", "color": "Purple/Black/White/Blue", "lo": 15500, "hi": 16000}, {"brand": "iPad", "model": "iPad Air 7 11\"", "storage": "WiFi 128GB", "color": "Black/Purple/Blue/White", "lo": 17000, "hi": 17500}, {"brand": "iPad", "model": "iPad Air 7 11\"", "storage": "WiFi 256GB", "color": "Blue/Black/Purple/White", "lo": 20300, "hi": 20800}, {"brand": "iPad", "model": "iPad Air 7 11\"", "storage": "SIM 128GB", "color": "Purple/White/Blue/Black", "lo": 19000, "hi": 19500}, {"brand": "iPad", "model": "iPad Air 7 11\"", "storage": "SIM 256GB", "color": "Purple/White/Blue/Black", "lo": 24000, "hi": 24500}, {"brand": "iPad", "model": "iPad Air 7 13\"", "storage": "WiFi 128GB", "color": "Black/Purple/White/Blue", "lo": 20000, "hi": 20500}, {"brand": "iPad", "model": "iPad Air 8 M4 11\"", "storage": "WiFi 128GB", "color": "Blue/Purple/White/Black", "lo": 18700, "hi": 19300}, {"brand": "iPad", "model": "iPad Air 8 M4 11\"", "storage": "WiFi 256GB", "color": "Purple/Blue/White/Black", "lo": 22800, "hi": 23400}, {"brand": "Accessories", "model": "Adapter Apple", "storage": "-", "color": "-", "lo": 450, "hi": 480}, {"brand": "Accessories", "model": "สาย C-Lightning IP14", "storage": "-", "color": "-", "lo": 500, "hi": 550}, {"brand": "Accessories", "model": "สาย C-C IP15", "storage": "-", "color": "-", "lo": 480, "hi": 500}, {"brand": "Accessories", "model": "หูฟัง IP15", "storage": "-", "color": "-", "lo": 480, "hi": 500}, {"brand": "Accessories", "model": "หูฟัง IP14", "storage": "-", "color": "-", "lo": 480, "hi": 500}, {"brand": "Accessories", "model": "Adapter Samsung 25W", "storage": "-", "color": "ศูนย์ไทย", "lo": 250, "hi": 300}, {"brand": "Accessories", "model": "Apple Pencil USB-C", "storage": "-", "color": "-", "lo": 1700, "hi": 2000}, {"brand": "Accessories", "model": "Apple Pencil Pro", "storage": "-", "color": "-", "lo": 2700, "hi": 3000}, {"brand": "Accessories", "model": "AirPods 4th", "storage": "-", "color": "-", "lo": 2500, "hi": 2700}, {"brand": "Accessories", "model": "AirPods 4th ANC", "storage": "-", "color": "-", "lo": 3500, "hi": 3800}, {"brand": "Accessories", "model": "AirPods Pro 3", "storage": "-", "color": "-", "lo": 5500, "hi": 5800}, {"brand": "Samsung", "model": "Galaxy A06 5G", "storage": "4/64GB", "color": "Black/Green", "lo": 1900, "hi": 2100}, {"brand": "Samsung", "model": "Galaxy A06 5G", "storage": "6/128GB", "color": "Black/Green", "lo": 2800, "hi": 3200}, {"brand": "Samsung", "model": "Galaxy A07", "storage": "4/64GB", "color": "Black/Blue", "lo": 2000, "hi": 2200}, {"brand": "Samsung", "model": "Galaxy A07", "storage": "4/128GB", "color": "Black/Green", "lo": 2600, "hi": 2800}, {"brand": "Samsung", "model": "Galaxy A17 5G", "storage": "8/128GB", "color": "Black/Blue", "lo": 5000, "hi": 5300}, {"brand": "Samsung", "model": "Galaxy A17", "storage": "8/256GB", "color": "Black/Blue", "lo": 6100, "hi": 6300}, {"brand": "Samsung", "model": "Galaxy Tab A11", "storage": "SIM 5/64GB", "color": "Gray", "lo": 3300, "hi": 3500}, {"brand": "Samsung", "model": "Galaxy Tab A11", "storage": "WiFi", "color": "", "lo": 5300, "hi": 5700}, {"brand": "Samsung", "model": "Galaxy Tab A11", "storage": "SIM", "color": "Gray", "lo": 7000, "hi": 7300}, {"brand": "Samsung", "model": "Galaxy A26", "storage": "8/256GB", "color": "Black/Green", "lo": 6500, "hi": 6700}, {"brand": "Samsung", "model": "Galaxy A36", "storage": "8/256GB", "color": "คละสี", "lo": 6800, "hi": 7300}, {"brand": "Samsung", "model": "Galaxy A56", "storage": "12/256GB", "color": "Black/Purple/Green", "lo": 10200, "hi": 10400}, {"brand": "Samsung", "model": "Galaxy A37", "storage": "8/256GB", "color": "Black/Green/Purple", "lo": 9800, "hi": 10100}, {"brand": "Samsung", "model": "Galaxy A57", "storage": "12/256GB", "color": "คละสี", "lo": 12500, "hi": 12800}, {"brand": "Samsung", "model": "Galaxy S25 FE", "storage": "128GB", "color": "คละสี", "lo": 14800, "hi": 15200}, {"brand": "Samsung", "model": "Galaxy S25 FE", "storage": "256GB", "color": "คละสี", "lo": 17000, "hi": 17500}, {"brand": "Samsung", "model": "Galaxy S25 Ultra", "storage": "256GB", "color": "คละสี", "lo": 26500, "hi": 27000}, {"brand": "Samsung", "model": "Galaxy S26 Ultra", "storage": "256GB", "color": "คละสี", "lo": 33500, "hi": 34000}, {"brand": "Samsung", "model": "Galaxy S26 Ultra", "storage": "512GB", "color": "คละสี", "lo": 37000, "hi": 37500}, {"brand": "Samsung", "model": "Galaxy S26 Ultra", "storage": "512GB Blue", "color": "Blue", "lo": 36500, "hi": 37000}, {"brand": "OPPO", "model": "OPPO A6x", "storage": "4/64GB", "color": "คละสี", "lo": 2500, "hi": 2800}, {"brand": "OPPO", "model": "OPPO A6x", "storage": "4/128GB", "color": "คละสี", "lo": 2800, "hi": 3000}, {"brand": "OPPO", "model": "OPPO A6t 4G", "storage": "4/64GB", "color": "Blue/Purple", "lo": 2400, "hi": 2600}, {"brand": "OPPO", "model": "OPPO A6t", "storage": "4/128GB", "color": "Blue/Purple", "lo": 2900, "hi": 3100}, {"brand": "OPPO", "model": "OPPO A6 Pro 5G", "storage": "6/128GB", "color": "คละสี", "lo": 5800, "hi": 6200}, {"brand": "OPPO", "model": "OPPO A6 Pro 5G", "storage": "8/256GB", "color": "คละสี", "lo": 6500, "hi": 7200}, {"brand": "OPPO", "model": "OPPO Reno 15f", "storage": "8/256GB", "color": "คละสี", "lo": 10800, "hi": 11200}, {"brand": "OPPO", "model": "OPPO Reno 15f", "storage": "12/256GB", "color": "คละสี", "lo": 11500, "hi": 12000}, {"brand": "OPPO", "model": "OPPO Reno 15", "storage": "12/256GB", "color": "คละสี", "lo": 13500, "hi": 14000}, {"brand": "Vivo", "model": "Vivo Y04s", "storage": "4/64GB", "color": "คละสี", "lo": 2000, "hi": 2300}, {"brand": "Vivo", "model": "Vivo Y05 4G", "storage": "4/64GB", "color": "คละสี", "lo": 2700, "hi": 3000}, {"brand": "Vivo", "model": "Vivo Y05 4G", "storage": "4/128GB", "color": "คละสี", "lo": 2800, "hi": 3400}, {"brand": "Vivo", "model": "Vivo Y21d", "storage": "4/128GB", "color": "คละสี", "lo": 3000, "hi": 3300}, {"brand": "Vivo", "model": "Vivo Y21d", "storage": "6/128GB", "color": "คละสี", "lo": 3500, "hi": 3700}, {"brand": "Vivo", "model": "Vivo Y21d", "storage": "6/256GB", "color": "คละสี", "lo": 4000, "hi": 4200}, {"brand": "Vivo", "model": "Vivo V60 Lite", "storage": "8/256GB", "color": "คละสี", "lo": 6800, "hi": 7000}, {"brand": "Vivo", "model": "Vivo V70 FE", "storage": "8/256GB", "color": "คละสี", "lo": 9000, "hi": 9300}, {"brand": "Vivo", "model": "Vivo V7 FE", "storage": "12/256GB", "color": "คละสี", "lo": 10500, "hi": 11000}, {"brand": "Vivo", "model": "Vivo V70", "storage": "8/256GB", "color": "คละสี", "lo": 12500, "hi": 13000}, {"brand": "Vivo", "model": "Vivo V70", "storage": "12/256GB", "color": "คละสี", "lo": 14000, "hi": 14500}, {"brand": "Vivo", "model": "Vivo X300 5G", "storage": "16/512GB", "color": "Black/Purple/Pink", "lo": 21500, "hi": 22500}, {"brand": "Vivo", "model": "Vivo X300 Pro 5G", "storage": "16/512GB", "color": "Gray/Brown/Blue", "lo": 28500, "hi": 29000}, {"brand": "Redmi", "model": "Redmi A5", "storage": "3/64GB", "color": "คละสี", "lo": 1500, "hi": 2000}, {"brand": "Redmi", "model": "Redmi 15c", "storage": "6/128GB", "color": "คละสี", "lo": 2300, "hi": 2700}, {"brand": "Redmi", "model": "Redmi 15c", "storage": "8/256GB", "color": "คละสี", "lo": 2800, "hi": 3000}, {"brand": "Redmi", "model": "Redmi Note 15 4G", "storage": "8/256GB", "color": "คละสี", "lo": 4000, "hi": 4500}, {"brand": "Redmi", "model": "Redmi Note 15 5G", "storage": "8/256GB", "color": "คละสี", "lo": 5000, "hi": 5500}]}]};
+
+function loadDB() {
+  try {
+    const raw = localStorage.getItem(DB_KEY);
+    if (raw) {
+      const db = JSON.parse(raw);
+      if (db.snapshots && db.snapshots.length >= SEED_DB.snapshots.length) return db;
+    }
+  } catch(e) {}
+  return JSON.parse(JSON.stringify(SEED_DB));
+}
+
+function saveDB(db) {
+  try { localStorage.setItem(DB_KEY, JSON.stringify(db)); } catch(e) {}
+}
+
+let DB = loadDB();
+let port = JSON.parse(localStorage.getItem(PORT_KEY) || '[]');
+
+// Current state
+let curSnap = DB.snapshots.length - 1;
+let selB = '';
+let tSelB = '';
+
+// ======== INIT ========
+function init() {
+  renderDateRow();
+  initBrandFilters();
+  initCalc();
+  initTrendFilters();
+  renderAll();
+  renderPort();
+}
+
+function renderDateRow() {
+  const snap = DB.snapshots[curSnap];
+  document.getElementById('cur-date-badge').textContent = snap.date;
+  document.getElementById('cur-sub').textContent =
+    snap.items.length + ' รายการ · ' + snap.source + ' · อัปเดต ' + snap.date;
+
+  const row = document.getElementById('date-row');
+  row.innerHTML = '<span>ดูราคาวันที่:</span>';
+  DB.snapshots.forEach((s, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'date-btn' + (i === curSnap ? ' active' : '');
+    btn.textContent = s.date;
+    btn.onclick = () => { curSnap = i; init(); };
+    row.appendChild(btn);
+  });
+}
+
+function initBrandFilters() {
+  const BRANDS = [...new Set(DB.snapshots[curSnap].items.map(r => r.brand))];
+  const el = document.getElementById('bfilters');
+  el.innerHTML = '';
+  const all = document.createElement('button');
+  all.className = 'fb' + (!selB ? ' on' : '');
+  all.textContent = 'ทั้งหมด'; all.dataset.b = '';
+  all.onclick = () => setB(''); el.appendChild(all);
+  BRANDS.forEach(b => {
+    const btn = document.createElement('button');
+    btn.className = 'fb' + (selB === b ? ' on' : '');
+    btn.textContent = b; btn.dataset.b = b;
+    btn.onclick = () => setB(b); el.appendChild(btn);
+  });
+}
+
+function initTrendFilters() {
+  const BRANDS = [...new Set(DB.snapshots.flatMap(s => s.items.map(r => r.brand)))];
+  const el = document.getElementById('tbfilters');
+  el.innerHTML = '';
+  const all = document.createElement('button');
+  all.className = 'fb' + (!tSelB ? ' on' : '');
+  all.textContent = 'ทั้งหมด'; all.dataset.b = '';
+  all.onclick = () => { tSelB = ''; renderTrend(); updateTFilter(); }; el.appendChild(all);
+  BRANDS.forEach(b => {
+    const btn = document.createElement('button');
+    btn.className = 'fb' + (tSelB === b ? ' on' : '');
+    btn.textContent = b; btn.dataset.b = b;
+    btn.onclick = () => { tSelB = b; renderTrend(); updateTFilter(); }; el.appendChild(btn);
+  });
+}
+
+function updateTFilter() {
+  document.querySelectorAll('#tbfilters .fb').forEach(btn =>
+    btn.classList.toggle('on', btn.dataset.b === tSelB));
+}
+
+// ======== ALL LIST ========
+const fmt = n => Math.round(n).toLocaleString('th-TH');
+const pct = n => (n * 100).toFixed(1) + '%';
+const mid = r => (r.lo + r.hi) / 2;
+
+function normStorage(s) {
+  // "128" / "128G" / "128GB" / "128gb" → "128GB"
+  // "8/256" / "8/256G" / "8/256GB" → "8/256GB"
+  // "1 TB" / "1TB" → "1TB"
+  if (!s || s === '-') return '-';
+  return s.trim()
+    .replace(/\s+/g, '')
+    .replace(/[gG][bB]$/i, 'GB')
+    .replace(/[gG]$/i, 'GB')
+    .replace(/[tT][bB]$/i, 'TB')
+    .toUpperCase();
+}
+
+function normModel(m) {
+  // "iPhone 13 128" → extract trailing storage number into model normalization
+  // Just normalize whitespace and case for matching
+  if (!m) return '';
+  // Remove trailing bare storage numbers that sometimes get embedded in model name
+  let s = m.trim().replace(/\s+/g, ' ');
+  // "iPhone 13 128" — strip trailing number if it looks like storage
+  s = s.replace(/\s+(128|256|512|64|1024|1TB|2TB)\s*[gG]?[bB]?\s*$/i, '');
+  return s.toLowerCase();
+}
+
+function itemKey(r) {
+  return r.brand.toLowerCase() + '|' + normModel(r.model) + '|' + normStorage(r.storage);
+}
+
+function getPrevItem(item) {
+  if (curSnap === 0) return null;
+  const prev = DB.snapshots[curSnap - 1];
+  return prev.items.find(p => itemKey(p) === itemKey(item)) || null;
+}
+
+function getPriceChange(item) {
+  const prev = getPrevItem(item);
+  if (!prev) return null;
+  return mid(item) - mid(prev);
+}
+
+function setB(b) {
+  selB = b;
+  document.querySelectorAll('#bfilters .fb').forEach(btn =>
+    btn.classList.toggle('on', btn.dataset.b === b));
+  renderAll();
+}
+
+function renderAll() {
+  const q = (document.getElementById('q').value || '').toLowerCase();
+  const sort = document.getElementById('sortsel').value;
+  const items = DB.snapshots[curSnap].items;
+  let rows = items.filter(r => {
+    const bOk = !selB || r.brand === selB;
+    const qOk = !q || (r.model + ' ' + r.storage + ' ' + r.brand + ' ' + r.color).toLowerCase().includes(q);
+    return bOk && qOk;
+  });
+  if (sort === 'name') rows.sort((a, b) => (a.model + a.storage).localeCompare(b.model + b.storage, 'th'));
+  else if (sort === 'lo') rows.sort((a, b) => a.lo - b.lo);
+  else if (sort === 'hi') rows.sort((a, b) => b.hi - a.hi);
+  else if (sort === 'profit') {
+    rows = rows.map(r => {
+      const h = port.find(e => e.model === r.model && e.storage === r.storage);
+      return { r, p: h ? (mid(r) - h.cost) / h.cost : null };
+    }).sort((a, b) => (b.p ?? -99) - (a.p ?? -99)).map(x => x.r);
+  }
+  const el = document.getElementById('all-list');
+  if (!rows.length) { el.innerHTML = '<div class="empty">ไม่พบรุ่นที่ค้นหา</div>'; return; }
+
+  // Group by brand
+  let html = '';
+  let lastBrand = null;
+  rows.forEach(r => {
+    if (!selB && r.brand !== lastBrand) {
+      html += `<div class="sec-hdr">${r.brand}</div>`;
+      lastBrand = r.brand;
+    }
+    const h = port.find(e => e.model === r.model && e.storage === r.storage);
+    let ph = '';
+    if (h) {
+      const p = (mid(r) - h.cost) / h.cost;
+      const c = p >= 0.05 ? 'pg2' : p >= 0 ? 'pa' : 'pr3';
+      const l = p >= 0.05 ? 'น่าซื้อ' : p >= 0 ? 'พอได้' : 'ขาดทุน';
+      ph = `<span class="pill ${c}">${l} ${pct(p)}</span>`;
+    }
+    const chg = getPriceChange(r);
+    let chgHtml = '';
+    if (chg !== null && chg !== 0) {
+      const cls = chg > 0 ? 'chg-up' : 'chg-dn';
+      const arrow = chg > 0 ? '↑' : '↓';
+      chgHtml = `<span class="chg ${cls}">${arrow}${fmt(Math.abs(chg))}</span>`;
+    } else if (chg === null && curSnap > 0) {
+      chgHtml = `<span class="chg" style="color:var(--text3)">ใหม่</span>`;
+    }
+    const colorInfo = r.color && r.color !== '-' ? `<span style="color:var(--text3)"> · ${r.color}</span>` : '';
+    html += `<div class="pr" onclick="quickCalc('${esc(r.brand)}','${esc(r.model)}','${esc(r.storage)}')">
+      <div class="pi">
+        <div class="pm">${r.model} <span style="font-weight:400;color:var(--text3)">${r.storage}</span>${chgHtml}</div>
+        <div class="ps">${r.brand}${colorInfo}${h ? ' · ทุน ฿' + fmt(h.cost) : ''}</div>
+      </div>
+      <div class="pv"><div class="pp">฿${fmt(r.lo)}</div><div class="pr2">–฿${fmt(r.hi)}</div>${ph}</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+function esc(s) { return (s || '').replace(/'/g, "\\'"); }
+
+// ======== CALC ========
+function initCalc() {
+  const BRANDS = [...new Set(DB.snapshots[curSnap].items.map(r => r.brand))];
+  const sel = document.getElementById('cb');
+  sel.innerHTML = '<option value="">-- เลือก --</option>';
+  BRANDS.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; sel.appendChild(o); });
+}
+
+function onB() {
+  const b = document.getElementById('cb').value;
+  const sel = document.getElementById('cm');
+  sel.innerHTML = '<option value="">-- เลือก --</option>';
+  document.getElementById('cs').innerHTML = '<option value="">-- เลือก --</option>';
+  document.getElementById('cinfo').style.display = 'none';
+  if (!b) return;
+  const items = DB.snapshots[curSnap].items;
+  [...new Set(items.filter(r => r.brand === b).map(r => r.model))].forEach(m => {
+    const o = document.createElement('option'); o.value = m; o.textContent = m; sel.appendChild(o);
+  });
+}
+
+function onM() {
+  const b = document.getElementById('cb').value, m = document.getElementById('cm').value;
+  const sel = document.getElementById('cs');
+  sel.innerHTML = '<option value="">-- เลือก --</option>';
+  document.getElementById('cinfo').style.display = 'none';
+  if (!m) return;
+  const items = DB.snapshots[curSnap].items;
+  const rows = items.filter(r => r.brand === b && r.model === m);
+  rows.forEach(r => {
+    const label = r.storage + (r.color && r.color !== '-' ? ' · ' + r.color : '');
+    const o = document.createElement('option'); o.value = r.storage + '|||' + r.color; o.textContent = label; sel.appendChild(o);
+  });
+  if (rows.length === 1) { sel.value = rows[0].storage + '|||' + rows[0].color; onS(); }
+}
+
+function onS() {
+  const b = document.getElementById('cb').value, m = document.getElementById('cm').value;
+  const val = document.getElementById('cs').value;
+  if (!val) return;
+  const [storage, color] = val.split('|||');
+  const items = DB.snapshots[curSnap].items;
+  const row = items.find(r => r.brand === b && r.model === m && r.storage === storage && r.color === color);
+  if (!row) return;
+  document.getElementById('cinfo').style.display = 'block';
+  document.getElementById('cpd').textContent = '฿' + fmt(row.lo) + ' – ฿' + fmt(row.hi);
+  const h = port.find(e => e.model === m && e.storage === storage);
+  document.getElementById('cc').value = h ? h.cost : '';
+  document.getElementById('cres').innerHTML = '';
+  document.getElementById('csave').style.display = 'none';
+  if (h) calcP();
+}
+
+function calcP() {
+  const cost = parseFloat(document.getElementById('cc').value);
+  const b = document.getElementById('cb').value, m = document.getElementById('cm').value;
+  const val = document.getElementById('cs').value;
+  if (!val) return;
+  const [storage, color] = val.split('|||');
+  const items = DB.snapshots[curSnap].items;
+  const row = items.find(r => r.brand === b && r.model === m && r.storage === storage && r.color === color);
+  if (!row || !cost || cost <= 0) { document.getElementById('cres').innerHTML = ''; document.getElementById('csave').style.display = 'none'; return; }
+  const md = mid(row), pLo = row.lo - cost, pHi = row.hi - cost, pM = md - cost, pp = pM / cost;
+  const v = pp >= 0.05 ? 'น่าซื้อ' : pp >= 0 ? 'กำไรน้อย' : 'ขาดทุน';
+  const pc = pp >= 0.05 ? 'pg2' : pp >= 0 ? 'pa' : 'pr3';
+  const vc = pp >= 0.05 ? 'gn' : pp >= 0 ? 'am' : 'rd';
+  document.getElementById('cres').innerHTML = `<div class="rcard">
+    <div class="rh"><span style="font-size:14px;font-weight:500">${m} ${storage}</span><span class="pill ${pc}">${v}</span></div>
+    <div class="mg">
+      <div class="mc"><div class="ml">กำไรต่ำสุด</div><div class="mv ${pLo >= 0 ? 'gn' : 'rd'}">${pLo >= 0 ? '+' : ''}฿${fmt(pLo)}</div></div>
+      <div class="mc"><div class="ml">กำไรสูงสุด</div><div class="mv ${pHi >= 0 ? 'gn' : 'rd'}">${pHi >= 0 ? '+' : ''}฿${fmt(pHi)}</div></div>
+      <div class="mc"><div class="ml">% กำไร (กลาง)</div><div class="mv ${vc}">${pct(pp)}</div></div>
+      <div class="mc"><div class="ml">ต้นทุน</div><div class="mv">฿${fmt(cost)}</div></div>
+    </div></div>`;
+  document.getElementById('csave').style.display = 'block';
+}
+
+function savePort() {
+  const b = document.getElementById('cb').value, m = document.getElementById('cm').value;
+  const val = document.getElementById('cs').value;
+  const cost = parseFloat(document.getElementById('cc').value);
+  if (!val || !cost) return;
+  const [storage, color] = val.split('|||');
+  const items = DB.snapshots[curSnap].items;
+  const row = items.find(r => r.brand === b && r.model === m && r.storage === storage && r.color === color);
+  if (!row) return;
+  const idx = port.findIndex(e => e.model === m && e.storage === storage);
+  const entry = { date: new Date().toLocaleDateString('th-TH'), brand: b, model: m, storage, color, lo: row.lo, hi: row.hi, cost };
+  if (idx >= 0) port[idx] = entry; else port.unshift(entry);
+  localStorage.setItem(PORT_KEY, JSON.stringify(port));
+  const btn = document.getElementById('csave');
+  btn.textContent = '✓ บันทึกแล้ว';
+  setTimeout(() => { btn.innerHTML = '💾 บันทึก'; }, 1500);
+  renderAll();
+}
+
+function quickCalc(brand, model, storage) {
+  showTab('calc');
+  const cb = document.getElementById('cb'); cb.value = brand; onB();
+  setTimeout(() => {
+    document.getElementById('cm').value = model; onM();
+    setTimeout(() => {
+      const items = DB.snapshots[curSnap].items;
+      const row = items.find(r => r.brand === brand && r.model === model && r.storage === storage);
+      if (row) { document.getElementById('cs').value = row.storage + '|||' + row.color; onS(); }
+    }, 50);
+  }, 50);
+}
+
+// ======== TREND ========
+function renderTrend() {
+  const q = (document.getElementById('tq').value || '').toLowerCase();
+
+  // Build a map: key -> [{date, lo, hi}]
+  // itemKey normalizes storage/model so "128" and "128GB" map to the same entry
+  const trendMap = new Map();
+  DB.snapshots.forEach(snap => {
+    snap.items.forEach(r => {
+      if (tSelB && r.brand !== tSelB) return;
+      const k = itemKey(r);
+      if (!trendMap.has(k)) {
+        // Prefer the version with the cleanest storage string (has "GB")
+        const cleanStorage = normStorage(r.storage);
+        const cleanModel = r.model.replace(/\s+(128|256|512|64|1024)\s*[gG]?[bB]?\s*$/i, '').trim();
+        trendMap.set(k, { brand: r.brand, model: cleanModel, storage: cleanStorage, points: [] });
+      }
+      trendMap.get(k).points.push({ date: snap.date, lo: r.lo, hi: r.hi });
+    });
+  });
+
+  // Filter and sort
+  let entries = [...trendMap.values()].filter(e => {
+    if (!q) return true;
+    return (e.model + ' ' + e.storage + ' ' + e.brand).toLowerCase().includes(q);
+  });
+  entries.sort((a, b) => (a.model + a.storage).localeCompare(b.model + b.storage, 'th'));
+
+  const el = document.getElementById('trend-list');
+  if (!entries.length) { el.innerHTML = '<div class="empty">ไม่พบรุ่นที่ค้นหา</div>'; return; }
+
+  let html = '';
+  let lastBrand = null;
+  entries.forEach(e => {
+    if (!tSelB && e.brand !== lastBrand) {
+      html += `<div class="sec-hdr">${e.brand}</div>`;
+      lastBrand = e.brand;
+    }
+    html += `<div class="trend-card">
+      <div class="trend-title">${e.model} <span style="font-weight:400;color:var(--text3)">${e.storage}</span></div>`;
+    e.points.forEach((pt, i) => {
+      const midPt = (pt.lo + pt.hi) / 2;
+      let deltaHtml = '';
+      if (i > 0) {
+        const prevMid = (e.points[i - 1].lo + e.points[i - 1].hi) / 2;
+        const d = midPt - prevMid;
+        if (d !== 0) {
+          const cls = d > 0 ? 'chg-up' : 'chg-dn';
+          deltaHtml = `<div class="trend-chg ${cls}">${d > 0 ? '+' : ''}${fmt(d)}</div>`;
+        }
+      }
+      html += `<div class="trend-row">
+        <div class="trend-d">${pt.date}</div>
+        <div><div class="trend-p">฿${fmt(pt.lo)} – ฿${fmt(pt.hi)}</div>${deltaHtml}</div>
+      </div>`;
+    });
+    html += '</div>';
+  });
+  el.innerHTML = html;
+}
+
+// ======== PORT ========
+function renderPort() {
+  const el = document.getElementById('port-list');
+  document.getElementById('port-count').textContent = port.length + ' รายการ';
+  if (!port.length) { el.innerHTML = '<div class="empty">ยังไม่มีรายการ</div>'; return; }
+
+  // Find current prices for portfolio items
+  const curItems = DB.snapshots[curSnap].items;
+  el.innerHTML = port.map(e => {
+    const cur = curItems.find(r => r.model === e.model && r.storage === e.storage) || { lo: e.lo, hi: e.hi };
+    const md = mid(cur), pf = md - e.cost, p = pf / e.cost;
+    const c = p >= 0.05 ? 'gn' : p >= 0 ? 'am' : 'rd';
+    const pl = p >= 0.05 ? 'pg2' : p >= 0 ? 'pa' : 'pr3';
+    return `<div class="hi">
+      <div class="hd">${e.date}</div>
+      <div class="hm">${e.model} ${e.storage}</div>
+      <div class="hrw">
+        <span>ทุน ฿${fmt(e.cost)}</span>
+        <span>ราคาปัจจุบัน ฿${fmt(cur.lo)}–฿${fmt(cur.hi)}</span>
+      </div>
+      <div class="hrw" style="margin-top:3px">
+        <span class="${c}">${pf >= 0 ? '+' : ''}฿${fmt(pf)} (${pct(p)})</span>
+        <span class="pill ${pl}">${p >= 0.05 ? 'น่าซื้อ' : p >= 0 ? 'พอได้' : 'ขาดทุน'}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function clrPort() {
+  if (!confirm('ลบรายการทั้งหมด?')) return;
+  port = [];
+  localStorage.removeItem(PORT_KEY);
+  renderPort(); renderAll();
+}
+
+function resetDB() {
+  if (!confirm('รีเซ็ตข้อมูลราคาทั้งหมดกลับเป็นค่าเริ่มต้น?\n(ข้อมูลที่นำเข้าเพิ่มเติมจะหายไป แต่บันทึกต้นทุนยังอยู่)')) return;
+  localStorage.removeItem(DB_KEY);
+  DB = JSON.parse(JSON.stringify(SEED_DB));
+  curSnap = DB.snapshots.length - 1;
+  closeImport();
+  init();
+  alert('รีเซ็ตเรียบร้อย');
+}
+
+// ======== TABS ========
+function showTab(t) {
+  const tabs = ['all', 'calc', 'trend', 'port'];
+  document.querySelectorAll('.tab').forEach((el, i) => el.classList.toggle('active', tabs[i] === t));
+  document.querySelectorAll('.pg').forEach(p => p.classList.remove('active'));
+  document.getElementById('pg-' + t).classList.add('active');
+  if (t === 'trend') renderTrend();
+  if (t === 'port') renderPort();
+}
+
+// ======== IMPORT ========
+let parsedItems = [];
+let parsedDate = '';
+
+function openImport() { document.getElementById('overlay').classList.add('open'); }
+function closeImport() { document.getElementById('overlay').classList.remove('open'); document.getElementById('import-confirm').style.display = 'none'; document.getElementById('parse-res').innerHTML = ''; document.getElementById('import-text').value = ''; }
+function closeImportOutside(e) { if (e.target === document.getElementById('overlay')) closeImport(); }
+
+function parseImport() {
+  const text = document.getElementById('import-text').value.trim();
+  if (!text) return;
+  try {
+    const result = parseRawText(text);
+    parsedItems = result.items;
+    parsedDate = result.date;
+    document.getElementById('parse-res').className = 'parse-result ok';
+    document.getElementById('parse-res').textContent = `✓ พบ ${parsedItems.length} รายการ · วันที่ ${parsedDate || 'ไม่ระบุ'}`;
+    document.getElementById('import-confirm').style.display = 'block';
+    if (parsedDate) {
+      const d = parseDate(parsedDate);
+      if (d) document.getElementById('import-date').value = d;
+    }
+  } catch(e) {
+    document.getElementById('parse-res').className = 'parse-result err';
+    document.getElementById('parse-res').textContent = 'เกิดข้อผิดพลาด: ' + e.message;
+  }
+}
+
+function confirmImport() {
+  const dateVal = document.getElementById('import-date').value;
+  const source = document.getElementById('import-source').value || 'ร้าน A';
+  if (!dateVal) { alert('กรุณาระบุวันที่'); return; }
+  const [y, m, d] = dateVal.split('-').map(Number);
+  const thYear = y + 543;
+  const dateTH = String(d).padStart(2,'0') + '/' + String(m).padStart(2,'0') + '/' + thYear;
+
+  // Check if date already exists
+  const existing = DB.snapshots.findIndex(s => s.date_iso === dateVal);
+  const snapshot = { id: dateVal, date: dateTH, date_iso: dateVal, source, items: parsedItems };
+  if (existing >= 0) {
+    if (!confirm('มีข้อมูลวันที่นี้แล้ว ต้องการเขียนทับ?')) return;
+    DB.snapshots[existing] = snapshot;
+  } else {
+    DB.snapshots.push(snapshot);
+    DB.snapshots.sort((a, b) => a.date_iso.localeCompare(b.date_iso));
+  }
+  saveDB(DB);
+  curSnap = DB.snapshots.findIndex(s => s.date_iso === dateVal);
+  closeImport();
+  init();
+  alert(`บันทึกแล้ว! ${parsedItems.length} รายการ`);
+}
+
+function parseDate(str) {
+  // "25 May 26" -> "2026-05-25"
+  const months = {jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+  const m = str.toLowerCase().match(/(\d+)\s+([a-z]+)\s+(\d+)/);
+  if (m) {
+    const day = parseInt(m[1]);
+    const mo = months[m[2].substring(0,3)];
+    const yr = parseInt(m[3]) < 100 ? 2000 + parseInt(m[3]) : parseInt(m[3]);
+    if (mo) return `${yr}-${String(mo).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+  }
+  // "25/05/2569" Thai year
+  const m2 = str.match(/(\d+)\/(\d+)\/(\d+)/);
+  if (m2) {
+    const yr = parseInt(m2[3]) > 2500 ? parseInt(m2[3]) - 543 : parseInt(m2[3]);
+    return `${yr}-${m2[2].padStart(2,'0')}-${m2[1].padStart(2,'0')}`;
+  }
+  return '';
+}
+
+// ======== PARSER ========
+function parseRawText(text) {
+  const lines = text.split('\n').map(l => l.trim()).filter(l => l);
+  const items = [];
+  let dateStr = '';
+
+  // Extract date from first few lines
+  for (let i = 0; i < Math.min(5, lines.length); i++) {
+    if (/\d+\s+[a-z]+\s+\d+/i.test(lines[i])) { dateStr = lines[i].match(/\d+\s+[a-z]+\s+\d+/i)[0]; break; }
+    if (/\d+\/\d+\/\d+/.test(lines[i])) { dateStr = lines[i].match(/\d+\/\d+\/\d+/)[0]; break; }
+  }
+
+  // Detect current section
+  let section = '';
+  const PRICE_RE = /(\d[\d,]+)\s*[-–]\s*(\d[\d,]+)/;
+  const SINGLE_PRICE_RE = /^(\d[\d,]+)$/;
+
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    const lc = line.toLowerCase();
+
+    // Section detection
+    if (/^[\*\❤️]*\s*(samsung)/i.test(line)) { section = 'Samsung'; i++; continue; }
+    if (/^[\*\❤️]*\s*(oppo)/i.test(line)) { section = 'OPPO'; i++; continue; }
+    if (/^[\*\❤️]*\s*(vivo)/i.test(line)) { section = 'Vivo'; i++; continue; }
+    if (/^[\*\❤️]*\s*(redmi)/i.test(line)) { section = 'Redmi'; i++; continue; }
+    if (/^[\*\❤️]*\s*(realme)/i.test(line)) { section = 'Realme'; i++; continue; }
+    if (/ipad/i.test(line) && !/\d[\d,]+-\d[\d,]+/.test(line) && !/^\s*\d/.test(line)) { section = 'iPad'; i++; continue; }
+    if (/^(iphone|\d+\s+\d+|ip\s*\d+|iphone\s+\d+)/i.test(line) && section !== 'iPhone' && !/\d[\d,]+-\d[\d,]+/.test(line)) { section = 'iPhone'; }
+    if (/อะแดปเตอร์|adapter|สาย|หูฟัง|airpod|pencil|pen usb/i.test(line)) { section = 'Accessories'; }
+
+    // Parse by section
+    if (section === 'Samsung' || section === 'OPPO' || section === 'Vivo' || section === 'Realme') {
+      // Format: "A06 5G 4/64 black green 1,900-2,100"
+      const pm = line.match(PRICE_RE);
+      if (pm) {
+        const priceStr = pm[0];
+        const beforePrice = line.substring(0, line.indexOf(priceStr)).trim();
+        // Extract storage (RAM/GB pattern)
+        const storageM = beforePrice.match(/(\d+\/\d+\s*[gG][bB]?|\d+\s*[gG][bB])/);
+        let storage = storageM ? storageM[0].trim().replace(/gb$/i, 'GB') : '';
+        const afterStorage = storageM ? beforePrice.substring(beforePrice.indexOf(storageM[0]) + storageM[0].length).trim() : '';
+        const modelPart = storageM ? beforePrice.substring(0, beforePrice.indexOf(storageM[0])).trim() : beforePrice;
+        let model = modelPart;
+        if (section === 'Samsung') model = 'Galaxy ' + model.replace(/^galaxy\s*/i, '');
+        if (section === 'OPPO') model = 'OPPO ' + model.replace(/^oppo\s*/i, '');
+        if (section === 'Vivo') model = 'Vivo ' + model.replace(/^vivo\s*/i, '');
+        const color = afterStorage || 'คละสี';
+        const lo = parseInt(pm[1].replace(/,/g, ''));
+        const hi = parseInt(pm[2].replace(/,/g, ''));
+        if (lo > 0 && hi > 0 && model.length > 2) {
+          items.push({ brand: section, model: model.replace(/\s+/g, ' '), storage: storage || '-', color, lo, hi });
+        }
+      }
+      i++; continue;
+    }
+
+    if (section === 'Redmi') {
+      const pm = line.match(PRICE_RE);
+      if (pm) {
+        const priceStr = pm[0];
+        const beforePrice = line.substring(0, line.indexOf(priceStr)).trim();
+        const storageM = beforePrice.match(/(\d+\/\d+\s*[gG][bB]?|\d+\s*[gG][bB])/);
+        let storage = storageM ? storageM[0].trim().replace(/gb$/i, 'GB') : '';
+        const modelPart = storageM ? beforePrice.substring(0, beforePrice.indexOf(storageM[0])).trim() : beforePrice;
+        const afterStorage = storageM ? beforePrice.substring(beforePrice.indexOf(storageM[0]) + storageM[0].length).trim() : '';
+        let model = 'Redmi ' + modelPart.replace(/^redmi\s*/i, '').trim();
+        const color = afterStorage || 'คละสี';
+        const lo = parseInt(pm[1].replace(/,/g, ''));
+        const hi = parseInt(pm[2].replace(/,/g, ''));
+        if (lo > 0 && hi > 0 && model.length > 5) {
+          items.push({ brand: 'Redmi', model: model.replace(/\s+/g, ' '), storage: storage || '-', color, lo, hi });
+        }
+      }
+      i++; continue;
+    }
+
+    if (section === 'Accessories') {
+      const pm = line.match(/(\d[\d,]+)\s*[-–=]\s*(\d[\d,]+)/);
+      if (pm) {
+        const lo = parseInt(pm[1].replace(/,/g, ''));
+        const hi = parseInt(pm[2].replace(/,/g, ''));
+        const modelPart = line.substring(0, line.search(/\d[\d,]+\s*[-–=]/)).trim().replace(/=\s*$/, '').trim();
+        if (modelPart && lo > 0) {
+          items.push({ brand: 'Accessories', model: modelPart, storage: '-', color: '-', lo, hi });
+        }
+      }
+      i++; continue;
+    }
+
+    if (section === 'iPhone' || section === 'iPad') {
+      // Multi-line format
+      // Check if this line has a price range directly
+      const pm = line.match(PRICE_RE);
+      if (pm) {
+        // Could be "colors price" on same line or just price
+        const lo = parseInt(pm[1].replace(/,/g, ''));
+        const hi = parseInt(pm[2].replace(/,/g, ''));
+        const beforePrice = line.substring(0, line.indexOf(pm[0])).trim();
+        // Look back for model and colors
+        // Try to find model in previous lines
+        let modelLine = '', colorLine = '';
+        for (let j = i - 1; j >= Math.max(0, i - 3); j--) {
+          const prev = lines[j];
+          if (!PRICE_RE.test(prev) && prev.length > 0 && !/^[-—]+$/.test(prev)) {
+            if (!colorLine && /[a-z]/i.test(prev) && !/ipad|iphone|\d+\s*[gt]b/i.test(prev)) {
+              colorLine = prev;
+            } else if (!modelLine) {
+              modelLine = prev;
+            }
+          }
+          if (modelLine && colorLine) break;
+        }
+        // Parse model
+        let brand = section, model = '', storage = '', color = '';
+        const target = colorLine || modelLine;
+        color = (beforePrice || target || 'คละสี').replace(/\*[^*]*\*/g, '').trim();
+        if (!color) color = 'คละสี';
+
+        // Find the model line
+        for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
+          const prev = lines[j];
+          if (PRICE_RE.test(prev)) break;
+          if (/^[-—]+$/.test(prev)) break;
+          // Model line: has numbers like "13 128", "ip 14 128G", "iPhone 17 Pro 256"
+          if (/(\d+\s*[gt]b|\d+\/\d+|\d+\s+\d+|iphone|ipad|ip\s*\d+)/i.test(prev)) {
+            const parsed = parseModelLine(prev, section);
+            if (parsed.model) { model = parsed.model; storage = parsed.storage; break; }
+          }
+        }
+
+        if (model && lo > 0) {
+          items.push({ brand, model, storage, color, lo, hi });
+        }
+        i++; continue;
+      }
+      i++; continue;
+    }
+
+    i++;
+  }
+
+  return { items, date: dateStr };
+}
+
+function parseModelLine(line, section) {
+  let model = '', storage = '';
+  const clean = line.replace(/\*[^*]*\*/g, '').replace(/ไม่ต้องเยอะ/g, '').trim();
+
+  if (section === 'iPhone') {
+    // "13 128" -> iPhone 13 128GB
+    // "ip 14 128G" -> iPhone 14 128GB
+    // "iPhone 17 Pro 256" -> iPhone 17 Pro 256GB
+    // "iPhone 17e 8/256" -> iPhone 17e 8/256GB
+    const storageM = clean.match(/(\d+\/\d+|\d+)\s*[gG][bB]?(\s|$)/);
+    const storageMB = clean.match(/(\d+)\s*[gG][bB]$/i);
+
+    let raw = clean.replace(/^(ip|iphone)\s*/i, '').trim();
+    // Extract storage
+    const sm = raw.match(/(\d+\/\d+\s*[gG][bB]?|\d+\s*[gG][bB])/i);
+    if (sm) {
+      storage = sm[0].trim();
+      if (!/gb$/i.test(storage)) storage += 'GB';
+      raw = raw.replace(sm[0], '').trim();
+    }
+    model = 'iPhone ' + raw.replace(/\s+/g, ' ').trim();
+    model = model.replace(/iPhone iPhone/, 'iPhone');
+  } else if (section === 'iPad') {
+    const sm = clean.match(/(wi-?fi\s+\d+[gG][bB]|sim\s+\d+[gG][bB]|\d+\s*[gG][bB])/i);
+    if (sm) { storage = sm[0].trim(); }
+    model = clean.replace(/^(ipad)\s*/i, 'iPad ').replace(/\s+/g, ' ').trim();
+    if (!model.startsWith('iPad')) model = 'iPad ' + model;
+  }
+
+  return { model, storage };
+}
+
+// ======== START ========
+init();
+</script>
+</body>
+</html>

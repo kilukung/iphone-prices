@@ -340,7 +340,7 @@ function initBrandFilters() {
   const wbtn = document.createElement('button');
   wbtn.className = 'fb' + (wishOnly ? ' on' : '');
   wbtn.textContent = '⭐ Wishlist';
-  wbtn.onclick = () => { wishOnly = !wishOnly; selB = ''; renderAll(); initBrandFilters(); };
+  wbtn.onclick = () => { wishOnly = !wishOnly; if (wishOnly) selB = ''; renderAll(); initBrandFilters(); };
   el.appendChild(wbtn);
   BRANDS.forEach(b => {
     const btn = document.createElement('button');
@@ -418,8 +418,9 @@ function getPriceChange(item) {
 
 function setB(b) {
   selB = b;
+  if (b) wishOnly = false;  // กด brand → ปิด wishlist mode
   document.querySelectorAll('#bfilters .fb').forEach(btn =>
-    btn.classList.toggle('on', btn.dataset.b === b));
+    btn.classList.toggle('on', btn.dataset.b === b || (btn.textContent.includes('Wishlist') && wishOnly)));
   renderAll();
 }
 
@@ -430,7 +431,7 @@ function renderAll() {
   let rows = items.filter(r => {
     const bOk = !selB || r.brand === selB;
     const qOk = !q || (r.model + ' ' + r.storage + ' ' + r.brand + ' ' + r.color).toLowerCase().includes(q);
-    const wOk = !wishOnly || wishlist.has(itemKey(r));
+    const wOk = selB ? true : (!wishOnly || wishlist.has(itemKey(r)));
     return bOk && qOk && wOk;
   });
   if (sort === 'name') rows.sort((a, b) => (a.model + a.storage).localeCompare(b.model + b.storage, 'th'));

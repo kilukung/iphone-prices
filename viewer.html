@@ -984,7 +984,8 @@ function parseModelLine(line, section) {
 // Load immediately with SEED_DB, then silently refresh if remote available
 init();
 fetchRemoteDB().then(remote => {
-  if (remote && remote.snapshots && remote.snapshots.length > 0) {
+  // Only use remote if it has MORE snapshots (avoid overwriting with old cached version)
+  if (remote && remote.snapshots && remote.snapshots.length > DB.snapshots.length) {
     DB = remote;
     curSnap = DB.snapshots.length - 1;
     init();

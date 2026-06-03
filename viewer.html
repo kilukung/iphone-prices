@@ -154,6 +154,7 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 
 <!-- คำนวณ -->
 <div id="pg-calc" class="pg">
+  <div style="font-size:11px;color:var(--text3);margin-bottom:12px">💡 กดรุ่นใดก็ได้ในหน้าทั้งหมดเพื่อคำนวณได้เลย</div>
   <div class="lbl">แบรนด์</div><select class="full" id="cb" onchange="onB()"><option value="">-- เลือก --</option></select>
   <div class="lbl">รุ่น</div><select class="full" id="cm" onchange="onM()"><option value="">-- เลือก --</option></select>
   <div class="lbl">ความจำ/สี</div><select class="full" id="cs" onchange="onS()"><option value="">-- เลือก --</option></select>
@@ -176,10 +177,7 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 <div id="pg-port" class="pg">
   <div class="tbar">
     <span style="font-size:14px;font-weight:500" id="port-count">0 รายการ</span>
-    <div style="display:flex;gap:12px;align-items:center">
-      <button onclick="openImport()" style="font-size:12px;color:var(--text2);background:var(--bg2);border:0.5px solid var(--bd2);border-radius:20px;padding:4px 12px;cursor:pointer;touch-action:manipulation">+ นำเข้าราคา</button>
-      <button onclick="clrPort()" style="font-size:12px;color:var(--r-t);background:none;border:none;cursor:pointer">ลบทั้งหมด</button>
-    </div>
+    <button onclick="openImport()" style="font-size:12px;color:var(--text2);background:var(--bg2);border:0.5px solid var(--bd2);border-radius:20px;padding:4px 12px;cursor:pointer;touch-action:manipulation">+ นำเข้าราคา</button>
   </div>
   <div id="port-list"><div class="empty">ยังไม่มีรายการ</div></div>
 </div>
@@ -586,7 +584,11 @@ function savePort() {
   const row = items.find(r => r.brand === b && r.model === m && r.storage === storage && r.color === color);
   if (!row) return;
   const idx = port.findIndex(e => e.model === m && e.storage === storage);
-  const entry = { date: new Date().toLocaleDateString('th-TH'), brand: b, model: m, storage, color, lo: row.lo, hi: row.hi, cost };
+  const now = new Date();
+  const dd = String(now.getDate()).padStart(2,'0');
+  const mm = String(now.getMonth()+1).padStart(2,'0');
+  const yy = now.getFullYear() + 543;
+  const entry = { date: dd+'/'+mm+'/'+yy, brand: b, model: m, storage, color, lo: row.lo, hi: row.hi, cost };
   if (idx >= 0) port[idx] = entry; else port.unshift(entry);
   localStorage.setItem(PORT_KEY, JSON.stringify(port));
   const btn = document.getElementById('csave');
@@ -1074,8 +1076,11 @@ function showChart(entry) {
   const W = 340, H = 190, PL = 58, PR = 10, PT = 10, PB = 42;
   const IW = W - PL - PR, IH = H - PT - PB;
   const vals = pts.flatMap(p => [p.lo, p.hi]);
-  const minV = Math.floor(Math.min(...vals) / 500) * 500;
-  const maxV = Math.ceil(Math.max(...vals) / 500) * 500;
+  const rawMin = Math.min(...vals);
+  const rawMax = Math.max(...vals);
+  const pad = Math.max((rawMax - rawMin) * 0.15, rawMax * 0.03);
+  const minV = Math.floor((rawMin - pad) / 100) * 100;
+  const maxV = Math.ceil((rawMax + pad) / 100) * 100;
   const rng = maxV - minV || 1000;
   const cx = i => PL + (pts.length < 2 ? IW / 2 : (i / (pts.length - 1)) * IW);
   const cy = v => PT + IH - ((v - minV) / rng) * IH;

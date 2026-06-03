@@ -608,20 +608,32 @@ function quickCalc(brand, model, storage) {
 function renderTrend() {
   const q = (document.getElementById('tq').value || '').toLowerCase();
 
-  // Build a map: key -> [{date, lo, hi}]
-  // itemKey normalizes storage/model so "128" and "128GB" map to the same entry
+  // Strip color keywords from storage to get base size (e.g. "256GB Orange" → "256GB")
+  function baseStorage(s) {
+    return normStorage(s)
+      .replace(/\b(WHITE|BLACK|BLUE|GREEN|PINK|PURPLE|ORANGE|SILVER|GOLD|GRAY|GREY|BROWN|NATURAL|DESERT)\b/gi, '')
+      .replace(/\s+/g, '').trim() || normStorage(s);
+  }
+
+  // Build map: aggregate all color variants per date → min(lo) / max(hi)
   const trendMap = new Map();
   DB.snapshots.forEach(snap => {
     snap.items.forEach(r => {
       if (tSelB && r.brand !== tSelB) return;
-      const k = itemKey(r);
+      const bs = baseStorage(r.storage);
+      const cleanModel = r.model.replace(/\s+(128|256|512|64|1024)\s*[gG]?[bB]?\s*$/i, '').trim();
+      const k = r.brand.toLowerCase() + '|' + normModel(r.model) + '|' + bs;
       if (!trendMap.has(k)) {
-        // Prefer the version with the cleanest storage string (has "GB")
-        const cleanStorage = normStorage(r.storage);
-        const cleanModel = r.model.replace(/\s+(128|256|512|64|1024)\s*[gG]?[bB]?\s*$/i, '').trim();
-        trendMap.set(k, { brand: r.brand, model: cleanModel, storage: cleanStorage, points: [] });
+        trendMap.set(k, { brand: r.brand, model: cleanModel, storage: bs, points: [] });
       }
-      trendMap.get(k).points.push({ date: snap.date, lo: r.lo, hi: r.hi });
+      const entry = trendMap.get(k);
+      const existing = entry.points.find(p => p.date === snap.date);
+      if (existing) {
+        existing.lo = Math.min(existing.lo, r.lo);
+        existing.hi = Math.max(existing.hi, r.hi);
+      } else {
+        entry.points.push({ date: snap.date, lo: r.lo, hi: r.hi });
+      }
     });
   });
 
@@ -632,17 +644,20 @@ function renderTrend() {
   });
   entries.sort((a, b) => (a.model + a.storage).localeCompare(b.model + b.storage, 'th'));
 
+  // Store globally for chart access (avoid JSON.stringify in onclick)
+  window._trendEntries = entries;
+
   const el = document.getElementById('trend-list');
   if (!entries.length) { el.innerHTML = '<div class="empty">ไม่พบรุ่นที่ค้นหา</div>'; return; }
 
   let html = '';
   let lastBrand = null;
-  entries.forEach(e => {
+  entries.forEach((e, idx) => {
     if (!tSelB && e.brand !== lastBrand) {
       html += `<div class="sec-hdr">${e.brand}</div>`;
       lastBrand = e.brand;
     }
-    html += `<div class="trend-card" onclick="showChart(${JSON.stringify(e).replace(/`/g,'\\`')})" style="cursor:pointer">
+    html += `<div class="trend-card" onclick="showChart(window._trendEntries[${idx}])" style="cursor:pointer">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
         <div class="trend-title" style="margin:0">${e.model} <span style="font-weight:400;color:var(--text3)">${e.storage}</span></div>
         <span style="font-size:11px;color:var(--text3)">ดูกราฟ ›</span>

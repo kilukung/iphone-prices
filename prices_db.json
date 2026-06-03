@@ -669,6 +669,318 @@
           "color": "คละสี",
           "lo": 8200,
           "hi": 8500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 10000,
+          "hi": 10300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "Blue/White/Pink",
+          "lo": 13200,
+          "hi": 13500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14000,
+          "hi": 14500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15700,
+          "hi": 16200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 15000,
+          "hi": 15500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21500,
+          "hi": 22000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14000,
+          "hi": 14500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15700,
+          "hi": 16200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 15000,
+          "hi": 15500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21500,
+          "hi": 22000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 15000,
+          "hi": 15500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21500,
+          "hi": 22000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 15000,
+          "hi": 15500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21500,
+          "hi": 22000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21500,
+          "hi": 22000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21500,
+          "hi": 22000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
         }
       ]
     },
@@ -1253,6 +1565,318 @@
           "color": "คละสี",
           "lo": 8200,
           "hi": 8500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 9800,
+          "hi": 10300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "Blue/White/Pink",
+          "lo": 13200,
+          "hi": 13500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14000,
+          "hi": 14500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15700,
+          "hi": 16200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 14500,
+          "hi": 15200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14000,
+          "hi": 14500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15700,
+          "hi": 16200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 14500,
+          "hi": 15200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 14500,
+          "hi": 15200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 14500,
+          "hi": 15200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue",
+          "lo": 19500,
+          "hi": 20000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
         }
       ]
     },
@@ -1829,6 +2453,318 @@
           "color": "คละสี",
           "lo": 8200,
           "hi": 8500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 9800,
+          "hi": 10100
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "Blue/White/Pink",
+          "lo": 13200,
+          "hi": 13700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14000,
+          "hi": 14500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Purple/Blue",
+          "lo": 14700,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14000,
+          "hi": 14500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Purple/Blue",
+          "lo": 14700,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12800,
+          "hi": 13200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Purple/Blue",
+          "lo": 14700,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Purple/Blue",
+          "lo": 14700,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
         }
       ]
     },
@@ -2437,6 +3373,342 @@
           "color": "คละสี",
           "lo": 8200,
           "hi": 8500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 9500,
+          "hi": 9900
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "Blue/White/Pink",
+          "lo": 13000,
+          "hi": 13500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 18800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 18800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 18800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 18800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
         }
       ]
     },
@@ -3045,6 +4317,342 @@
           "color": "คละสี",
           "lo": 8200,
           "hi": 8500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 9500,
+          "hi": 9900
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "Blue/White/Pink",
+          "lo": 13000,
+          "hi": 13500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 18800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 18800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 18800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 18800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
         }
       ]
     },
@@ -3653,6 +5261,342 @@
           "color": "คละสี",
           "lo": 8200,
           "hi": 8500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 9800,
+          "hi": 10000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "Blue/White/Pink",
+          "lo": 13000,
+          "hi": 13500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14700,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18700,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14700,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18700,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 12700,
+          "hi": 13000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14700,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18700,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14700,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18700,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 19000,
+          "hi": 19700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
         }
       ]
     },
@@ -4245,6 +6189,342 @@
           "color": "คละสี",
           "lo": 2500,
           "hi": 2800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 9800,
+          "hi": 10100
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 13200,
+          "hi": 13600
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
         }
       ]
     },
@@ -4765,6 +7045,342 @@
           "color": "คละสี",
           "lo": 6000,
           "hi": 6200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 10000,
+          "hi": 10500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 13200,
+          "hi": 13700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 15500,
+          "hi": 16200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 15500,
+          "hi": 16200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 15500,
+          "hi": 16200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 15500,
+          "hi": 16200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
         }
       ]
     },
@@ -5213,6 +7829,342 @@
           "color": "คละสี",
           "lo": 5800,
           "hi": 6000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/White/Blue",
+          "lo": 10000,
+          "hi": 10500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 13200,
+          "hi": 13700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12500,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 18500,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
         }
       ]
     },
@@ -5693,6 +8645,398 @@
           "color": "คละสี",
           "lo": 5000,
           "hi": 5500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink/Blue/White",
+          "lo": 10700,
+          "hi": 11200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 13200,
+          "hi": 13700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19000,
+          "hi": 19800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23300,
+          "hi": 23500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19000,
+          "hi": 19800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23300,
+          "hi": 23500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19000,
+          "hi": 19800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23300,
+          "hi": 23500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19000,
+          "hi": 19800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23300,
+          "hi": 23500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23300,
+          "hi": 23500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23300,
+          "hi": 23500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23300,
+          "hi": 23500
         }
       ]
     },
@@ -6237,6 +9581,406 @@
           "color": "คละสี",
           "lo": 5000,
           "hi": 5500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink",
+          "lo": 11000,
+          "hi": 11500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Blue/White",
+          "lo": 11000,
+          "hi": 11400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 13200,
+          "hi": 13700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19000,
+          "hi": 19800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23000,
+          "hi": 23300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19000,
+          "hi": 19800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23000,
+          "hi": 23300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19000,
+          "hi": 19800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23000,
+          "hi": 23300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16000,
+          "hi": 16700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19000,
+          "hi": 19800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23000,
+          "hi": 23300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23000,
+          "hi": 23300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23000,
+          "hi": 23300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 23000,
+          "hi": 23300
         }
       ]
     },
@@ -6805,6 +10549,406 @@
           "color": "คละสี",
           "lo": 5000,
           "hi": 5500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink",
+          "lo": 11200,
+          "hi": 11500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Blue/White",
+          "lo": 11000,
+          "hi": 11300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 13700,
+          "hi": 14300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16500,
+          "hi": 16900
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19500,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16500,
+          "hi": 16900
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19500,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16500,
+          "hi": 16900
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19500,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16500,
+          "hi": 16900
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 19500,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 23500,
+          "hi": 24000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
         }
       ]
     },
@@ -7373,6 +11517,358 @@
           "color": "คละสี",
           "lo": 5000,
           "hi": 5500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink",
+          "lo": 11200,
+          "hi": 11500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Blue/White",
+          "lo": 11000,
+          "hi": 11300
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 14300,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 15000,
+          "hi": 15500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 15000,
+          "hi": 15500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 16500,
+          "hi": 17000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23200
         }
       ]
     },
@@ -7949,6 +12445,358 @@
           "color": "คละสี",
           "lo": 5000,
           "hi": 5500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Blue/White",
+          "lo": 11000,
+          "hi": 11400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink",
+          "lo": 11300,
+          "hi": 11600
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 14500,
+          "hi": 14800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 15000,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20300,
+          "hi": 20800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 15000,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20300,
+          "hi": 20800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20300,
+          "hi": 20800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20300,
+          "hi": 20800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20500,
+          "hi": 21000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "256GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 22800,
+          "hi": 23400
         }
       ]
     },
@@ -8573,6 +13421,358 @@
           "color": "คละสี",
           "lo": 5000,
           "hi": 5500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink",
+          "lo": 11300,
+          "hi": 11600
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Blue/White",
+          "lo": 11000,
+          "hi": 11400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 15000,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20300,
+          "hi": 20800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Blue/White/Black",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "White/Blue/Pink",
+          "lo": 15000,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 256GB",
+          "color": "White/Blue/Pink",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20300,
+          "hi": 20800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Blue/White/Black",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue/Black",
+          "lo": 12000,
+          "hi": 12700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 15500,
+          "hi": 16000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20300,
+          "hi": 20800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Blue/White/Black",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/Blue/White",
+          "lo": 17000,
+          "hi": 17500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Black/Purple/White",
+          "lo": 20300,
+          "hi": 20800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Blue/White/Black",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 11นิ้ว",
+          "storage": "SIM 256GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Blue/White/Black",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 7 13นิ้ว",
+          "storage": "WiFi 128GB",
+          "color": "Black/Purple/White/Blue",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Blue/White/Black",
+          "lo": 22800,
+          "hi": 23400
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11นิ้ว",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Blue/White/Black",
+          "lo": 22800,
+          "hi": 23400
         }
       ]
     }

@@ -300,6 +300,7 @@ let port = JSON.parse(localStorage.getItem(PORT_KEY) || '[]');
 let curSnap = DB.snapshots.length - 1;
 let selB = '';
 let tSelB = '';
+let tWishOnly = false;
 
 // ======== INIT ========
 function init() {
@@ -357,18 +358,25 @@ function initTrendFilters() {
   const all = document.createElement('button');
   all.className = 'fb' + (!tSelB ? ' on' : '');
   all.textContent = 'ทั้งหมด'; all.dataset.b = '';
-  all.onclick = () => { tSelB = ''; renderTrend(); updateTFilter(); }; el.appendChild(all);
+  all.onclick = () => { tSelB = ''; tWishOnly = false; renderTrend(); updateTFilter(); }; el.appendChild(all);
+  const wbtn = document.createElement('button');
+  wbtn.className = 'fb' + (tWishOnly ? ' on' : '');
+  wbtn.textContent = '⭐ Wishlist'; wbtn.dataset.b = '__wish__';
+  wbtn.onclick = () => { tWishOnly = !tWishOnly; if (tWishOnly) tSelB = ''; renderTrend(); updateTFilter(); };
+  el.appendChild(wbtn);
   BRANDS.forEach(b => {
     const btn = document.createElement('button');
     btn.className = 'fb' + (tSelB === b ? ' on' : '');
     btn.textContent = b; btn.dataset.b = b;
-    btn.onclick = () => { tSelB = b; renderTrend(); updateTFilter(); }; el.appendChild(btn);
+    btn.onclick = () => { tSelB = b; tWishOnly = false; renderTrend(); updateTFilter(); }; el.appendChild(btn);
   });
 }
 
 function updateTFilter() {
-  document.querySelectorAll('#tbfilters .fb').forEach(btn =>
-    btn.classList.toggle('on', btn.dataset.b === tSelB));
+  document.querySelectorAll('#tbfilters .fb').forEach(btn => {
+    if (btn.dataset.b === '__wish__') btn.classList.toggle('on', tWishOnly);
+    else btn.classList.toggle('on', btn.dataset.b === tSelB && !tWishOnly);
+  });
 }
 
 // ======== ALL LIST ========
@@ -620,6 +628,10 @@ function renderTrend() {
   DB.snapshots.forEach(snap => {
     snap.items.forEach(r => {
       if (tSelB && r.brand !== tSelB) return;
+      if (tWishOnly) {
+        const modelPrefix = r.brand.toLowerCase() + '|' + normModel(r.model);
+        if (![...wishlist].some(w => w.startsWith(modelPrefix))) return;
+      }
       const bs = baseStorage(r.storage);
       const cleanModel = r.model.replace(/\s+(128|256|512|64|1024)\s*[gG]?[bB]?\s*$/i, '').trim();
       const k = r.brand.toLowerCase() + '|' + normModel(r.model) + '|' + bs;

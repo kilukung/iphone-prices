@@ -168,7 +168,10 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 
 <!-- ราคาย้อนหลัง -->
 <div id="pg-trend" class="pg">
-  <div class="sw"><span class="si">🔍</span><input type="search" id="tq" placeholder="ค้นหารุ่น..." oninput="renderTrend()"></div>
+  <div style="display:flex;gap:8px;margin-bottom:10px">
+    <div class="sw" style="flex:1;margin-bottom:0"><span class="si">🔍</span><input type="search" id="tq" placeholder="ค้นหารุ่น..." oninput="renderTrend()"></div>
+    <button onclick="openImport()" style="font-size:12px;color:var(--text2);background:var(--bg2);border:0.5px solid var(--bd2);border-radius:20px;padding:0 12px;cursor:pointer;touch-action:manipulation;white-space:nowrap;flex-shrink:0">+ นำเข้า</button>
+  </div>
   <div class="frow" id="tbfilters"></div>
   <div id="trend-list"></div>
 </div>
@@ -177,7 +180,6 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 <div id="pg-port" class="pg">
   <div class="tbar">
     <span style="font-size:14px;font-weight:500" id="port-count">0 รายการ</span>
-    <button onclick="openImport()" style="font-size:12px;color:var(--text2);background:var(--bg2);border:0.5px solid var(--bd2);border-radius:20px;padding:4px 12px;cursor:pointer;touch-action:manipulation">+ นำเข้าราคา</button>
   </div>
   <div id="port-list"><div class="empty">ยังไม่มีรายการ</div></div>
 </div>

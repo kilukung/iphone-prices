@@ -97,7 +97,6 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 .modal-btns button{flex:1;padding:12px;font-size:14px;font-weight:500;border:none;border-radius:var(--r);cursor:pointer}
 .btn-cancel{background:var(--bg2);color:var(--text2)}
 .btn-ok{background:var(--text);color:var(--bg)}
-.fab{position:fixed;bottom:24px;right:24px;width:52px;height:52px;border-radius:50%;background:var(--text);color:var(--bg);border:none;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
 .parse-result{background:var(--bg2);border-radius:var(--r);padding:10px;margin-top:8px;font-size:12px;color:var(--text2)}
 .parse-result.ok{background:var(--g-bg);color:var(--g-t)}
 .parse-result.err{background:var(--r-bg);color:var(--r-t)}
@@ -177,14 +176,16 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 <div id="pg-port" class="pg">
   <div class="tbar">
     <span style="font-size:14px;font-weight:500" id="port-count">0 รายการ</span>
-    <button onclick="clrPort()" style="font-size:12px;color:var(--r-t);background:none;border:none;cursor:pointer">ลบทั้งหมด</button>
+    <div style="display:flex;gap:12px;align-items:center">
+      <button onclick="openImport()" style="font-size:12px;color:var(--text2);background:var(--bg2);border:0.5px solid var(--bd2);border-radius:20px;padding:4px 12px;cursor:pointer;touch-action:manipulation">+ นำเข้าราคา</button>
+      <button onclick="clrPort()" style="font-size:12px;color:var(--r-t);background:none;border:none;cursor:pointer">ลบทั้งหมด</button>
+    </div>
   </div>
   <div id="port-list"><div class="empty">ยังไม่มีรายการ</div></div>
 </div>
 </div>
 
 <!-- FAB + Import Modal -->
-<button class="fab" onclick="openImport()" title="นำเข้าราคาใหม่">+</button>
 
 <div class="chart-overlay" id="chart-overlay" onclick="closeChartOutside(event)">
   <div class="chart-modal">

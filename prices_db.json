@@ -175,22 +175,6 @@
           "hi": 58500
         },
         {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 10000,
-          "hi": 10300
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/Blue/White/Pink",
-          "lo": 13200,
-          "hi": 13500
-        },
-        {
           "brand": "Accessories",
           "model": "Adapter Apple",
           "storage": "-",
@@ -863,22 +847,6 @@
           "hi": 59000
         },
         {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 9800,
-          "hi": 10300
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/Blue/White/Pink",
-          "lo": 13200,
-          "hi": 13500
-        },
-        {
           "brand": "Accessories",
           "model": "Adapter Apple",
           "storage": "-",
@@ -1471,22 +1439,6 @@
           "hi": 59500
         },
         {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 9800,
-          "hi": 10100
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/Blue/White/Pink",
-          "lo": 13200,
-          "hi": 13700
-        },
-        {
           "brand": "Accessories",
           "model": "Adapter Apple",
           "storage": "-",
@@ -2069,22 +2021,6 @@
           "color": "Blue",
           "lo": 59000,
           "hi": 59500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 9500,
-          "hi": 9900
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/Blue/White/Pink",
-          "lo": 13000,
-          "hi": 13500
         },
         {
           "brand": "Accessories",
@@ -2695,22 +2631,6 @@
           "hi": 59500
         },
         {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 9500,
-          "hi": 9900
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/Blue/White/Pink",
-          "lo": 13000,
-          "hi": 13500
-        },
-        {
           "brand": "Accessories",
           "model": "Adapter Apple",
           "storage": "-",
@@ -3301,22 +3221,6 @@
           "color": "Blue",
           "lo": 59000,
           "hi": 59700
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 9800,
-          "hi": 10000
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/Blue/White/Pink",
-          "lo": 13000,
-          "hi": 13500
         },
         {
           "brand": "Accessories",
@@ -3917,30 +3821,6 @@
           "color": "White/Orange/Blue",
           "lo": 59500,
           "hi": 60000
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 9800,
-          "hi": 10100
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 13200,
-          "hi": 13600
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/White/Blue/Pink",
-          "lo": 14300,
-          "hi": 14700
         },
         {
           "brand": "iPhone",
@@ -4551,30 +4431,6 @@
           "hi": 60500
         },
         {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 10000,
-          "hi": 10500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 13200,
-          "hi": 13700
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/White/Blue/Pink",
-          "lo": 14300,
-          "hi": 14700
-        },
-        {
           "brand": "Accessories",
           "model": "Adapter Apple",
           "storage": "-",
@@ -5063,30 +4919,6 @@
           "hi": 59500
         },
         {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/White/Blue",
-          "lo": 10000,
-          "hi": 10500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 13200,
-          "hi": 13700
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/White/Blue/Pink",
-          "lo": 14300,
-          "hi": 14700
-        },
-        {
           "brand": "Accessories",
           "model": "Adapter Apple",
           "storage": "-",
@@ -5533,30 +5365,6 @@
           "color": "White",
           "lo": 59000,
           "hi": 59500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink/Blue/White",
-          "lo": 10700,
-          "hi": 11200
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 13200,
-          "hi": 13700
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/White/Blue/Pink",
-          "lo": 14300,
-          "hi": 14700
         },
         {
           "brand": "Accessories",
@@ -6061,30 +5869,6 @@
           "color": "White",
           "lo": 59000,
           "hi": 59500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink",
-          "lo": 11000,
-          "hi": 11500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Blue/White",
-          "lo": 11000,
-          "hi": 11400
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 13200,
-          "hi": 13700
         },
         {
           "brand": "Accessories",
@@ -6613,30 +6397,6 @@
           "color": "Orange/Blue",
           "lo": 59000,
           "hi": 59000
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink",
-          "lo": 11200,
-          "hi": 11500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Blue/White",
-          "lo": 11000,
-          "hi": 11300
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 13700,
-          "hi": 14300
         },
         {
           "brand": "Accessories",
@@ -7205,30 +6965,6 @@
           "color": "Orange/Blue",
           "lo": 59000,
           "hi": 59000
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink",
-          "lo": 11200,
-          "hi": 11500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Blue/White",
-          "lo": 11000,
-          "hi": 11300
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 14300,
-          "hi": 14800
         },
         {
           "brand": "Accessories",
@@ -7805,30 +7541,6 @@
           "color": "Orange/Blue",
           "lo": 59000,
           "hi": 59500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Blue/White",
-          "lo": 11000,
-          "hi": 11400
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "128/Pink",
-          "lo": 11300,
-          "hi": 11600
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 14500,
-          "hi": 14800
         },
         {
           "brand": "Accessories",

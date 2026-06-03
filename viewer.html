@@ -105,7 +105,7 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 .parse-result.ok{background:var(--g-bg);color:var(--g-t)}
 .parse-result.err{background:var(--r-bg);color:var(--r-t)}
 /* Wishlist star */
-.star-btn{background:none;border:none;cursor:pointer;font-size:16px;padding:0 0 0 8px;line-height:1;color:var(--text3);touch-action:manipulation;flex-shrink:0}
+.star-btn{background:none;border:none;cursor:pointer;font-size:14px;padding:6px 0 6px 8px;line-height:1;color:var(--bd2);touch-action:manipulation;flex-shrink:0;-webkit-tap-highlight-color:transparent}
 .star-btn.on{color:#f5a623}
 /* Chart modal */
 .chart-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;align-items:flex-end}
@@ -473,16 +473,17 @@ function renderAll() {
     const colorInfo = r.color && r.color !== '-' ? `<span style="color:var(--text3)"> · ${r.color}</span>` : '';
     const wk = itemKey(r);
     const starred = wishlist.has(wk);
-    html += `<div class="pr" style="align-items:flex-start">
-      <div class="pi" onclick="quickCalc('${esc(r.brand)}','${esc(r.model)}','${esc(r.storage)}')" style="flex:1;min-width:0">
+    html += `<div class="pr" onclick="quickCalc('${esc(r.brand)}','${esc(r.model)}','${esc(r.storage)}')">
+      <div class="pi">
         <div class="pm">${r.model} <span style="font-weight:400;color:var(--text3)">${r.storage}</span>${chgHtml}</div>
         <div class="ps">${r.brand}${colorInfo}${h ? ' · ทุน ฿' + fmt(h.cost) : ''}</div>
       </div>
+      <div class="pv">
+        <div class="pp">฿${fmt(r.lo)}</div>
+        <div class="pr2">–฿${fmt(r.hi)}</div>
+        ${ph}
       </div>
-      <div class="pv" onclick="quickCalc('${esc(r.brand)}','${esc(r.model)}','${esc(r.storage)}')" style="text-align:right">
-        <div class="pp">฿${fmt(r.lo)}</div><div class="pr2">–฿${fmt(r.hi)}</div>${ph}
-      </div>
-      <button class="star-btn ${starred ? 'on' : ''}" onclick="toggleWish('${wk.replace(/'/g,"\\'")}')">
+      <button class="star-btn ${starred ? 'on' : ''}" onclick="event.stopPropagation();toggleWish('${wk.replace(/'/g,"\\'")}')">
         ${starred ? '★' : '☆'}
       </button>
     </div>`;

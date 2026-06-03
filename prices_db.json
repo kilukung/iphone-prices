@@ -3823,14 +3823,6 @@
           "hi": 60000
         },
         {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "1 TB",
-          "color": "256/White/Blue/Pink",
-          "lo": 15500,
-          "hi": 16000
-        },
-        {
           "brand": "Accessories",
           "model": "Adapter Apple",
           "storage": "-",
@@ -8125,30 +8117,6 @@
           "color": "256/Blue/Black",
           "lo": 26000,
           "hi": 26500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone Air",
-          "storage": "",
-          "color": "128/Pink",
-          "lo": 11300,
-          "hi": 11600
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone Air",
-          "storage": "",
-          "color": "128/Blue/White",
-          "lo": 11000,
-          "hi": 11400
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone Air",
-          "storage": "",
-          "color": "256/White/Blue/Pink",
-          "lo": 14500,
-          "hi": 15000
         },
         {
           "brand": "Accessories",

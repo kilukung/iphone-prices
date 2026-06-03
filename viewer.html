@@ -22,10 +22,7 @@ body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--text)
 .hdr h1{font-size:17px;font-weight:600}
 .hdr .sub{font-size:11px;color:var(--text3);margin-top:2px}
 .badge{display:inline-block;background:var(--g-bg);color:var(--g-t);font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
-.date-row{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
-.date-row span{font-size:11px;color:var(--text3)}
-.date-btn{padding:3px 10px;font-size:11px;border-radius:20px;border:0.5px solid var(--bd2);background:none;cursor:pointer;color:var(--text2)}
-.date-btn.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.date-row{display:flex;align-items:center;gap:8px;margin-top:6px}
 .tabs{display:flex;border-bottom:0.5px solid var(--bd);margin:10px 0 0;overflow-x:auto}
 .tab{flex:1;min-width:60px;padding:9px 4px;font-size:12px;text-align:center;cursor:pointer;color:var(--text2);border:none;background:none;border-bottom:2px solid transparent;white-space:nowrap}
 .tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:500}
@@ -129,7 +126,10 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
     <div class="sub" id="cur-sub">—</div>
     <button class="export-btn" onclick="exportExcel()">⬇ Excel</button>
   </div>
-  <div class="date-row" id="date-row"></div>
+  <div class="date-row">
+    <span style="font-size:11px;color:var(--text3);white-space:nowrap">ดูราคาวันที่:</span>
+    <select id="date-select" onchange="curSnap=+this.value;init()" style="flex:1;padding:4px 8px;font-size:12px;border:0.5px solid var(--bd2);border-radius:20px;background:var(--bg2);color:var(--text);appearance:none;-webkit-appearance:none;text-align:center"></select>
+  </div>
 </div>
 <div class="tabs">
   <button class="tab active" onclick="showTab('all')">ทั้งหมด</button>
@@ -318,15 +318,10 @@ function renderDateRow() {
   document.getElementById('cur-sub').textContent =
     snap.items.length + ' รายการ · ' + snap.source + ' · อัปเดต ' + snap.date;
 
-  const row = document.getElementById('date-row');
-  row.innerHTML = '<span>ดูราคาวันที่:</span>';
-  DB.snapshots.forEach((s, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'date-btn' + (i === curSnap ? ' active' : '');
-    btn.textContent = s.date;
-    btn.onclick = () => { curSnap = i; init(); };
-    row.appendChild(btn);
-  });
+  const sel = document.getElementById('date-select');
+  sel.innerHTML = DB.snapshots.map((s, i) =>
+    `<option value="${i}" ${i === curSnap ? 'selected' : ''}>${s.date}${i === DB.snapshots.length-1 ? ' ★ล่าสุด' : ''}</option>`
+  ).reverse().join('');
 }
 
 function initBrandFilters() {

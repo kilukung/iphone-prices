@@ -894,54 +894,117 @@ function parseRawText(text) {
   const items = [];
   let dateStr = '';
 
-  // Extract date from first few lines
   for (let i = 0; i < Math.min(5, lines.length); i++) {
     if (/\d+\s+[a-z]+\s+\d+/i.test(lines[i])) { dateStr = lines[i].match(/\d+\s+[a-z]+\s+\d+/i)[0]; break; }
     if (/\d+\/\d+\/\d+/.test(lines[i])) { dateStr = lines[i].match(/\d+\/\d+\/\d+/)[0]; break; }
   }
 
-  // Detect current section
+  const PRICE_RE = /(\d[\d,]+)\s*[-\u2013]\s*(\d[\d,]+)/;
+  const pp = s => parseInt(s.replace(/,/g,''));
+  const normColor = s => s.split(/[\s/]+/).filter(c=>c&&c!=='-').map(c=>c.charAt(0).toUpperCase()+c.slice(1).toLowerCase()).join('/') || '\u0e04\u0e25\u0e30\u0e2a\u0e35';
+
+  // iPad helpers
+  function isIPadModel(line) {
+    return /^(igen|gan\s*11|gen\s*11|mini\s*7|air\s*[78]|ipad)/i.test(line.trim()) && !PRICE_RE.test(line);
+  }
+  function normIPadModel(line) {
+    const lc = line.toLowerCase().trim();
+    if (/^(igen|gen\s*11)/.test(lc)) return 'iPad Gen 11';
+    if (/^gan\s*11/.test(lc)) return 'iPad Gen 11';
+    if (/^mini\s*7/.test(lc)) return 'iPad Mini 7';
+    if (/^(air\s*8|air8|m4|ipad\s*air\s*8)/.test(lc)) return 'iPad Air 8 M4 11\u0e19\u0e34\u0e49\u0e27';
+    if (/^(air\s*7\s*13|ipad\s*air\s*7\s*13)/.test(lc)) return 'iPad Air 7 13\u0e19\u0e34\u0e49\u0e27';
+    if (/^(air\s*7|ipad\s*air)/.test(lc)) return 'iPad Air 7 11\u0e19\u0e34\u0e49\u0e27';
+    return line.replace(/^ipad\s*/i,'iPad ').replace(/\s+/g,' ').trim();
+  }
+  function getConn(line) {
+    const lc = line.toLowerCase();
+    if (/sim/.test(lc)) return 'SIM';
+    return 'WiFi';
+  }
+  function isAccLine(line) {
+    return /\ud83c\udf4e|\u0e2d\u0e30\u0e41\u0e14\u0e1b\u0e40\u0e15\u0e2d\u0e23\u0e4c|adapter|airpod|pencil|pen\s*usb|\u0e2a\u0e32\u0e22\s*c|\u0e2b\u0e39\u0e1f\u0e31\u0e07/i.test(line);
+  }
+
   let section = '';
-  const PRICE_RE = /(\d[\d,]+)\s*[-–]\s*(\d[\d,]+)/;
-  const SINGLE_PRICE_RE = /^(\d[\d,]+)$/;
+  let iPadModel = null, iPadConn = 'WiFi', iPadPendingStorage = null;
 
   let i = 0;
   while (i < lines.length) {
     const line = lines[i];
     const lc = line.toLowerCase();
 
-    // Section detection
-    if (/^[\*\❤️]*\s*(samsung)/i.test(line)) { section = 'Samsung'; i++; continue; }
-    if (/^[\*\❤️]*\s*(oppo)/i.test(line)) { section = 'OPPO'; i++; continue; }
-    if (/^[\*\❤️]*\s*(vivo)/i.test(line)) { section = 'Vivo'; i++; continue; }
-    if (/^[\*\❤️]*\s*(redmi)/i.test(line)) { section = 'Redmi'; i++; continue; }
-    if (/^[\*\❤️]*\s*(realme)/i.test(line)) { section = 'Realme'; i++; continue; }
-    if (/ipad/i.test(line) && !/\d[\d,]+-\d[\d,]+/.test(line) && !/^\s*\d/.test(line)) { section = 'iPad'; i++; continue; }
-    if (/^(iphone|\d+\s+\d+|ip\s*\d+|iphone\s+\d+)/i.test(line) && section !== 'iPhone' && !/\d[\d,]+-\d[\d,]+/.test(line)) { section = 'iPhone'; }
-    if (/อะแดปเตอร์|adapter|สาย|หูฟัง|airpod|pencil|pen usb/i.test(line)) { section = 'Accessories'; }
+    // Skip boilerplate
+    if (/\ud83d\udce3|\ud83d\udcc9|\ud83d\udcac|\u0e02\u0e2d\u0e1a\u0e04\u0e38\u0e13|\u0e23\u0e32\u0e04\u0e32\u0e2d\u0e32\u0e08|\u0e42\u0e1b\u0e23\u0e14\u0e2d\u0e48\u0e32\u0e19/i.test(line)) { i++; continue; }
+    if (/^\d{1,2}\s+[a-z]+\s+\d{2,4}\s*$/i.test(line)) { i++; continue; }
 
-    // Parse by section
-    if (section === 'Samsung' || section === 'OPPO' || section === 'Vivo' || section === 'Realme') {
-      // Format: "A06 5G 4/64 black green 1,900-2,100"
+    // Brand section switches (strip emoji first)
+    const stripped = line.replace(/[^a-zA-Z0-9\s]/g,'').toLowerCase().trim();
+    if (/^samsung/.test(stripped) && !PRICE_RE.test(line)) { section='Samsung'; i++; continue; }
+    if (/^oppo/.test(stripped) && !PRICE_RE.test(line)) { section='OPPO'; i++; continue; }
+    if (/^vivo/.test(stripped) && !PRICE_RE.test(line)) { section='Vivo'; i++; continue; }
+    if (/^redmi/.test(stripped) && !PRICE_RE.test(line)) { section='Redmi'; i++; continue; }
+    if (/^realme/.test(stripped) && !PRICE_RE.test(line)) { section='Realme'; i++; continue; }
+    if (/^poco/.test(stripped) && !PRICE_RE.test(line)) { section='Poco'; i++; continue; }
+
+    // Accessories
+    if (isAccLine(line)) { section='Accessories'; }
+
+    // iPad model line (enter iPad section)
+    if (isIPadModel(line) && !PRICE_RE.test(line)) {
+      section = 'iPad';
+      iPadModel = normIPadModel(line);
+      iPadConn = getConn(line);
+      const sm = line.match(/\b(128|256|512|64)\b/);
+      iPadPendingStorage = sm ? sm[1]+'GB' : null;
+      i++; continue;
+    }
+
+    // iPhone section
+    if (/^(iphone|\d+\s+\d+|ip\s*\d+)/i.test(line) && !PRICE_RE.test(line) && section !== 'iPad') { section='iPhone'; }
+
+    // ── Parse by section ────────────────────────────────────────────
+
+    if (section === 'iPad') {
+      if (isAccLine(line)) { section='Accessories'; }
+      const pm = line.match(PRICE_RE);
+      if (pm && iPadModel) {
+        const lo = pp(pm[1]), hi = pp(pm[2]);
+        const before = line.substring(0, line.indexOf(pm[0])).trim();
+        const smatch = before.match(/^(\d+)\s*(?:gb)?\s*/i);
+        let storageGB;
+        if (smatch) { storageGB = smatch[1]+'GB'; iPadPendingStorage = storageGB; }
+        else { storageGB = iPadPendingStorage || '128GB'; }
+        const colorPart = smatch ? before.substring(smatch[0].length) : before;
+        const color = normColor(colorPart) || '\u0e04\u0e25\u0e30\u0e2a\u0e35';
+        const storage = (iPadConn?iPadConn+' ':'') + storageGB;
+        if (lo > 5000) items.push({ brand:'iPad', model:iPadModel, storage, color, lo, hi });
+        i++; continue;
+      }
+      if (/^\d+\s*(?:gb)?\s*$/i.test(line)) { iPadPendingStorage = line.match(/(\d+)/)[1]+'GB'; i++; continue; }
+      if (isIPadModel(line) && !pm) { i--; } // re-process as model line
+      i++; continue;
+    }
+
+    if (section === 'Samsung' || section === 'OPPO' || section === 'Vivo' || section === 'Realme' || section === 'Poco') {
       const pm = line.match(PRICE_RE);
       if (pm) {
-        const priceStr = pm[0];
-        const beforePrice = line.substring(0, line.indexOf(priceStr)).trim();
-        // Extract storage (RAM/GB pattern)
-        const storageM = beforePrice.match(/(\d+\/\d+\s*[gG][bB]?|\d+\s*[gG][bB])/);
-        let storage = storageM ? storageM[0].trim().replace(/gb$/i, 'GB') : '';
-        const afterStorage = storageM ? beforePrice.substring(beforePrice.indexOf(storageM[0]) + storageM[0].length).trim() : '';
-        const modelPart = storageM ? beforePrice.substring(0, beforePrice.indexOf(storageM[0])).trim() : beforePrice;
+        const before = line.substring(0, line.indexOf(pm[0])).trim();
+        const smatch = before.match(/(\d+\/\d+\s*(?:gb)?|\d+\s*gb)/i);
+        let storage = smatch ? smatch[0].trim().replace(/gb$/i,'GB') : '-';
+        const afterSt = smatch ? before.substring(before.indexOf(smatch[0])+smatch[0].length).trim() : '';
+        const modelPart = smatch ? before.substring(0,before.indexOf(smatch[0])).trim() : before;
         let model = modelPart;
-        if (section === 'Samsung') model = 'Galaxy ' + model.replace(/^galaxy\s*/i, '');
-        if (section === 'OPPO') model = 'OPPO ' + model.replace(/^oppo\s*/i, '');
-        if (section === 'Vivo') model = 'Vivo ' + model.replace(/^vivo\s*/i, '');
-        const color = afterStorage || 'คละสี';
-        const lo = parseInt(pm[1].replace(/,/g, ''));
-        const hi = parseInt(pm[2].replace(/,/g, ''));
-        if (lo > 0 && hi > 0 && model.length > 2) {
-          items.push({ brand: section, model: model.replace(/\s+/g, ' '), storage: storage || '-', color, lo, hi });
-        }
+        if (section==='Samsung') model='Galaxy '+model.replace(/^galaxy\s*/i,'');
+        else if (section==='OPPO') model='OPPO '+model.replace(/^oppo\s*/i,'');
+        else if (section==='Vivo') model='Vivo '+model.replace(/^vivo\s*/i,'');
+        else if (section==='Redmi') model='Redmi '+model.replace(/^redmi\s*/i,'');
+        // Handle suffix keywords (ultra/fe/pro)
+        const suffixM = afterSt.match(/^(ultra[s]?|pro|max|fe|lite|5g|4g)(\s+(ultra[s]?|pro|max|fe|lite|5g|4g))*/i);
+        if (suffixM) { model = model + ' ' + suffixM[0].replace(/ultras/i,'Ultra').trim().replace(/\b\w/g,c=>c.toUpperCase()); }
+        const color = (suffixM ? afterSt.substring(suffixM[0].length).trim() : afterSt) || '\u0e04\u0e25\u0e30\u0e2a\u0e35';
+        const lo = pp(pm[1]), hi = pp(pm[2]);
+        if (lo>0&&hi>0&&model.length>2) items.push({ brand:section, model:model.trim().replace(/\s+/g,' '), storage, color, lo, hi });
       }
       i++; continue;
     }
@@ -949,90 +1012,52 @@ function parseRawText(text) {
     if (section === 'Redmi') {
       const pm = line.match(PRICE_RE);
       if (pm) {
-        const priceStr = pm[0];
-        const beforePrice = line.substring(0, line.indexOf(priceStr)).trim();
-        const storageM = beforePrice.match(/(\d+\/\d+\s*[gG][bB]?|\d+\s*[gG][bB])/);
-        let storage = storageM ? storageM[0].trim().replace(/gb$/i, 'GB') : '';
-        const modelPart = storageM ? beforePrice.substring(0, beforePrice.indexOf(storageM[0])).trim() : beforePrice;
-        const afterStorage = storageM ? beforePrice.substring(beforePrice.indexOf(storageM[0]) + storageM[0].length).trim() : '';
-        let model = 'Redmi ' + modelPart.replace(/^redmi\s*/i, '').trim();
-        const color = afterStorage || 'คละสี';
-        const lo = parseInt(pm[1].replace(/,/g, ''));
-        const hi = parseInt(pm[2].replace(/,/g, ''));
-        if (lo > 0 && hi > 0 && model.length > 5) {
-          items.push({ brand: 'Redmi', model: model.replace(/\s+/g, ' '), storage: storage || '-', color, lo, hi });
-        }
+        const before = line.substring(0,line.indexOf(pm[0])).trim();
+        const smatch = before.match(/(\d+\/\d+\s*(?:gb)?|\d+\s*gb)/i);
+        let storage = smatch ? smatch[0].trim().replace(/gb$/i,'GB') : '-';
+        const modelPart = smatch ? before.substring(0,before.indexOf(smatch[0])).trim() : before;
+        const afterSt = smatch ? before.substring(before.indexOf(smatch[0])+smatch[0].length).trim() : '';
+        const model = 'Redmi '+modelPart.replace(/^redmi\s*/i,'').trim();
+        const lo=pp(pm[1]),hi=pp(pm[2]);
+        if (lo>0&&hi>0&&model.length>5) items.push({ brand:'Redmi', model:model.replace(/\s+/g,' '), storage, color:afterSt||'\u0e04\u0e25\u0e30\u0e2a\u0e35', lo, hi });
       }
       i++; continue;
     }
 
     if (section === 'Accessories') {
-      const pm = line.match(/(\d[\d,]+)\s*[-–=]\s*(\d[\d,]+)/);
+      const pm = line.match(/(\d[\d,]+)\s*[-\u2013=]\s*(\d[\d,]+)/);
       if (pm) {
-        const lo = parseInt(pm[1].replace(/,/g, ''));
-        const hi = parseInt(pm[2].replace(/,/g, ''));
-        const modelPart = line.substring(0, line.search(/\d[\d,]+\s*[-–=]/)).trim().replace(/=\s*$/, '').trim();
-        if (modelPart && lo > 0) {
-          items.push({ brand: 'Accessories', model: modelPart, storage: '-', color: '-', lo, hi });
-        }
+        const lo=pp(pm[1]),hi=pp(pm[2]);
+        const modelPart = line.substring(0,line.search(/\d[\d,]+\s*[-\u2013=]/)).replace(/=\s*$/,'').trim();
+        if (modelPart&&lo>0) items.push({ brand:'Accessories', model:modelPart, storage:'-', color:'-', lo, hi });
       }
       i++; continue;
     }
 
-    if (section === 'iPhone' || section === 'iPad') {
-      // Multi-line format
-      // Check if this line has a price range directly
+    if (section === 'iPhone') {
       const pm = line.match(PRICE_RE);
       if (pm) {
-        // Could be "colors price" on same line or just price
-        const lo = parseInt(pm[1].replace(/,/g, ''));
-        const hi = parseInt(pm[2].replace(/,/g, ''));
-        const beforePrice = line.substring(0, line.indexOf(pm[0])).trim();
-        // Look back for model and colors
-        // Try to find model in previous lines
-        let modelLine = '', colorLine = '';
-        for (let j = i - 1; j >= Math.max(0, i - 3); j--) {
-          const prev = lines[j];
-          if (!PRICE_RE.test(prev) && prev.length > 0 && !/^[-—]+$/.test(prev)) {
-            if (!colorLine && /[a-z]/i.test(prev) && !/ipad|iphone|\d+\s*[gt]b/i.test(prev)) {
-              colorLine = prev;
-            } else if (!modelLine) {
-              modelLine = prev;
-            }
-          }
-          if (modelLine && colorLine) break;
-        }
-        // Parse model
-        let brand = section, model = '', storage = '', color = '';
-        const target = colorLine || modelLine;
-        color = (beforePrice || target || 'คละสี').replace(/\*[^*]*\*/g, '').trim();
-        if (!color) color = 'คละสี';
-
-        // Find the model line
-        for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
-          const prev = lines[j];
-          if (PRICE_RE.test(prev)) break;
-          if (/^[-—]+$/.test(prev)) break;
-          // Model line: has numbers like "13 128", "ip 14 128G", "iPhone 17 Pro 256"
-          if (/(\d+\s*[gt]b|\d+\/\d+|\d+\s+\d+|iphone|ipad|ip\s*\d+)/i.test(prev)) {
-            const parsed = parseModelLine(prev, section);
-            if (parsed.model) { model = parsed.model; storage = parsed.storage; break; }
+        const lo=pp(pm[1]),hi=pp(pm[2]);
+        const before = line.substring(0,line.indexOf(pm[0])).trim();
+        let model='',storage='',color=before||'\u0e04\u0e25\u0e30\u0e2a\u0e35';
+        for (let j=i-1;j>=Math.max(0,i-5);j--) {
+          const prev=lines[j];
+          if (PRICE_RE.test(prev)||/^[-\u2014]+$/.test(prev)) break;
+          if (/\d+\s*[gt]b|\d+\/\d+|iphone|ip\s*\d+|\b1[3-9]\b|\b2[0-9]\b/i.test(prev)&&!PRICE_RE.test(prev)) {
+            const parsed=parseModelLine(prev,'iPhone');
+            if (parsed.model){model=parsed.model;storage=parsed.storage;break;}
           }
         }
-
-        if (model && lo > 0) {
-          items.push({ brand, model, storage, color, lo, hi });
-        }
-        i++; continue;
+        if (model&&lo>0) items.push({ brand:'iPhone', model, storage, color, lo, hi });
       }
       i++; continue;
     }
 
     i++;
   }
-
   return { items, date: dateStr };
 }
+
 
 function parseModelLine(line, section) {
   let model = '', storage = '';

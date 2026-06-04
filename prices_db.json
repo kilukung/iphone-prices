@@ -3721,22 +3721,6 @@
         {
           "brand": "iPhone",
           "model": "iPhone 17 pro max",
-          "storage": "256GB",
-          "color": "Orange/Blue",
-          "lo": 49500,
-          "hi": 50000
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
-          "storage": "256GB",
-          "color": "White",
-          "lo": 51000,
-          "hi": 51500
-        },
-        {
-          "brand": "iPhone",
-          "model": "iPhone 17 pro max",
           "storage": "1 TB",
           "color": "White",
           "lo": 59500,
@@ -4301,6 +4285,14 @@
           "color": "Black/Purple/Blue/White",
           "lo": 22800,
           "hi": 23200
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 pro max",
+          "storage": "256GB",
+          "color": "White/Orange/Blue",
+          "lo": 46800,
+          "hi": 46800
         }
       ]
     },

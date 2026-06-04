@@ -409,8 +409,42 @@ def cmd_parse_file(path, db):
         print(f'ไม่พบไฟล์: {path}'); return
 
     with open(path, 'r', encoding='utf-8') as f:
-        text = f.read()
+        text = f.read().strip()
 
+    # ── ตรวจสอบว่าเป็น JSON format ──────────────────────────────────
+    if text.startswith('{') or text.startswith('['):
+        try:
+            data = json.loads(text)
+            # รองรับ format: snapshot object เดี่ยว หรือ array ของ items
+            if isinstance(data, dict) and 'items' in data:
+                # JSON snapshot format: { "date": "...", "items": [...] }
+                date_iso = data.get('date_iso', datetime.today().strftime('%Y-%m-%d'))
+                items = data.get('items', [])
+                source = data.get('source', 'ร้าน A')
+            elif isinstance(data, list):
+                # Array of items
+                items = data
+                date_iso = datetime.today().strftime('%Y-%m-%d')
+                source = 'ร้าน A'
+            else:
+                print('❌ รูปแบบ JSON ไม่ถูกต้อง'); return
+
+            print(f'\n📦 JSON format: {len(items)} รายการ  วันที่ {date_iso}')
+            for brand in dict.fromkeys(r.get('brand','') for r in items):
+                count = sum(1 for r in items if r.get('brand') == brand)
+                print(f'   {brand}: {count} รายการ')
+
+            ans = input('\nบันทึกลงฐานข้อมูล? [y/n] ').strip().lower()
+            if ans == 'y':
+                db = add_snapshot(db, date_iso, items, source)
+                save_db(db)
+                regenerate_html(db)
+                print(f'\n✅ บันทึกสำเร็จ! เปิด viewer.html ในเบราเซอร์เพื่อดูราคา')
+            return
+        except json.JSONDecodeError as e:
+            print(f'⚠️ JSON parse error: {e} — ลองอ่านเป็น text format แทน')
+
+    # ── Text format (ข้อความจากร้าน) ────────────────────────────────
     result = parse_text(text)
     date_iso = result['date_iso']
     items = result['items']

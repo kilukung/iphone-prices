@@ -10233,9 +10233,9 @@
       ]
     },
     {
-      "id": "2026-06-04",
-      "date": "04/06/2569",
-      "date_iso": "2026-06-04",
+      "id": "2026-06-05",
+      "date": "05/06/2569",
+      "date_iso": "2026-06-05",
       "source": "ร้าน A",
       "items": [
         {
@@ -10306,9 +10306,17 @@
           "brand": "iPhone",
           "model": "iPhone 17",
           "storage": "256GB",
-          "color": "Green/Blue/White/Purple/Black",
+          "color": "Green/Blue",
           "lo": 26700,
           "hi": 27300
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17",
+          "storage": "256GB",
+          "color": "White/Purple/Black",
+          "lo": 26700,
+          "hi": 27200
         },
         {
           "brand": "iPhone",
@@ -10364,7 +10372,7 @@
           "storage": "256GB",
           "color": "Orange",
           "lo": 44700,
-          "hi": 45000
+          "hi": 45300
         },
         {
           "brand": "iPhone",
@@ -10675,8 +10683,8 @@
           "model": "Galaxy Tab A11",
           "storage": "SIM",
           "color": "Gray",
-          "lo": 7000,
-          "hi": 7200
+          "lo": 6700,
+          "hi": 7000
         },
         {
           "brand": "Samsung",
@@ -10692,7 +10700,7 @@
           "storage": "8/256GB",
           "color": "คละสี",
           "lo": 6800,
-          "hi": 7300
+          "hi": 7200
         },
         {
           "brand": "Samsung",
@@ -10715,8 +10723,8 @@
           "model": "Galaxy A57",
           "storage": "12/256GB",
           "color": "คละสี",
-          "lo": 12500,
-          "hi": 12700
+          "lo": 12000,
+          "hi": 12500
         },
         {
           "brand": "Samsung",
@@ -10731,8 +10739,8 @@
           "model": "Galaxy S25 FE",
           "storage": "256GB",
           "color": "คละสี",
-          "lo": 16000,
-          "hi": 16500
+          "lo": 15500,
+          "hi": 16000
         },
         {
           "brand": "Samsung",
@@ -10746,9 +10754,9 @@
           "brand": "Samsung",
           "model": "Galaxy S26 Ultra",
           "storage": "256GB",
-          "color": "คละสี",
-          "lo": 33000,
-          "hi": 33500
+          "color": "Pink/Silver",
+          "lo": 32700,
+          "hi": 33200
         },
         {
           "brand": "Samsung",

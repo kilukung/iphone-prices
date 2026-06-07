@@ -87,13 +87,22 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 .hist-price-val{font-size:14px;font-weight:600}
 .hist-delta{font-size:12px;font-weight:500}
 /* Price trend per model */
-.trend-card{border:0.5px solid var(--bd);border-radius:var(--rl);padding:14px;margin-bottom:12px}
-.trend-title{font-size:14px;font-weight:600;margin-bottom:10px}
-.trend-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid var(--bd)}
+.trend-card{border:0.5px solid var(--bd);border-radius:var(--rl);margin-bottom:8px;overflow:hidden}
+.trend-hdr{display:flex;align-items:center;padding:12px 14px;cursor:pointer;gap:8px}
+.trend-hdr:active{background:var(--bg2)}
+.trend-title{font-size:14px;font-weight:600;flex:1;min-width:0}
+.trend-latest{font-size:13px;font-weight:500;flex-shrink:0;text-align:right}
+.trend-chev{font-size:12px;color:var(--text3);flex-shrink:0;transition:transform 0.2s;margin-left:2px}
+.trend-card.open .trend-chev{transform:rotate(180deg)}
+.trend-body{display:none;border-top:0.5px solid var(--bd);padding:0 14px}
+.trend-card.open .trend-body{display:block}
+.trend-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:0.5px solid var(--bd)}
 .trend-row:last-child{border-bottom:none}
 .trend-d{font-size:12px;color:var(--text2)}
 .trend-p{font-size:13px;font-weight:500;text-align:right}
 .trend-chg{font-size:11px;margin-top:1px;text-align:right}
+.trend-chart-btn{width:100%;padding:10px;font-size:12px;color:var(--text3);background:none;border:none;border-top:0.5px solid var(--bd);cursor:pointer;text-align:center}
+.trend-chart-btn:active{background:var(--bg2)}
 /* Section header in list */
 .sec-hdr{font-size:12px;font-weight:600;color:var(--text3);padding:10px 0 4px;letter-spacing:0.3px;text-transform:uppercase}
 /* Import modal */
@@ -704,11 +713,15 @@ function renderTrend() {
       html += `<div class="sec-hdr">${e.brand}</div>`;
       lastBrand = e.brand;
     }
-    html += `<div class="trend-card" onclick="showChart(window._trendEntries[${idx}])" style="cursor:pointer">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-        <div class="trend-title" style="margin:0">${e.model} <span style="font-weight:400;color:var(--text3)">${e.storage}</span></div>
-        <span style="font-size:11px;color:var(--text3)">ดูกราฟ ›</span>
-      </div>`;
+    const last = e.points[e.points.length - 1];
+    const latestHtml = last ? (last.lo === last.hi ? `฿${fmt(last.lo)}` : `฿${fmt(last.lo)}–${fmt(last.hi)}`) : '';
+    html += `<div class="trend-card" id="tc${idx}">
+      <div class="trend-hdr" onclick="toggleTrend(${idx})">
+        <div class="trend-title">${e.model} <span style="font-weight:400;color:var(--text3)">${storageDisplay(e.storage)}</span></div>
+        <div class="trend-latest">${latestHtml}</div>
+        <span class="trend-chev">▼</span>
+      </div>
+      <div class="trend-body">`;
     e.points.forEach((pt, i) => {
       const midPt = (pt.lo + pt.hi) / 2;
       let deltaHtml = '';
@@ -720,14 +733,21 @@ function renderTrend() {
           deltaHtml = `<div class="trend-chg ${cls}">${d > 0 ? '+' : ''}${fmt(d)}</div>`;
         }
       }
+      const ptPrice = pt.lo === pt.hi ? `฿${fmt(pt.lo)}` : `฿${fmt(pt.lo)}–${fmt(pt.hi)}`;
       html += `<div class="trend-row">
         <div class="trend-d">${pt.date}</div>
-        <div><div class="trend-p">฿${fmt(pt.lo)} – ฿${fmt(pt.hi)}</div>${deltaHtml}</div>
+        <div><div class="trend-p">${ptPrice}</div>${deltaHtml}</div>
       </div>`;
     });
-    html += '</div>';
+    html += `<button class="trend-chart-btn" onclick="showChart(window._trendEntries[${idx}])">ดูกราฟ →</button>`;
+    html += '</div></div>';
   });
   el.innerHTML = html;
+}
+
+function toggleTrend(idx) {
+  const card = document.getElementById('tc' + idx);
+  if (card) card.classList.toggle('open');
 }
 
 // ======== PORT ========

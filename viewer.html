@@ -431,10 +431,10 @@ function storageDisplay(s) {
   else if (/512/i.test(size)) sizeClass = 'stor-512';
   else if (/256/i.test(size)) sizeClass = 'stor-256';
   const sizeHtml = sizeClass ? `<span class="${sizeClass}">${size}</span>` : size;
-  let connHtml = '';
-  if (conn === 'SIM') connHtml = `<span class="conn-pill sim-pill">SIM</span>`;
-  else if (conn === 'WiFi') connHtml = `<span class="conn-pill wifi-pill">WiFi</span>`;
-  return sizeHtml + connHtml;
+  // SIM = blue badge after size; WiFi = plain text prefix (easy to read apart)
+  if (conn === 'SIM') return sizeHtml + `<span class="conn-pill sim-pill">SIM</span>`;
+  if (conn === 'WiFi') return `<span style="color:var(--text3)">WiFi </span>` + sizeHtml;
+  return sizeHtml;
 }
 
 function normModel(m) {
@@ -722,11 +722,14 @@ function renderTrend() {
         <span class="trend-chev">▼</span>
       </div>
       <div class="trend-body">`;
-    e.points.forEach((pt, i) => {
+    // Show latest date first; delta = change vs previous (chronological) point
+    const pts = e.points;
+    [...pts].reverse().forEach((pt, ri) => {
+      const i = pts.length - 1 - ri; // original index
       const midPt = (pt.lo + pt.hi) / 2;
       let deltaHtml = '';
       if (i > 0) {
-        const prevMid = (e.points[i - 1].lo + e.points[i - 1].hi) / 2;
+        const prevMid = (pts[i - 1].lo + pts[i - 1].hi) / 2;
         const d = midPt - prevMid;
         if (d !== 0) {
           const cls = d > 0 ? 'chg-up' : 'chg-dn';

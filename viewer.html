@@ -73,8 +73,11 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 .sim-pill{background:#dbeafe;color:#1d4ed8}
 .wifi-pill{background:var(--bg2);color:var(--text3);border:0.5px solid var(--bd2)}
 @media(prefers-color-scheme:dark){.sim-pill{background:#1e3a6e;color:#93bbff}.wifi-pill{background:var(--bg2);color:var(--text3)}}
-/* Storage size — no color, just normal text3 */
-.stor-256,.stor-512,.stor-1tb{color:var(--text3)}
+/* Storage size color coding */
+.stor-256{color:#1d6fa4}
+.stor-512{color:#7c3aed}
+.stor-1tb{color:#b45309}
+@media(prefers-color-scheme:dark){.stor-256{color:#60b0f0}.stor-512{color:#c4a0ff}.stor-1tb{color:#fac775}}
 /* History price page */
 .hist-item{padding:11px 0;border-bottom:0.5px solid var(--bd)}
 .hist-item:last-child{border-bottom:none}
@@ -514,12 +517,11 @@ function renderAll() {
     html += `<div class="pr" onclick="quickCalc('${esc(r.brand)}','${esc(r.model)}','${esc(r.storage)}')">
       <div class="pi">
         <div class="pm">${r.model} <span style="font-weight:400;color:var(--text3)">${storageDisplay(r.storage)}</span></div>
-        <div class="ps">${r.brand}${colorInfo}${h ? ' · ทุน ฿' + fmt(h.cost) : ''}</div>
+        <div class="ps">${r.brand}${colorInfo}</div>
       </div>
       <div class="pv">
         <div class="pp">${priceHtml}</div>
         ${chgHtml ? `<div class="pr2" style="text-align:right;margin-top:1px">${chgHtml}</div>` : ''}
-        ${ph}
       </div>
       <button class="star-btn ${starred ? 'on' : ''}" onclick="event.stopPropagation();toggleWish('${wk.replace(/'/g,"\\'")}')">
         ${starred ? '★' : '☆'}

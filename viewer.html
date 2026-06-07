@@ -416,13 +416,14 @@ function normStorage(s) {
 
 function storageDisplay(s) {
   // Separate connectivity (SIM/WiFi) from size (128GB etc.)
+  // Input may be "WiFi 128GB" or "WIFI128GB" (normStorage concatenates without space)
   if (!s || s === '-') return s;
-  const connMatch = s.match(/\b(SIM|WiFi|Wi-Fi|WIFI)\b/i);
+  const connMatch = s.match(/^(SIM|WiFi|Wi-Fi|WIFI)\s*/i);
   let conn = '';
   let size = s;
   if (connMatch) {
-    conn = /sim/i.test(connMatch[0]) ? 'SIM' : 'WiFi';
-    size = s.replace(/\b(SIM|WiFi|Wi-Fi|WIFI)\s*/gi, '').trim();
+    conn = /sim/i.test(connMatch[1]) ? 'SIM' : 'WiFi';
+    size = s.slice(connMatch[0].length).trim();
   }
   size = normStorage(size) || s;
   // Color-code storage size

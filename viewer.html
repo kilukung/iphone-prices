@@ -65,7 +65,7 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 .empty{text-align:center;padding:36px 0;color:var(--text3);font-size:14px}
 .tbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
 /* Change indicator */
-.chg{font-size:10px;font-weight:600;margin-left:4px}
+.chg{font-size:11px;font-weight:600}
 .chg-up{color:#27500a}.chg-dn{color:#791f1f}
 @media(prefers-color-scheme:dark){.chg-up{color:#c0dd97}.chg-dn{color:#f09595}}
 /* Connectivity badge (SIM/WiFi) */
@@ -73,11 +73,8 @@ select.full,input.full{width:100%;padding:10px 12px;font-size:15px;border:0.5px 
 .sim-pill{background:#dbeafe;color:#1d4ed8}
 .wifi-pill{background:var(--bg2);color:var(--text3);border:0.5px solid var(--bd2)}
 @media(prefers-color-scheme:dark){.sim-pill{background:#1e3a6e;color:#93bbff}.wifi-pill{background:var(--bg2);color:var(--text3)}}
-/* Storage size color coding */
-.stor-256{color:#92440a}
-.stor-512{color:#276b2a}
-.stor-1tb{color:#6b27a0}
-@media(prefers-color-scheme:dark){.stor-256{color:#fac775}.stor-512{color:#b0e0b0}.stor-1tb{color:#d4a0f0}}
+/* Storage size — no color, just normal text3 */
+.stor-256,.stor-512,.stor-1tb{color:var(--text3)}
 /* History price page */
 .hist-item{padding:11px 0;border-bottom:0.5px solid var(--bd)}
 .hist-item:last-child{border-bottom:none}
@@ -516,11 +513,12 @@ function renderAll() {
     const priceHtml = r.lo === r.hi ? `฿${fmt(r.lo)}` : `฿${fmt(r.lo)}–${fmt(r.hi)}`;
     html += `<div class="pr" onclick="quickCalc('${esc(r.brand)}','${esc(r.model)}','${esc(r.storage)}')">
       <div class="pi">
-        <div class="pm">${r.model} <span style="font-weight:400;color:var(--text3)">${storageDisplay(r.storage)}</span>${chgHtml}</div>
+        <div class="pm">${r.model} <span style="font-weight:400;color:var(--text3)">${storageDisplay(r.storage)}</span></div>
         <div class="ps">${r.brand}${colorInfo}${h ? ' · ทุน ฿' + fmt(h.cost) : ''}</div>
       </div>
       <div class="pv">
         <div class="pp">${priceHtml}</div>
+        ${chgHtml ? `<div class="pr2" style="text-align:right;margin-top:1px">${chgHtml}</div>` : ''}
         ${ph}
       </div>
       <button class="star-btn ${starred ? 'on' : ''}" onclick="event.stopPropagation();toggleWish('${wk.replace(/'/g,"\\'")}')">

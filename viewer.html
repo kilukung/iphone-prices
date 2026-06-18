@@ -480,6 +480,15 @@ function normStorage(s) {
     .toUpperCase();
 }
 
+function storageBytes(s) {
+  if (!s) return 0;
+  const m = s.match(/(\d+)\s*(TB|GB|MB)/i);
+  if (!m) return 0;
+  const n = parseInt(m[1]);
+  const u = m[2].toUpperCase();
+  return u === 'TB' ? n * 1024 * 1024 : u === 'GB' ? n * 1024 : n;
+}
+
 function storageDisplay(s) {
   // Separate connectivity (SIM/WiFi) from size (128GB etc.)
   // Input may be "WiFi 128GB" or "WIFI128GB" (normStorage concatenates without space)
@@ -549,7 +558,11 @@ function renderAll() {
     const wOk = selB ? true : (!wishOnly || wishlist.has(itemKey(r)));
     return bOk && qOk && wOk;
   });
-  if (sort === 'name') rows.sort((a, b) => (a.model + a.storage).localeCompare(b.model + b.storage, 'th'));
+  if (sort === 'name') rows.sort((a, b) => {
+    const mc = a.model.localeCompare(b.model, 'th');
+    if (mc !== 0) return mc;
+    return storageBytes(a.storage) - storageBytes(b.storage);
+  });
   else if (sort === 'lo') rows.sort((a, b) => a.lo - b.lo);
   else if (sort === 'hi') rows.sort((a, b) => b.hi - a.hi);
   else if (sort === 'profit') {

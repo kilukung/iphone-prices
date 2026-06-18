@@ -782,7 +782,14 @@ function renderTrend() {
     if (!q) return true;
     return (e.model + ' ' + e.storage + ' ' + e.brand).toLowerCase().includes(q);
   });
-  entries.sort((a, b) => (a.model + a.storage).localeCompare(b.model + b.storage, 'th'));
+  entries.sort((a, b) => {
+    const bc = (BRAND_ORDER.indexOf(a.brand) < 0 ? 99 : BRAND_ORDER.indexOf(a.brand)) -
+               (BRAND_ORDER.indexOf(b.brand) < 0 ? 99 : BRAND_ORDER.indexOf(b.brand));
+    if (bc !== 0) return bc;
+    const mc = a.model.localeCompare(b.model, 'th');
+    if (mc !== 0) return mc;
+    return storageBytes(a.storage) - storageBytes(b.storage);
+  });
 
   // Store globally for chart access (avoid JSON.stringify in onclick)
   window._trendEntries = entries;

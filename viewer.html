@@ -558,13 +558,17 @@ function renderAll() {
     const wOk = selB ? true : (!wishOnly || wishlist.has(itemKey(r)));
     return bOk && qOk && wOk;
   });
+  // Brand order always applied first
+  const brandRank = r => { const i = BRAND_ORDER.indexOf(r.brand); return i < 0 ? 99 : i; };
   if (sort === 'name') rows.sort((a, b) => {
+    const bc = brandRank(a) - brandRank(b);
+    if (bc !== 0) return bc;
     const mc = a.model.localeCompare(b.model, 'th');
     if (mc !== 0) return mc;
     return storageBytes(a.storage) - storageBytes(b.storage);
   });
-  else if (sort === 'lo') rows.sort((a, b) => a.lo - b.lo);
-  else if (sort === 'hi') rows.sort((a, b) => b.hi - a.hi);
+  else if (sort === 'lo') rows.sort((a, b) => { const bc = brandRank(a)-brandRank(b); return bc !== 0 ? bc : a.lo - b.lo; });
+  else if (sort === 'hi') rows.sort((a, b) => { const bc = brandRank(a)-brandRank(b); return bc !== 0 ? bc : b.hi - a.hi; });
   else if (sort === 'profit') {
     rows = rows.map(r => {
       const h = port.find(e => e.model === r.model && e.storage === r.storage);

@@ -1301,51 +1301,71 @@ function showChart(entry) {
   document.getElementById('chart-title').innerHTML = entry.model + ' <span style="font-weight:400;color:var(--text3)">' + storageDisplay(entry.storage) + '</span>';
   document.getElementById('chart-sub').textContent = entry.brand + ' · ' + entry.points.length + ' รอบราคา';
   const pts = entry.points;
-  const W = 340, H = 190, PL = 58, PR = 10, PT = 10, PB = 42;
+  const W = 360, H = 220, PL = 54, PR = 16, PT = 24, PB = 44;
   const IW = W - PL - PR, IH = H - PT - PB;
   const vals = pts.flatMap(p => [p.lo, p.hi]);
-  const rawMin = Math.min(...vals);
-  const rawMax = Math.max(...vals);
-  const pad = Math.max((rawMax - rawMin) * 0.15, rawMax * 0.03);
-  const minV = Math.floor((rawMin - pad) / 100) * 100;
-  const maxV = Math.ceil((rawMax + pad) / 100) * 100;
-  const rng = maxV - minV || 1000;
+  const rawMin = Math.min(...vals), rawMax = Math.max(...vals);
+  const pad = Math.max((rawMax - rawMin) * 0.2, rawMax * 0.04);
+  const minV = Math.floor((rawMin - pad) / 500) * 500;
+  const maxV = Math.ceil((rawMax + pad) / 500) * 500;
+  const rng = maxV - minV || 2000;
   const cx = i => PL + (pts.length < 2 ? IW / 2 : (i / (pts.length - 1)) * IW);
   const cy = v => PT + IH - ((v - minV) / rng) * IH;
-  // Y grid + labels
-  const ySteps = 4;
+  const fmtK = v => v >= 1000 ? (v / 1000).toFixed(0) + 'k' : String(v);
+  const BLUE = '#2563eb';
+
+  // Y grid + labels (4 steps)
   let yHTML = '';
-  for (let i = 0; i <= ySteps; i++) {
-    const v = minV + rng * i / ySteps;
-    yHTML += `<line x1="${PL}" y1="${cy(v)}" x2="${W - PR}" y2="${cy(v)}" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
-      <text x="${PL - 4}" y="${cy(v) + 4}" text-anchor="end" font-size="9" fill="currentColor" opacity="0.5">${fmt(Math.round(v))}</text>`;
+  for (let i = 0; i <= 4; i++) {
+    const v = minV + rng * i / 4;
+    const y = cy(v).toFixed(1);
+    yHTML += `<line x1="${PL}" y1="${y}" x2="${W - PR}" y2="${y}" stroke="currentColor" stroke-width="1" opacity="0.08"/>
+      <text x="${PL - 8}" y="${+y + 4}" text-anchor="end" font-size="10.5" fill="currentColor" opacity="0.55" font-family="system-ui">฿${fmtK(Math.round(v))}</text>`;
   }
-  // Area band lo-hi
+
+  // Area band lo–hi
   const areaTop = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${cx(i).toFixed(1)},${cy(p.hi).toFixed(1)}`).join(' ');
-  const areaBot = [...pts].reverse().map((p, i) => `L${cx(pts.length - 1 - i).toFixed(1)},${cy(p.lo).toFixed(1)}`).join(' ');
-  // Mid line
-  const midPath = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${cx(i).toFixed(1)},${cy((p.lo + p.hi) / 2).toFixed(1)}`).join(' ');
-  // Dots
-  const dots = pts.map((p, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${cy((p.lo + p.hi) / 2).toFixed(1)}" r="3.5" fill="#27500a" stroke="var(--bg)" stroke-width="1.5"/>`).join('');
-  // X labels (every n-th)
+  const areaBot = [...pts].reverse().map((p, i) => `L${cx(pts.length-1-i).toFixed(1)},${cy(p.lo).toFixed(1)}`).join(' ');
+
+  // Mid line (smooth)
+  const midPath = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${cx(i).toFixed(1)},${cy((p.lo+p.hi)/2).toFixed(1)}`).join(' ');
+
+  // Dots + value label on first & last
+  let dotsHTML = '';
+  pts.forEach((p, i) => {
+    const x = cx(i).toFixed(1), y = cy((p.lo+p.hi)/2).toFixed(1);
+    const isLast = i === pts.length - 1;
+    dotsHTML += `<circle cx="${x}" cy="${y}" r="${isLast ? 5 : 3.5}" fill="${BLUE}" stroke="var(--bg)" stroke-width="2"/>`;
+    if (isLast) {
+      const anchor = pts.length > 1 ? (i / (pts.length-1) > 0.7 ? 'end' : 'middle') : 'middle';
+      const lx = anchor === 'end' ? +x - 8 : +x;
+      dotsHTML += `<text x="${lx}" y="${+y - 10}" text-anchor="${anchor}" font-size="11" font-weight="600" fill="${BLUE}" font-family="system-ui">฿${fmtK(p.lo)}–${fmtK(p.hi)}</text>`;
+    }
+  });
+
+  // X labels (max 5)
   const step = Math.max(1, Math.ceil(pts.length / 5));
   let xHTML = '';
   pts.forEach((p, i) => {
     if (i % step !== 0 && i !== pts.length - 1) return;
     const d = p.date.split('/');
-    xHTML += `<text x="${cx(i).toFixed(1)}" y="${H - 5}" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">${d[0]}/${d[1]}</text>`;
+    xHTML += `<text x="${cx(i).toFixed(1)}" y="${H - 6}" text-anchor="middle" font-size="10.5" fill="currentColor" opacity="0.55" font-family="system-ui">${d[0]}/${d[1]}</text>`;
   });
-  const svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" style="color:var(--text)">
-    ${yHTML}
-    <path d="${areaTop} ${areaBot} Z" fill="#27500a" opacity="0.15"/>
-    <path d="${midPath}" fill="none" stroke="#27500a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-    ${dots}${xHTML}
-  </svg>`;
-  document.getElementById('chart-svg').innerHTML = svg;
+
+  document.getElementById('chart-svg').innerHTML =
+    `<svg viewBox="0 0 ${W} ${H}" width="100%" style="color:var(--text);overflow:visible">
+      ${yHTML}
+      <path d="${areaTop} ${areaBot} Z" fill="${BLUE}" opacity="0.1"/>
+      <path d="${midPath}" fill="none" stroke="${BLUE}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      ${dotsHTML}${xHTML}
+    </svg>`;
+
   const rows = [...pts].reverse().map(p => {
-    const d = mid(p) - (pts.length > 1 ? mid(pts[pts.indexOf(p) - 1] || p) : mid(p));
-    const delta = pts.indexOf(p) > 0 ? `<span style="color:${d >= 0 ? 'var(--g-t)' : 'var(--r-t)'};font-size:11px"> ${d >= 0 ? '+' : ''}${fmt(d)}</span>` : '';
-    return `<div class="chart-row"><span class="chart-date">${p.date}</span><span>฿${fmt(p.lo)} – ฿${fmt(p.hi)}${delta}</span></div>`;
+    const idx = pts.indexOf(p);
+    const prev = pts[idx - 1];
+    const d = prev ? mid(p) - mid(prev) : 0;
+    const delta = idx > 0 ? ` <span style="color:${d >= 0 ? 'var(--g-t)' : 'var(--r-t)'};font-size:11px;font-weight:600">${d >= 0 ? '↑' : '↓'}${fmt(Math.abs(d))}</span>` : '';
+    return `<div class="chart-row"><span class="chart-date">${p.date}</span><span style="font-weight:500">฿${fmt(p.lo)} – ฿${fmt(p.hi)}${delta}</span></div>`;
   }).join('');
   document.getElementById('chart-data').innerHTML = rows;
   document.getElementById('chart-overlay').classList.add('open');

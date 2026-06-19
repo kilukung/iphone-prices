@@ -9649,7 +9649,7 @@
         {
           "brand": "iPhone",
           "model": "iPhone Air",
-          "storage": "",
+          "storage": "256GB",
           "color": "256gold/White",
           "lo": 26500,
           "hi": 27000
@@ -9657,7 +9657,7 @@
         {
           "brand": "iPhone",
           "model": "iPhone Air",
-          "storage": "",
+          "storage": "256GB",
           "color": "256/Blue/Black",
           "lo": 26000,
           "hi": 26500

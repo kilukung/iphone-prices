@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<script>if(!location.search.includes('v=9'))location.replace(location.pathname+'?v=9');</script>
+<script>if(!location.search.includes('v=10'))location.replace(location.pathname+'?v=10');</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -658,7 +658,7 @@ function renderAll() {
     html += `<div class="pr" onclick="quickCalc('${esc(r.brand)}','${esc(r.model)}','${esc(r.storage)}')">
       <div class="pi">
         <div class="pm">${r.model} <span style="font-weight:400;color:var(--text3)">${storageDisplay(r.storage)}</span></div>
-        <div class="ps">${r.brand}${colorInfo}</div>
+        <div class="ps">${colorInfo ? colorInfo.replace(' · ', '') : ''}</div>
       </div>
       <div class="pv">
         <div class="pp">${priceHtml}</div>

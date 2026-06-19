@@ -253,17 +253,18 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 
 <!-- FAB + Import Modal -->
 
-<div class="chart-overlay" id="chart-overlay" onclick="closeChartOutside(event)">
-  <div class="chart-modal">
+<div class="chart-overlay" id="chart-overlay" onclick="closeChartOutside(event)" style="cursor:pointer">
+  <div class="chart-modal" onclick="event.stopPropagation()" style="cursor:default">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
       <div>
         <div class="chart-title" id="chart-title"></div>
         <div class="chart-sub" id="chart-sub"></div>
       </div>
-      <button onclick="closeChart()" style="background:none;border:none;font-size:22px;color:var(--text3);cursor:pointer;touch-action:manipulation">×</button>
+      <button onclick="closeChart()" style="background:var(--bg2);border:none;font-size:18px;color:var(--text2);cursor:pointer;touch-action:manipulation;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">×</button>
     </div>
     <div id="chart-svg" style="margin-bottom:12px"></div>
     <div id="chart-data"></div>
+    <button onclick="closeChart()" style="width:100%;margin-top:16px;padding:14px;font-size:15px;font-weight:600;background:var(--text);color:var(--bg);border:none;border-radius:var(--rl);cursor:pointer;touch-action:manipulation">ปิด</button>
   </div>
 </div>
 

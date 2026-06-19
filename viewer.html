@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<script>if(!location.search.includes('v=5'))location.replace(location.pathname+'?v=5');</script>
+<script>if(!location.search.includes('v=6'))location.replace(location.pathname+'?v=6');</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -21,8 +21,9 @@
   --bg:#ffffff;--bg2:#f5f5f5;--bg3:#ebebeb;
   --text:#111111;--text2:#666666;--text3:#9e9e9e;
   --accent:#111111;--accent-soft:#f0f0f0;
+  --blue:#2563eb;--blue-bg:#eff6ff;
   --bd:rgba(0,0,0,0.07);--bd2:rgba(0,0,0,0.14);
-  --g-bg:#dcf5e7;--g-t:#0a5c2a;--a-bg:#fff3cd;--a-t:#7a5a00;--r-bg:#fde8e8;--r-t:#8b1a1a;
+  --g-bg:#dcf5e7;--g-t:#16a34a;--a-bg:#fff3cd;--a-t:#7a5a00;--r-bg:#fde8e8;--r-t:#dc2626;
   --r:14px;--rl:20px;
   --shadow:0 1px 8px rgba(0,0,0,0.07),0 0 0 0.5px rgba(0,0,0,0.05);
   --tab-bg:#111111;--tab-active:#ffffff;--tab-active-text:#111111;--tab-text:rgba(255,255,255,0.5);
@@ -31,8 +32,9 @@
   --bg:#141414;--bg2:#1e1e1e;--bg3:#282828;
   --text:#f0f0f0;--text2:#a0a0a0;--text3:#606060;
   --accent:#f0f0f0;--accent-soft:#2a2a2a;
+  --blue:#60a5fa;--blue-bg:#1e3a6e22;
   --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.14);
-  --g-bg:#0a3d20;--g-t:#6ee7b0;--a-bg:#4a3500;--a-t:#fcd34d;--r-bg:#4a1010;--r-t:#fca5a5;
+  --g-bg:#0a3d20;--g-t:#4ade80;--a-bg:#4a3500;--a-t:#fcd34d;--r-bg:#4a1010;--r-t:#f87171;
   --shadow:0 2px 14px rgba(0,0,0,0.35),0 0 0 0.5px rgba(255,255,255,0.06);
   --tab-bg:#f0f0f0;--tab-active:#111111;--tab-active-text:#ffffff;--tab-text:rgba(0,0,0,0.4);
 }}
@@ -40,8 +42,9 @@
   --bg:#141414;--bg2:#1e1e1e;--bg3:#282828;
   --text:#f0f0f0;--text2:#a0a0a0;--text3:#606060;
   --accent:#f0f0f0;--accent-soft:#2a2a2a;
+  --blue:#60a5fa;--blue-bg:#1e3a6e22;
   --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.14);
-  --g-bg:#0a3d20;--g-t:#6ee7b0;--a-bg:#4a3500;--a-t:#fcd34d;--r-bg:#4a1010;--r-t:#fca5a5;
+  --g-bg:#0a3d20;--g-t:#4ade80;--a-bg:#4a3500;--a-t:#fcd34d;--r-bg:#4a1010;--r-t:#f87171;
   --shadow:0 2px 14px rgba(0,0,0,0.35),0 0 0 0.5px rgba(255,255,255,0.06);
   --tab-bg:#f0f0f0;--tab-active:#111111;--tab-active-text:#ffffff;--tab-text:rgba(0,0,0,0.4);
 }
@@ -140,13 +143,12 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 :root[data-theme="dark"] .chg-up{color:#6ee7b7}:root[data-theme="dark"] .chg-dn{color:#fca5a5}
 /* ── Connectivity badge ── */
 .conn-pill{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10px;font-weight:700;margin-left:5px;vertical-align:middle}
-.sim-pill{background:#dbeafe;color:#1d4ed8}
-@media(prefers-color-scheme:dark){.sim-pill{background:#1e3a6e;color:#93bbff}}
-:root[data-theme="dark"] .sim-pill{background:#1e3a6e;color:#93bbff}
-/* ── Storage colors ── */
-.stor-256{color:#2563eb}.stor-512{color:#0891b2}.stor-1tb{color:#b45309}
-@media(prefers-color-scheme:dark){.stor-256{color:#60a5fa}.stor-512{color:#22d3ee}.stor-1tb{color:#fcd34d}}
-:root[data-theme="dark"] .stor-256{color:#60a5fa}:root[data-theme="dark"] .stor-512{color:#22d3ee}:root[data-theme="dark"] .stor-1tb{color:#fcd34d}
+.sim-pill{background:var(--blue-bg);color:var(--blue)}
+/* ── Storage colors (blue → violet → amber) ── */
+.stor-256{color:var(--blue)}
+.stor-512{color:#7c3aed}.stor-1tb{color:#b45309}
+@media(prefers-color-scheme:dark){.stor-512{color:#a78bfa}.stor-1tb{color:#fcd34d}}
+:root[data-theme="dark"] .stor-512{color:#a78bfa}:root[data-theme="dark"] .stor-1tb{color:#fcd34d}
 /* ── Trend / History ── */
 .hist-item{padding:11px 0;border-bottom:0.5px solid var(--bd)}.hist-item:last-child{border-bottom:none}
 .hist-date{font-size:11px;color:var(--text3);margin-bottom:3px}
@@ -209,7 +211,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
       <div class="sub" id="cur-sub">—</div>
     </div>
     <div class="menu-wrap">
-      <button class="menu-btn" onclick="toggleMenu()">···</button>
+      <button class="menu-btn" onclick="toggleMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
       <div class="menu-drop" id="main-menu">
         <button class="menu-item" id="theme-item" onclick="toggleTheme();closeMenu()">🌙 Dark mode</button>
         <button class="menu-item" onclick="exportExcel();closeMenu()">⬇ Excel</button>
@@ -234,7 +236,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 
 <!-- ทั้งหมด -->
 <div id="pg-all" class="pg active">
-  <div class="sw"><span class="si">🔍</span><input type="search" id="q" placeholder="ค้นหา..." oninput="renderAll()"></div>
+  <div class="sw"><span class="si"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg></span><input type="search" id="q" placeholder="ค้นหา..." oninput="renderAll()"></div>
   <div class="frow" id="bfilters"></div>
   <div class="sort-pills" id="sort-pills">
     <button class="sp on" onclick="setSort('name')">ชื่อ</button>
@@ -261,7 +263,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 <!-- ราคาย้อนหลัง -->
 <div id="pg-trend" class="pg">
   <div style="display:flex;gap:8px;margin-bottom:10px">
-    <div class="sw" style="flex:1;margin-bottom:0"><span class="si">🔍</span><input type="search" id="tq" placeholder="ค้นหารุ่น..." oninput="renderTrend()"></div>
+    <div class="sw" style="flex:1;margin-bottom:0"><span class="si"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg></span><input type="search" id="tq" placeholder="ค้นหารุ่น..." oninput="renderTrend()"></div>
   </div>
   <div class="frow" id="tbfilters"></div>
   <div id="trend-list"></div>
@@ -285,7 +287,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
         <div class="chart-title" id="chart-title"></div>
         <div class="chart-sub" id="chart-sub"></div>
       </div>
-      <button onclick="closeChart()" style="background:var(--bg2);border:none;font-size:18px;color:var(--text2);cursor:pointer;touch-action:manipulation;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">×</button>
+      <button onclick="closeChart()" style="background:var(--bg2);border:none;color:var(--text2);cursor:pointer;touch-action:manipulation;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/></svg></button>
     </div>
     <div id="chart-svg" style="margin-bottom:12px"></div>
     <div id="chart-data"></div>
@@ -470,7 +472,7 @@ function initBrandFilters() {
   el.appendChild(all);
   const wbtn = document.createElement('button');
   wbtn.className = 'fb' + (wishOnly ? ' on' : '');
-  wbtn.textContent = '⭐ Wishlist';
+  wbtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 16 16" fill="#f5a623" stroke="#f5a623" stroke-width="1.5" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px"><polygon points="8,1.5 10,6 15,6.5 11.2,10 12.5,15 8,12.3 3.5,15 4.8,10 1,6.5 6,6"/></svg>Wishlist';
   wbtn.onclick = () => { wishOnly = !wishOnly; if (wishOnly) selB = ''; renderAll(); initBrandFilters(); };
   el.appendChild(wbtn);
   BRANDS.forEach(b => {
@@ -491,7 +493,7 @@ function initTrendFilters() {
   all.onclick = () => { tSelB = ''; tWishOnly = false; renderTrend(); updateTFilter(); }; el.appendChild(all);
   const wbtn = document.createElement('button');
   wbtn.className = 'fb' + (tWishOnly ? ' on' : '');
-  wbtn.textContent = '⭐ Wishlist'; wbtn.dataset.b = '__wish__';
+  wbtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 16 16" fill="#f5a623" stroke="#f5a623" stroke-width="1.5" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px"><polygon points="8,1.5 10,6 15,6.5 11.2,10 12.5,15 8,12.3 3.5,15 4.8,10 1,6.5 6,6"/></svg>Wishlist'; wbtn.dataset.b = '__wish__';
   wbtn.onclick = () => { tWishOnly = !tWishOnly; if (tWishOnly) tSelB = ''; renderTrend(); updateTFilter(); };
   el.appendChild(wbtn);
   BRANDS.forEach(b => {
@@ -664,7 +666,7 @@ function renderAll() {
         ${chgHtml ? `<div class="pr2" style="text-align:right;margin-top:1px">${chgHtml}</div>` : ''}
       </div>
       <button class="star-btn ${starred ? 'on' : ''}" onclick="event.stopPropagation();toggleWish('${wk.replace(/'/g,"\\'")}')">
-        ${starred ? '★' : '☆'}
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="${starred ? '#f5a623' : 'none'}" stroke="${starred ? '#f5a623' : 'currentColor'}" stroke-width="1.5" stroke-linejoin="round"><polygon points="8,1.5 10,6 15,6.5 11.2,10 12.5,15 8,12.3 3.5,15 4.8,10 1,6.5 6,6"/></svg>
       </button>
     </div>`;
   });
@@ -883,7 +885,7 @@ function renderTrend() {
           <div class="trend-latest">${latestHtml}</div>
           ${chgHtml ? `<div style="font-size:11px;margin-top:1px">${chgHtml}</div>` : ''}
         </div>
-        <span style="color:var(--text3);font-size:13px;margin-left:4px">›</span>
+        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text3);flex-shrink:0"><polyline points="1,1 6,6 1,11"/></svg>
       </div>
     </div>`;
   });
@@ -1312,7 +1314,7 @@ function showChart(entry) {
   const cx = i => PL + (pts.length < 2 ? IW / 2 : (i / (pts.length - 1)) * IW);
   const cy = v => PT + IH - ((v - minV) / rng) * IH;
   const fmtK = v => v >= 1000 ? (v / 1000).toFixed(0) + 'k' : String(v);
-  const BLUE = '#2563eb';
+  const BLUE = getComputedStyle(document.documentElement).getPropertyValue('--blue').trim() || '#2563eb';
 
   // Y grid + labels (4 steps)
   let yHTML = '';

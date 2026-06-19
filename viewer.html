@@ -283,6 +283,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 <div id="pg-port" class="pg">
   <div class="tbar">
     <span style="font-size:14px;font-weight:500" id="port-count">0 รายการ</span>
+    <span id="port-snap-date" style="font-size:11px;color:var(--text3)"></span>
   </div>
   <div id="port-list"><div class="empty">ยังไม่มีรายการ</div></div>
 </div>
@@ -973,6 +974,9 @@ function toggleTrend(idx) {
 function renderPort() {
   const el = document.getElementById('port-list');
   document.getElementById('port-count').textContent = port.length + ' รายการ';
+  const snapDate = DB.snapshots[curSnap]?.date || '';
+  const sdEl = document.getElementById('port-snap-date');
+  if (sdEl) sdEl.textContent = snapDate ? 'ราคา ' + snapDate : '';
   if (!port.length) { el.innerHTML = '<div class="empty">ยังไม่มีรายการ</div>'; return; }
 
   // Find current prices for portfolio items

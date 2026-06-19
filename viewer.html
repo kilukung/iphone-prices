@@ -1034,7 +1034,7 @@ function resetDB() {
 
 // ======== TABS ========
 function showTab(t) {
-  const tabs = ['all', 'calc', 'trend', 'port'];
+  const tabs = ['all', 'trend', 'port'];
   document.querySelectorAll('.tab').forEach((el, i) => el.classList.toggle('active', tabs[i] === t));
   document.querySelectorAll('.pg').forEach(p => p.classList.remove('active'));
   document.getElementById('pg-' + t).classList.add('active');

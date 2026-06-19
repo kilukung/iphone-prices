@@ -286,8 +286,12 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 <div id="pg-port" class="pg">
   <div class="tbar">
     <span style="font-size:14px;font-weight:500" id="port-count">0 รายการ</span>
-    <span id="port-snap-date" style="font-size:11px;color:var(--text3)"></span>
+    <div style="display:flex;gap:5px">
+      <button class="sp on" id="psort-new" onclick="setPortSort('new')">ล่าสุด</button>
+      <button class="sp" id="psort-pct" onclick="setPortSort('pct')">กำไร%</button>
+    </div>
   </div>
+  <div style="text-align:right;margin-bottom:8px"><span id="port-snap-date" style="font-size:11px;color:var(--text3)"></span></div>
   <div id="port-list"><div class="empty" style="padding:40px 0 20px"><div style="font-size:32px;margin-bottom:12px">📋</div><div style="font-weight:600;margin-bottom:6px">ยังไม่มีรายการ</div><div style="font-size:12px;color:var(--text3);line-height:1.6">กดที่การ์ดราคา → ใส่ราคาที่ซื้อมา<br>→ กดบันทึก เพื่อเพิ่มรายการ</div></div></div>
 </div>
 </div>
@@ -988,6 +992,14 @@ function toggleTrend(idx) {
 }
 
 // ======== PORT ========
+let portSort = 'new';
+function setPortSort(s) {
+  portSort = s;
+  document.getElementById('psort-new').classList.toggle('on', s === 'new');
+  document.getElementById('psort-pct').classList.toggle('on', s === 'pct');
+  renderPort();
+}
+
 function renderPort() {
   const el = document.getElementById('port-list');
   document.getElementById('port-count').textContent = port.length + ' รายการ';
@@ -995,15 +1007,19 @@ function renderPort() {
   const snapDate = DB.snapshots[curSnap]?.date || '';
   const sdEl = document.getElementById('port-snap-date');
   if (sdEl) sdEl.textContent = snapDate ? 'ราคา ' + snapDate : '';
-  if (!port.length) { el.innerHTML = '<div class="empty">ยังไม่มีรายการ</div>'; return; }
+  if (!port.length) { el.innerHTML = '<div class="empty" style="padding:40px 0 20px"><div style="font-size:32px;margin-bottom:12px">📋</div><div style="font-weight:600;margin-bottom:6px">ยังไม่มีรายการ</div><div style="font-size:12px;color:var(--text3);line-height:1.6">กดที่การ์ดราคา → ใส่ราคาที่ซื้อมา<br>→ กดบันทึก เพื่อเพิ่มรายการ</div></div>'; return; }
 
-  // Find current prices for portfolio items
   const curItems = DB.snapshots[curSnap].items;
-  el.innerHTML = port.map((e, idx) => {
+  let entries = port.map((e, idx) => {
     const cur = curItems.find(r => r.model === e.model && r.storage === e.storage) || { lo: e.lo, hi: e.hi };
+    const ppMid = ((cur.lo + cur.hi) / 2 - e.cost) / e.cost;
+    return { e, idx, cur, ppMid };
+  });
+  if (portSort === 'pct') entries = entries.slice().sort((a, b) => b.ppMid - a.ppMid);
+
+  el.innerHTML = entries.map(({ e, idx, cur, ppMid }) => {
     const pfLo = cur.lo - e.cost, pfHi = cur.hi - e.cost;
     const ppLo = pfLo / e.cost, ppHi = pfHi / e.cost;
-    const ppMid = (pfLo + pfHi) / 2 / e.cost;
     const pl = ppMid >= 0.05 ? 'pg2' : ppMid >= 0 ? 'pa' : 'pr3';
     const cLo = ppLo >= 0 ? 'gn' : 'rd', cHi = ppHi >= 0 ? 'gn' : 'rd';
     return `<div class="hi">

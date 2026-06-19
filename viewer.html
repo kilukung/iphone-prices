@@ -187,7 +187,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 <body>
 <div class="app">
 <div class="hdr">
-  <h1>ราคารับซื้อมือถือ <span class="badge" id="cur-date-badge">—</span></h1>
+  <h1>ราคารับซื้อมือถือ</h1>
   <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
     <div class="sub" id="cur-sub">—</div>
     <div style="display:flex;gap:6px">
@@ -405,9 +405,8 @@ function init() {
 
 function renderDateRow() {
   const snap = DB.snapshots[curSnap];
-  document.getElementById('cur-date-badge').textContent = snap.date;
   document.getElementById('cur-sub').textContent =
-    snap.items.length + ' รายการ · ' + snap.source + ' · อัปเดต ' + snap.date;
+    snap.items.length + ' รายการ · ' + snap.source;
 
   const sel = document.getElementById('date-select');
   sel.innerHTML = DB.snapshots.map((s, i) =>

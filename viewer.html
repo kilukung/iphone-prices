@@ -692,7 +692,7 @@ function renderAll() {
           <div class="ic-cell"><div class="ic-lbl">กำไรสูงสุด</div><div class="ic-val" id="ic-hi-${i}">—</div></div>
           <div class="ic-cell"><div class="ic-lbl">กำไร %</div><div class="ic-val" id="ic-pct-${i}">—</div></div>
         </div>
-        <button class="ic-save" id="ic-save-${i}" onclick="saveIC(${i})">บันทึกลงเปรียบเทียบ</button>
+        <button class="ic-save" id="ic-save-${i}" onclick="saveIC(${i})">${savedCost ? 'อัปเดตต้นทุน' : 'บันทึกลงเปรียบเทียบ'}</button>
       </div>
     </div>`;
   });

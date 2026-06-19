@@ -1339,7 +1339,7 @@ function showChart(entry) {
     if (isLast) {
       const anchor = pts.length > 1 ? (i / (pts.length-1) > 0.7 ? 'end' : 'middle') : 'middle';
       const lx = anchor === 'end' ? +x - 8 : +x;
-      dotsHTML += `<text x="${lx}" y="${+y - 10}" text-anchor="${anchor}" font-size="11" font-weight="600" fill="${BLUE}" font-family="system-ui">฿${fmtK(p.lo)}–${fmtK(p.hi)}</text>`;
+      dotsHTML += `<text x="${lx}" y="${+y - 10}" text-anchor="${anchor}" font-size="11" font-weight="600" fill="${BLUE}" font-family="system-ui">฿${fmt(p.lo)}–${fmt(p.hi)}</text>`;
     }
   });
 
@@ -1364,8 +1364,8 @@ function showChart(entry) {
     const idx = pts.indexOf(p);
     const prev = pts[idx - 1];
     const d = prev ? mid(p) - mid(prev) : 0;
-    const delta = idx > 0 ? ` <span style="color:${d >= 0 ? 'var(--g-t)' : 'var(--r-t)'};font-size:11px;font-weight:600">${d >= 0 ? '↑' : '↓'}${fmt(Math.abs(d))}</span>` : '';
-    return `<div class="chart-row"><span class="chart-date">${p.date}</span><span style="font-weight:500">฿${fmt(p.lo)} – ฿${fmt(p.hi)}${delta}</span></div>`;
+    const deltaHtml = idx > 0 ? `<span style="color:${d >= 0 ? 'var(--g-t)' : 'var(--r-t)'};font-size:11px;font-weight:600;min-width:44px;display:inline-block">${d >= 0 ? '↑' : '↓'}${fmt(Math.abs(d))}</span>` : `<span style="min-width:44px;display:inline-block"></span>`;
+    return `<div class="chart-row"><span class="chart-date">${p.date}</span>${deltaHtml}<span style="font-weight:500">฿${fmt(p.lo)} – ฿${fmt(p.hi)}</span></div>`;
   }).join('');
   document.getElementById('chart-data').innerHTML = rows;
   document.getElementById('chart-overlay').classList.add('open');

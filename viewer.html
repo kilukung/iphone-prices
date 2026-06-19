@@ -778,6 +778,23 @@ function renderTrend() {
     });
   });
 
+  // Merge entries that have storage="-" (empty/unknown) into sibling entries with same brand+model
+  const emptyKeys = [...trendMap.keys()].filter(k => trendMap.get(k).storage === '-');
+  emptyKeys.forEach(emptyKey => {
+    const parts = emptyKey.split('|');
+    const prefix = parts[0] + '|' + parts[1] + '|';
+    const siblings = [...trendMap.keys()].filter(k => k !== emptyKey && k.startsWith(prefix));
+    if (siblings.length >= 1) {
+      const target = trendMap.get(siblings[0]);
+      trendMap.get(emptyKey).points.forEach(p => {
+        const ex = target.points.find(op => op.date === p.date);
+        if (ex) { ex.lo = Math.min(ex.lo, p.lo); ex.hi = Math.max(ex.hi, p.hi); }
+        else target.points.push({...p});
+      });
+      trendMap.delete(emptyKey);
+    }
+  });
+
   // Filter and sort
   let entries = [...trendMap.values()].filter(e => {
     if (!q) return true;

@@ -806,36 +806,22 @@ function renderTrend() {
     }
     const last = e.points[e.points.length - 1];
     const latestHtml = last ? (last.lo === last.hi ? `฿${fmt(last.lo)}` : `฿${fmt(last.lo)}–${fmt(last.hi)}`) : '';
-    html += `<div class="trend-card" id="tc${idx}">
-      <div class="trend-hdr" onclick="toggleTrend(${idx})">
+    const prev = e.points.length >= 2 ? e.points[e.points.length - 2] : null;
+    let chgHtml = '';
+    if (prev) {
+      const d = Math.round((last.lo + last.hi)/2 - (prev.lo + prev.hi)/2);
+      if (d !== 0) chgHtml = `<span class="chg ${d>0?'chg-up':'chg-dn'}" style="margin-left:6px">${d>0?'↑':'↓'}${fmt(Math.abs(d))}</span>`;
+    }
+    html += `<div class="trend-card" onclick="showChart(window._trendEntries[${idx}])" style="cursor:pointer">
+      <div class="trend-hdr">
         <div class="trend-title">${e.model} <span style="font-weight:400;color:var(--text3)">${storageDisplay(e.storage)}</span></div>
-        <div class="trend-latest">${latestHtml}</div>
-        <span class="trend-chev">▼</span>
+        <div style="text-align:right;flex-shrink:0">
+          <div class="trend-latest">${latestHtml}</div>
+          ${chgHtml ? `<div style="font-size:11px;margin-top:1px">${chgHtml}</div>` : ''}
+        </div>
+        <span style="color:var(--text3);font-size:13px;margin-left:4px">›</span>
       </div>
-      <div class="trend-body">`;
-    // Show latest date first; delta = change vs previous (chronological) point
-    const pts = e.points;
-    [...pts].reverse().forEach((pt, ri) => {
-      const i = pts.length - 1 - ri; // original index
-      const midPt = (pt.lo + pt.hi) / 2;
-      let deltaHtml = '';
-      if (i > 0) {
-        const prevMid = (pts[i - 1].lo + pts[i - 1].hi) / 2;
-        const d = midPt - prevMid;
-        if (d !== 0) {
-          const cls = d > 0 ? 'chg-up' : 'chg-dn';
-          deltaHtml = `<div class="trend-chg ${cls}">${d > 0 ? '+' : ''}${fmt(d)}</div>`;
-        }
-      }
-      const ptPrice = pt.lo === pt.hi ? `฿${fmt(pt.lo)}` : `฿${fmt(pt.lo)}–${fmt(pt.hi)}`;
-      html += `<div class="trend-row">
-        <div class="trend-d">${pt.date}</div>
-        <div><div class="trend-p">${ptPrice}</div>${deltaHtml}</div>
-      </div>`;
-    });
-    html += `<button class="trend-chart-btn" onclick="showChart(window._trendEntries[${idx}])">ดูกราฟ →</button>`;
-    html += '</div></div>';
-  });
+    </div>`;
   el.innerHTML = html;
 }
 

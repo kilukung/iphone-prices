@@ -227,22 +227,23 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
     <div>
       <h1>ราคารับซื้อมือถือ</h1>
       <div class="sub" id="cur-sub">—</div>
+      <div style="font-size:11px;color:var(--text3);margin-top:2px">อัปเดต <span id="hdr-date">—</span></div>
     </div>
     <div class="menu-wrap">
       <button class="menu-btn" onclick="toggleMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
       <div class="menu-drop" id="main-menu">
+        <div class="menu-item" style="display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:default">
+          <span style="font-size:13px">📅 ดูราคาวันที่</span>
+          <select id="date-select-menu" onchange="curSnap=+this.value;closeMenu();init()" style="font-size:12px;border:none;background:var(--bg2);color:var(--text);border-radius:8px;padding:4px 6px;cursor:pointer"></select>
+        </div>
         <button class="menu-item" id="theme-item" onclick="toggleTheme();closeMenu()">🌙 Dark mode</button>
         <button class="menu-item" onclick="exportExcel();closeMenu()">⬇ Excel</button>
         <button class="menu-item" onclick="openImport();closeMenu()">➕ นำเข้าราคาใหม่</button>
       </div>
     </div>
   </div>
-  <div class="date-row">
-    <span style="font-size:11px;color:var(--text3);white-space:nowrap">ดูราคาวันที่:</span>
-    <div class="date-sel-wrap">
-      <span id="date-disp">—</span>
-      <select id="date-select" onchange="curSnap=+this.value;init()" style="appearance:none;-webkit-appearance:none"></select>
-    </div>
+  <div style="display:none">
+    <select id="date-select" onchange="curSnap=+this.value;init()" style="appearance:none;-webkit-appearance:none"></select>
   </div>
 </div>
 <div class="tabs">
@@ -465,14 +466,15 @@ function renderDateRow() {
   document.getElementById('cur-sub').textContent =
     snap.items.length + ' รายการ · ' + snap.source;
 
-  const sel = document.getElementById('date-select');
-  sel.innerHTML = DB.snapshots.map((s, i) =>
+  const opts = DB.snapshots.map((s, i) =>
     `<option value="${i}" ${i === curSnap ? 'selected' : ''}>${s.date}${i === DB.snapshots.length-1 ? ' · ล่าสุด' : ''}</option>`
   ).reverse().join('');
+  const sel = document.getElementById('date-select');
+  if (sel) sel.innerHTML = opts;
+  const selM = document.getElementById('date-select-menu');
+  if (selM) selM.innerHTML = opts;
 
-  const isLatest = curSnap === DB.snapshots.length - 1;
-  document.getElementById('date-disp').textContent =
-    snap.date + (isLatest ? ' · ล่าสุด' : '');
+  document.getElementById('hdr-date').textContent = snap.date;
 }
 
 let curSort = 'name';

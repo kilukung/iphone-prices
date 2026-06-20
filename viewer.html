@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<script>if(!location.search.includes('v=13'))location.replace(location.pathname+'?v=13');</script>
+<script>if(!location.search.includes('v=14'))location.replace(location.pathname+'?v=14');</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -90,7 +90,8 @@ body{font-family:-apple-system,sans-serif;background:var(--bg2);color:var(--text
 .pg{display:none;padding:0 12px 100px}.pg.active{display:block}
 /* ── Search ── */
 .sw{position:relative;margin-bottom:10px}
-.sw input{width:100%;padding:10px 14px 10px 36px;font-size:14px;border:none;border-radius:16px;background:var(--bg);color:var(--text);box-shadow:var(--shadow)}
+.sw input{width:100%;padding:10px 32px 10px 36px;font-size:14px;border:none;border-radius:16px;background:var(--bg);color:var(--text);box-shadow:var(--shadow)}
+.sw-clr{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text3);font-size:16px;cursor:pointer;padding:2px 4px;line-height:1}
 .si{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;pointer-events:none}
 /* ── Filter pills ── */
 .frow{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;margin-bottom:10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
@@ -116,7 +117,7 @@ body{font-family:-apple-system,sans-serif;background:var(--bg2);color:var(--text
 .ic{display:none;background:var(--bg2);border-radius:0 0 var(--rl) var(--rl);padding:12px 14px;border:0.5px solid var(--bd);border-top:none}
 .ic.open{display:block}
 .ic-inp{width:100%;padding:8px 10px 8px 26px;font-size:14px;border:0.5px solid var(--bd2);border-radius:10px;background:var(--bg);color:var(--text);outline:none}
-.ic-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:10px 0}
+.ic-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
 .ic-cell{background:var(--bg);border-radius:10px;padding:8px 10px;box-shadow:var(--shadow)}
 .ic-lbl{font-size:10px;color:var(--text3);margin-bottom:3px}
 .ic-val{font-size:14px;font-weight:700;color:var(--text3)}
@@ -194,6 +195,8 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 .btn-cancel{background:var(--bg2);color:var(--text2)}
 .btn-ok{background:var(--text);color:var(--bg)}
 .parse-result{background:var(--bg2);border-radius:var(--r);padding:10px;margin-top:8px;font-size:12px;color:var(--text2)}
+/* ── Badge ── */
+.tab-badge{display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#2563eb;color:#fff;font-size:10px;font-weight:700;margin-left:4px;vertical-align:middle}
 /* ── Toast ── */
 #toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;font-size:13px;font-weight:500;padding:10px 18px;border-radius:20px;opacity:0;transition:opacity .2s,transform .2s;z-index:300;pointer-events:none;white-space:nowrap}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -243,13 +246,13 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 </div>
 <div class="tabs">
   <button class="tab active" onclick="showTab('all')">ราคารับซื้อ</button>
-  <button class="tab" onclick="showTab('trend')">ราคาย้อนหลัง</button>
   <button class="tab" onclick="showTab('port')" id="tab-port">เปรียบเทียบ</button>
+  <button class="tab" onclick="showTab('trend')">ย้อนหลัง</button>
 </div>
 
 <!-- ทั้งหมด -->
 <div id="pg-all" class="pg active">
-  <div class="sw"><span class="si"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg></span><input type="search" id="q" placeholder="ค้นหา..." oninput="renderAll()"></div>
+  <div class="sw"><span class="si"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg></span><input type="search" id="q" placeholder="ค้นหา..." oninput="renderAll();document.getElementById('q-clr').style.display=this.value?'block':'none'"><button class="sw-clr" id="q-clr" onclick="document.getElementById('q').value='';renderAll();this.style.display='none'" style="display:none">×</button></div>
   <div class="frow" id="bfilters"></div>
   <div class="sort-pills" id="sort-pills">
     <button class="sp on" onclick="setSort('name')">ชื่อ</button>
@@ -285,7 +288,10 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 <!-- บันทึก -->
 <div id="pg-port" class="pg">
   <div class="tbar">
-    <span style="font-size:14px;font-weight:500" id="port-count">0 รายการ</span>
+    <div>
+      <span style="font-size:14px;font-weight:500" id="port-count">0 รายการ</span>
+      <button id="port-clr-btn" onclick="clrPort()" style="display:none;font-size:11px;color:var(--r-t);background:none;border:none;cursor:pointer;padding:0;margin-left:10px;touch-action:manipulation">ลบทั้งหมด</button>
+    </div>
     <div style="display:flex;gap:5px">
       <button class="sp on" id="psort-new" onclick="setPortSort('new')">ล่าสุด</button>
       <button class="sp" id="psort-pct" onclick="setPortSort('pct')">กำไร%</button>
@@ -676,7 +682,7 @@ function renderAll() {
           ${chgHtml ? `<div class="pr2" style="text-align:right;margin-top:1px">${chgHtml}</div>` : ''}
         </div>
         <button class="star-btn ${starred ? 'on' : ''}" onclick="event.stopPropagation();toggleWish('${wk.replace(/'/g,"\\'")}')">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="${starred ? '#f5a623' : 'none'}" stroke="${starred ? '#f5a623' : 'currentColor'}" stroke-width="1.5" stroke-linejoin="round"><polygon points="8,1.5 10,6 15,6.5 11.2,10 12.5,15 8,12.3 3.5,15 4.8,10 1,6.5 6,6"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="${starred ? '#2563eb' : 'none'}" stroke="${starred ? '#2563eb' : 'currentColor'}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2h10a1 1 0 0 1 1 1v11l-5-3-5 3V3a1 1 0 0 1 1-1z"/></svg>
         </button>
       </div>
       <div class="ic" id="ic-${i}">
@@ -684,13 +690,13 @@ function renderAll() {
           <span style="font-size:12px;color:var(--text3);white-space:nowrap">ราคาซื้อ</span>
           <div style="flex:1;position:relative">
             <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--text3);pointer-events:none">฿</span>
-            <input type="number" class="ic-inp" id="ic-inp-${i}" placeholder="ใส่ราคาที่ซื้อมา" value="${savedCost}" oninput="calcIC(${i})">
+            <input type="number" class="ic-inp" id="ic-inp-${i}" placeholder="ใส่ราคาที่ซื้อมา" value="${savedCost}" oninput="calcIC(${i});document.getElementById('ic-clr-${i}').style.display=this.value?'block':'none'">
+            <button class="sw-clr" id="ic-clr-${i}" onclick="document.getElementById('ic-inp-${i}').value='';calcIC(${i});this.style.display='none'" style="display:${savedCost?'block':'none'}">×</button>
           </div>
         </div>
         <div class="ic-grid">
           <div class="ic-cell"><div class="ic-lbl">กำไรต่ำสุด</div><div class="ic-val" id="ic-lo-${i}">—</div></div>
           <div class="ic-cell"><div class="ic-lbl">กำไรสูงสุด</div><div class="ic-val" id="ic-hi-${i}">—</div></div>
-          <div class="ic-cell"><div class="ic-lbl">กำไร %</div><div class="ic-val" id="ic-pct-${i}">—</div></div>
         </div>
         <button class="ic-save" id="ic-save-${i}" onclick="saveIC(${i})">${savedCost ? 'อัปเดตต้นทุน' : 'บันทึกลงเปรียบเทียบ'}</button>
       </div>
@@ -710,7 +716,9 @@ function showToast(msg) {
 function updatePortBadge() {
   const el = document.getElementById('tab-port');
   if (!el) return;
-  el.textContent = port.length ? `เปรียบเทียบ ${port.length}` : 'เปรียบเทียบ';
+  el.innerHTML = port.length ? `เปรียบเทียบ<span class="tab-badge">${port.length}</span>` : 'เปรียบเทียบ';
+  const clrBtn = document.getElementById('port-clr-btn');
+  if (clrBtn) clrBtn.style.display = port.length ? 'inline' : 'none';
 }
 
 // ======== INLINE CALC ========
@@ -741,13 +749,12 @@ function calcIC(i) {
   if (!r || !inp) return;
   const cost = parseFloat(inp.value);
   const set = (id, txt, col) => { const el = document.getElementById(id); if (el) { el.textContent = txt; el.style.color = col || 'var(--text3)'; }};
-  if (isNaN(cost) || cost <= 0) { set('ic-lo-'+i,'—'); set('ic-hi-'+i,'—'); set('ic-pct-'+i,'—'); return; }
+  if (isNaN(cost) || cost <= 0) { set('ic-lo-'+i,'—'); set('ic-hi-'+i,'—'); return; }
   const pLo = r.lo - cost, pHi = r.hi - cost;
-  const pctLo = Math.round(pLo/cost*100), pctHi = Math.round(pHi/cost*100);
+  const pctLo = (pLo/cost*100).toFixed(1), pctHi = (pHi/cost*100).toFixed(1);
   const g = 'var(--g-t)', rd = 'var(--r-t)';
-  set('ic-lo-'+i, (pLo>=0?'+':'')+fmt(pLo), pLo>=0?g:rd);
-  set('ic-hi-'+i, (pHi>=0?'+':'')+fmt(pHi), pHi>=0?g:rd);
-  set('ic-pct-'+i, pctLo+'%–'+pctHi+'%', pctLo>=0?g:rd);
+  set('ic-lo-'+i, (pLo>=0?'+':'')+fmt(pLo)+' ('+pctLo+'%)', pLo>=0?g:rd);
+  set('ic-hi-'+i, (pHi>=0?'+':'')+fmt(pHi)+' ('+pctHi+'%)', pHi>=0?g:rd);
 }
 
 function saveIC(i) {
@@ -1044,7 +1051,6 @@ function renderPort() {
       </div>
     </div>`;
   }).join('');
-  el.innerHTML += `<div style="text-align:center;padding:16px 0 4px"><button onclick="clrPort()" style="font-size:12px;color:var(--r-t);background:none;border:none;cursor:pointer;touch-action:manipulation">ลบทั้งหมด</button></div>`;
 }
 
 function delPort(idx) {
@@ -1072,7 +1078,7 @@ function resetDB() {
 
 // ======== TABS ========
 function showTab(t) {
-  const tabs = ['all', 'trend', 'port'];
+  const tabs = ['all', 'port', 'trend'];
   document.querySelectorAll('.tab').forEach((el, i) => el.classList.toggle('active', tabs[i] === t));
   document.querySelectorAll('.pg').forEach(p => p.classList.remove('active'));
   document.getElementById('pg-' + t).classList.add('active');

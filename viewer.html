@@ -226,7 +226,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
   <div style="display:flex;justify-content:space-between;align-items:center">
     <div>
       <h1>ราคารับซื้อมือถือ</h1>
-      <div class="sub"><span id="cur-sub">—</span> · <span id="hdr-date" style="color:var(--text2)">—</span></div>
+      <div class="sub"><span id="cur-sub">—</span> · อัปเดตล่าสุด <span id="hdr-date" style="color:var(--text2)">—</span></div>
     </div>
     <div class="menu-wrap">
       <button class="menu-btn" onclick="toggleMenu()"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
@@ -463,7 +463,7 @@ function init() {
 function renderDateRow() {
   const snap = DB.snapshots[curSnap];
   document.getElementById('cur-sub').textContent =
-    snap.items.length + ' รายการ · ' + snap.source;
+    snap.items.length + ' รายการ';
 
   const opts = DB.snapshots.map((s, i) =>
     `<option value="${i}" ${i === curSnap ? 'selected' : ''}>${s.date}${i === DB.snapshots.length-1 ? ' · ล่าสุด' : ''}</option>`

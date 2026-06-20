@@ -66,7 +66,7 @@ body{font-family:-apple-system,sans-serif;background:var(--bg2);color:var(--text
 /* ── Sort pills ── */
 .sort-pills{display:flex;gap:6px;margin-bottom:10px}
 .sp{flex:1;padding:7px 4px;font-size:11px;font-weight:500;border:none;border-radius:20px;background:var(--bg);color:var(--text2);cursor:pointer;box-shadow:var(--shadow);white-space:nowrap;text-align:center}
-.sp.on{background:#333;color:#fff;font-weight:700}
+.sp.on{background:#555;color:#fff;font-weight:600}
 /* ── Overflow menu ── */
 .menu-wrap{position:relative;display:inline-block}
 .menu-btn{background:var(--bg2);border:none;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer;color:var(--text2);display:flex;align-items:center;justify-content:center;line-height:1}
@@ -467,12 +467,12 @@ function renderDateRow() {
 
   const sel = document.getElementById('date-select');
   sel.innerHTML = DB.snapshots.map((s, i) =>
-    `<option value="${i}" ${i === curSnap ? 'selected' : ''}>${s.date}${i === DB.snapshots.length-1 ? ' ★ล่าสุด' : ''}</option>`
+    `<option value="${i}" ${i === curSnap ? 'selected' : ''}>${s.date}${i === DB.snapshots.length-1 ? ' · ล่าสุด' : ''}</option>`
   ).reverse().join('');
 
   const isLatest = curSnap === DB.snapshots.length - 1;
   document.getElementById('date-disp').textContent =
-    snap.date + (isLatest ? ' ★ล่าสุด' : '');
+    snap.date + (isLatest ? ' · ล่าสุด' : '');
 }
 
 let curSort = 'name';

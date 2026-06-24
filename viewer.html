@@ -607,7 +607,10 @@ function itemKey(r) {
 function getPrevItem(item) {
   if (curSnap === 0) return null;
   const prev = DB.snapshots[curSnap - 1];
-  return prev.items.find(p => itemKey(p) === itemKey(item)) || null;
+  const sameKey = prev.items.filter(p => itemKey(p) === itemKey(item));
+  if (!sameKey.length) return null;
+  // prefer same color, fallback to first
+  return sameKey.find(p => p.color === item.color) || sameKey[0];
 }
 
 function getPriceChange(item) {

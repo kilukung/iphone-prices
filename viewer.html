@@ -84,8 +84,8 @@ body{font-family:-apple-system,sans-serif;background:var(--bg2);color:var(--text
   box-shadow:0 4px 28px rgba(0,0,0,0.22);
   z-index:50;
 }
-.tab{flex:1;padding:10px 2px;font-size:11px;font-weight:500;text-align:center;cursor:pointer;color:var(--tab-text);border:none;background:none;border-radius:22px;white-space:nowrap;transition:background .15s,color .15s}
-.tab.active{background:var(--tab-active);color:var(--tab-active-text);font-weight:700}
+.tab{flex:1;padding:10px 2px;font-size:11px;font-weight:500;text-align:center;cursor:pointer;color:var(--tab-text);border:none;background:none;border-radius:0;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+.tab.active{background:none;color:var(--text);font-weight:700;border-bottom:2px solid var(--blue)}
 /* ── Pages ── */
 .pg{display:none;padding:0 12px 100px}.pg.active{display:block}
 /* ── Search ── */
@@ -979,19 +979,33 @@ function renderTrend() {
       lastBrand = e.brand;
     }
     const last = e.points[e.points.length - 1];
-    const latestHtml = last ? (last.lo === last.hi ? `฿${fmt(last.lo)}` : `฿${fmt(last.lo)}–${fmt(last.hi)}`) : '';
     const prev = e.points.length >= 2 ? e.points[e.points.length - 2] : null;
     let chgHtml = '';
     if (prev) {
       const d = Math.round((last.lo + last.hi)/2 - (prev.lo + prev.hi)/2);
       if (d !== 0) chgHtml = `<span class="chg ${d>0?'chg-up':'chg-dn'}" style="margin-left:6px">${d>0?'↑':'↓'}${fmt(Math.abs(d))}</span>`;
     }
+    const vals = e.points.flatMap(p => [p.lo, p.hi]);
+    const minVal = Math.min(...vals), maxVal = Math.max(...vals);
+    const range = maxVal - minVal || 2000;
+    const chartW = 56, chartH = 28, pad = 2;
+    const pts = e.points.map((p, i) => {
+      const x = pad + (e.points.length > 1 ? (i / (e.points.length - 1)) * (chartW - 2*pad) : (chartW - 2*pad) / 2);
+      const y = chartH - pad - ((p.lo + p.hi) / 2 - minVal) / range * (chartH - 2*pad);
+      return { x: x.toFixed(1), y: y.toFixed(1) };
+    });
+    const pathPoints = pts.map((p, i) => `${p.x},${p.y}`).join(' ');
+    const chartColor = chgHtml ? (chgHtml.includes('chg-up') ? '#10b981' : '#ef4444') : '#9ca3af';
+    const miniChart = `<svg width="${chartW}" height="${chartH}" viewBox="0 0 ${chartW} ${chartH}" style="flex-shrink:0"><polyline points="${pathPoints}" fill="none" stroke="${chartColor}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
     html += `<div class="trend-card" onclick="showChart(window._trendEntries[${idx}])" style="cursor:pointer">
       <div class="trend-hdr">
         <div class="trend-title">${e.model} <span style="font-weight:400;color:var(--text3)">${storageDisplay(e.storage)}</span></div>
-        <div style="text-align:right;flex-shrink:0">
-          <div class="trend-latest">${latestHtml}</div>
-          ${chgHtml ? `<div style="font-size:11px;margin-top:1px">${chgHtml}</div>` : ''}
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0">
+          ${miniChart}
+          <div style="font-size:12px;color:var(--text2);display:flex;align-items:center;gap:6px">
+            <span>${e.points.length} รอบราคา</span>
+            ${chgHtml}
+          </div>
         </div>
         <svg width="7" height="12" viewBox="0 0 7 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text3);flex-shrink:0"><polyline points="1,1 6,6 1,11"/></svg>
       </div>
@@ -1468,12 +1482,18 @@ function showChart(entry) {
     }
   });
 
-  // X labels (max 5)
+  // X labels (max 5, avoid overlap near the end)
   const step = Math.max(1, Math.ceil(pts.length / 5));
+  let xIdxs = [];
+  pts.forEach((p, i) => { if (i % step === 0) xIdxs.push(i); });
+  if (xIdxs[xIdxs.length - 1] !== pts.length - 1) xIdxs.push(pts.length - 1);
+  const MIN_LABEL_GAP = 28;
+  while (xIdxs.length > 1 && (cx(xIdxs[xIdxs.length - 1]) - cx(xIdxs[xIdxs.length - 2])) < MIN_LABEL_GAP) {
+    xIdxs.splice(xIdxs.length - 2, 1);
+  }
   let xHTML = '';
-  pts.forEach((p, i) => {
-    if (i % step !== 0 && i !== pts.length - 1) return;
-    const d = p.date.split('/');
+  xIdxs.forEach(i => {
+    const d = pts[i].date.split('/');
     xHTML += `<text x="${cx(i).toFixed(1)}" y="${H - 6}" text-anchor="middle" font-size="10.5" fill="currentColor" opacity="0.55" font-family="system-ui">${d[0]}/${d[1]}</text>`;
   });
 
@@ -1489,7 +1509,11 @@ function showChart(entry) {
     const idx = pts.indexOf(p);
     const prev = pts[idx - 1];
     const d = prev ? mid(p) - mid(prev) : 0;
-    const deltaHtml = idx > 0 ? `<span style="color:${d >= 0 ? 'var(--g-t)' : 'var(--r-t)'};font-size:11px;font-weight:600;min-width:44px;display:inline-block">${d >= 0 ? '↑' : '↓'}${fmt(Math.abs(d))}</span>` : `<span style="min-width:44px;display:inline-block"></span>`;
+    const deltaHtml = idx > 0
+      ? (d === 0
+          ? `<span style="color:var(--text3);font-size:11px;font-weight:600;min-width:44px;display:inline-block">—</span>`
+          : `<span style="color:${d > 0 ? 'var(--g-t)' : 'var(--r-t)'};font-size:11px;font-weight:600;min-width:44px;display:inline-block">${d > 0 ? '↑' : '↓'}${fmt(Math.abs(d))}</span>`)
+      : `<span style="min-width:44px;display:inline-block"></span>`;
     return `<div class="chart-row"><span class="chart-date">${p.date}</span>${deltaHtml}<span style="font-weight:500">฿${fmt(p.lo)} – ฿${fmt(p.hi)}</span></div>`;
   }).join('');
   document.getElementById('chart-data').innerHTML = rows;

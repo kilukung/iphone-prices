@@ -20,7 +20,7 @@
 :root{
   --bg:#ffffff;--bg2:#f5f5f5;--bg3:#ebebeb;
   --text:#111111;--text2:#666666;--text3:#9e9e9e;
-  --accent:#111111;--accent-soft:#f0f0f0;
+  --accent:#111111;--accent-soft:#f0f0f0;--accent-text:#ffffff;
   --blue:#2563eb;--blue-bg:#eff6ff;
   --bd:rgba(0,0,0,0.07);--bd2:rgba(0,0,0,0.14);
   --g-bg:#dcf5e7;--g-t:#16a34a;--a-bg:#fff3cd;--a-t:#7a5a00;--r-bg:#fde8e8;--r-t:#dc2626;
@@ -32,7 +32,7 @@
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#141414;--bg2:#1e1e1e;--bg3:#282828;
   --text:#f0f0f0;--text2:#a0a0a0;--text3:#606060;
-  --accent:#f0f0f0;--accent-soft:#2a2a2a;
+  --accent:#f0f0f0;--accent-soft:#2a2a2a;--accent-text:#111111;
   --blue:#60a5fa;--blue-bg:#1e3a6e22;
   --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.14);
   --g-bg:#0a3d20;--g-t:#4ade80;--a-bg:#4a3500;--a-t:#fcd34d;--r-bg:#4a1010;--r-t:#f87171;
@@ -43,7 +43,7 @@
 :root[data-theme="dark"]{
   --bg:#141414;--bg2:#1e1e1e;--bg3:#282828;
   --text:#f0f0f0;--text2:#a0a0a0;--text3:#606060;
-  --accent:#f0f0f0;--accent-soft:#2a2a2a;
+  --accent:#f0f0f0;--accent-soft:#2a2a2a;--accent-text:#111111;
   --blue:#60a5fa;--blue-bg:#1e3a6e22;
   --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.14);
   --g-bg:#0a3d20;--g-t:#4ade80;--a-bg:#4a3500;--a-t:#fcd34d;--r-bg:#4a1010;--r-t:#f87171;
@@ -101,8 +101,8 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
 /* ── Filter pills ── */
 .frow{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;margin-bottom:10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .frow::-webkit-scrollbar{display:none}
-.fb{padding:5px 12px;font-size:11px;font-weight:500;border-radius:20px;border:none;background:var(--bg);cursor:pointer;color:var(--text2);box-shadow:var(--shadow)}
-.fb.on{background:var(--accent);color:#fff}
+.fb{padding:5px 12px;font-size:11px;font-weight:500;border-radius:20px;border:none;background:var(--bg);cursor:pointer;color:var(--text2);box-shadow:var(--shadow);white-space:nowrap}
+.fb.on{background:var(--accent);color:var(--accent-text)}
 .srow{display:flex;align-items:center;gap:7px;margin-bottom:10px}
 .srow span{font-size:12px;color:var(--text2);white-space:nowrap}
 .srow select{flex:1;padding:7px 10px;font-size:12px;border:none;border-radius:12px;background:var(--bg);color:var(--text);box-shadow:var(--shadow)}
@@ -504,7 +504,7 @@ function initBrandFilters() {
   el.appendChild(all);
   const wbtn = document.createElement('button');
   wbtn.className = 'fb' + (wishOnly ? ' on' : '');
-  wbtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 16 16" fill="#f5a623" stroke="#f5a623" stroke-width="1.5" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px"><polygon points="8,1.5 10,6 15,6.5 11.2,10 12.5,15 8,12.3 3.5,15 4.8,10 1,6.5 6,6"/></svg>Wishlist';
+  wbtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 16 16" fill="#f5a623" stroke="#f5a623" stroke-width="1.5" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px"><polygon points="8,1.5 10,6 15,6.5 11.2,10 12.5,15 8,12.3 3.5,15 4.8,10 1,6.5 6,6"/></svg>List';
   wbtn.onclick = () => { wishOnly = !wishOnly; if (wishOnly) selB = ''; renderAll(); initBrandFilters(); };
   el.appendChild(wbtn);
   BRANDS.forEach(b => {
@@ -525,7 +525,7 @@ function initTrendFilters() {
   all.onclick = () => { tSelB = ''; tWishOnly = false; renderTrend(); updateTFilter(); }; el.appendChild(all);
   const wbtn = document.createElement('button');
   wbtn.className = 'fb' + (tWishOnly ? ' on' : '');
-  wbtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 16 16" fill="#f5a623" stroke="#f5a623" stroke-width="1.5" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px"><polygon points="8,1.5 10,6 15,6.5 11.2,10 12.5,15 8,12.3 3.5,15 4.8,10 1,6.5 6,6"/></svg>Wishlist'; wbtn.dataset.b = '__wish__';
+  wbtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 16 16" fill="#f5a623" stroke="#f5a623" stroke-width="1.5" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px"><polygon points="8,1.5 10,6 15,6.5 11.2,10 12.5,15 8,12.3 3.5,15 4.8,10 1,6.5 6,6"/></svg>List'; wbtn.dataset.b = '__wish__';
   wbtn.onclick = () => { tWishOnly = !tWishOnly; if (tWishOnly) tSelB = ''; renderTrend(); updateTFilter(); };
   el.appendChild(wbtn);
   BRANDS.forEach(b => {
@@ -628,7 +628,7 @@ function setB(b) {
   selB = b;
   if (b) wishOnly = false;  // กด brand → ปิด wishlist mode
   document.querySelectorAll('#bfilters .fb').forEach(btn =>
-    btn.classList.toggle('on', btn.dataset.b === b || (btn.textContent.includes('Wishlist') && wishOnly)));
+    btn.classList.toggle('on', btn.dataset.b === b || (btn.textContent.includes('List') && wishOnly)));
   renderAll();
 }
 

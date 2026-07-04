@@ -54,7 +54,7 @@ button,select,input,a{touch-action:manipulation}
 body{font-family:-apple-system,sans-serif;background:var(--bg2);color:var(--text);min-height:100vh}
 .app{max-width:480px;margin:0 auto;background:var(--bg2)}
 /* ── Header ── */
-.hdr{padding:14px 16px 12px;background:var(--bg);border-radius:0 0 24px 24px;box-shadow:var(--shadow);margin-bottom:12px}
+.hdr{position:sticky;top:0;z-index:50;padding:14px 16px 12px;background:var(--bg);border-radius:0 0 24px 24px;box-shadow:var(--shadow);margin-bottom:12px;cursor:pointer}
 .hdr h1{font-size:18px;font-weight:700;letter-spacing:-0.3px}
 .hdr .sub{font-size:11px;color:var(--text3)}
 .date-row{display:flex;align-items:center;gap:8px;margin-top:8px}
@@ -222,7 +222,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 </head>
 <body>
 <div class="app">
-<div class="hdr">
+<div class="hdr" onclick="if(!event.target.closest('.menu-wrap'))window.scrollTo({top:0,behavior:'smooth'})">
   <div style="display:flex;justify-content:space-between;align-items:center">
     <div>
       <h1>ราคารับซื้อมือถือ</h1>

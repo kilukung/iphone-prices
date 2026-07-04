@@ -261,9 +261,9 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
   <div class="sw"><span class="si"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg></span><input type="search" id="q" placeholder="ค้นหา..." oninput="renderAll();document.getElementById('q-clr').style.display=this.value?'block':'none'"><button class="sw-clr" id="q-clr" onclick="document.getElementById('q').value='';renderAll();this.style.display='none'" style="display:none">×</button></div>
   <div class="frow" id="bfilters"></div>
   <div class="sort-pills" id="sort-pills">
-    <button class="sp on" onclick="setSort('name')">ชื่อ</button>
-    <button class="sp" onclick="setSort('lo')">ราคา ↑</button>
-    <button class="sp" onclick="setSort('hi')">ราคา ↓</button>
+    <button class="sp on" onclick="setSort('name')">Name</button>
+    <button class="sp" onclick="setSort('lo')">Price ↑</button>
+    <button class="sp" onclick="setSort('hi')">Price ↓</button>
   </div>
   <div id="all-list"></div>
 </div>
@@ -499,7 +499,7 @@ function initBrandFilters() {
   el.innerHTML = '';
   const all = document.createElement('button');
   all.className = 'fb' + (!selB ? ' on' : '');
-  all.textContent = 'ทั้งหมด'; all.dataset.b = '';
+  all.textContent = 'All'; all.dataset.b = '';
   all.onclick = () => { wishOnly = false; setB(''); };
   el.appendChild(all);
   const wbtn = document.createElement('button');
@@ -521,7 +521,7 @@ function initTrendFilters() {
   el.innerHTML = '';
   const all = document.createElement('button');
   all.className = 'fb' + (!tSelB ? ' on' : '');
-  all.textContent = 'ทั้งหมด'; all.dataset.b = '';
+  all.textContent = 'All'; all.dataset.b = '';
   all.onclick = () => { tSelB = ''; tWishOnly = false; renderTrend(); updateTFilter(); }; el.appendChild(all);
   const wbtn = document.createElement('button');
   wbtn.className = 'fb' + (tWishOnly ? ' on' : '');

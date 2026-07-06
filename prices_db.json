@@ -12587,8 +12587,8 @@
           "model": "iPhone 17e",
           "storage": "8/256GB",
           "color": "Pink/White/Black",
-          "lo": 21000,
-          "hi": 21500
+          "lo": 21500,
+          "hi": 22000
         },
         {
           "brand": "iPhone",
@@ -12720,7 +12720,7 @@
         },
         {
           "brand": "iPad",
-          "model": "iPad Air 7",
+          "model": "iPad Air 7 11นิ้ว",
           "storage": "WiFi 128GB",
           "color": "Black/Purple/Blue/White",
           "lo": 19000,
@@ -12728,7 +12728,7 @@
         },
         {
           "brand": "iPad",
-          "model": "iPad Air 7",
+          "model": "iPad Air 7 11นิ้ว",
           "storage": "WiFi 256GB",
           "color": "Blue/Black/Purple/White",
           "lo": 22000,
@@ -12736,7 +12736,7 @@
         },
         {
           "brand": "iPad",
-          "model": "iPad Air 8 M4",
+          "model": "iPad Air 8 M4 11นิ้ว",
           "storage": "WiFi 128GB",
           "color": "Purple/White/Black/Blue",
           "lo": 23000,
@@ -12744,7 +12744,7 @@
         },
         {
           "brand": "iPad",
-          "model": "iPad Air 8 M4",
+          "model": "iPad Air 8 M4 11นิ้ว",
           "storage": "WiFi 256GB",
           "color": "Purple/Blue/White/Black",
           "lo": 27000,
@@ -12752,7 +12752,7 @@
         },
         {
           "brand": "iPad",
-          "model": "iPad Air 8 M4",
+          "model": "iPad Air 8 M4 11นิ้ว",
           "storage": "SIM 128GB",
           "color": "Black/Blue/White/Purple",
           "lo": 27000,
@@ -12760,7 +12760,7 @@
         },
         {
           "brand": "iPad",
-          "model": "iPad Air 8 M4",
+          "model": "iPad Air 8 M4 11นิ้ว",
           "storage": "SIM 256GB",
           "color": "Black/White/Blue/Purple",
           "lo": 30000,
@@ -12768,7 +12768,7 @@
         },
         {
           "brand": "iPad",
-          "model": "iPad Air 8 M4 13",
+          "model": "iPad Air 8 M4 13นิ้ว",
           "storage": "WiFi 128GB",
           "color": "Black/White/Purple/Blue",
           "lo": 29000,
@@ -12776,11 +12776,11 @@
         },
         {
           "brand": "iPad",
-          "model": "iPad Air 8 M4 13",
+          "model": "iPad Air 8 M4 13นิ้ว",
           "storage": "WiFi 256GB",
           "color": "Black/White/Purple/Blue",
-          "lo": 32500,
-          "hi": 33000
+          "lo": 33000,
+          "hi": 33500
         },
         {
           "brand": "Accessories",
@@ -13008,6 +13008,14 @@
         },
         {
           "brand": "Samsung",
+          "model": "Galaxy S25 FE",
+          "storage": "256",
+          "color": "Blue/Navy",
+          "lo": 15500,
+          "hi": 15800
+        },
+        {
+          "brand": "Samsung",
           "model": "Galaxy S25 Ultra",
           "storage": "256",
           "color": "Black/Gray/Silver",
@@ -13157,6 +13165,14 @@
           "color": "คละสี",
           "lo": 17000,
           "hi": 17500
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y04s",
+          "storage": "4/64",
+          "color": "คละสี",
+          "lo": 2000,
+          "hi": 2300
         },
         {
           "brand": "Vivo",

@@ -13008,14 +13008,6 @@
         },
         {
           "brand": "Samsung",
-          "model": "Galaxy S25 FE",
-          "storage": "256",
-          "color": "Blue/Navy",
-          "lo": 15500,
-          "hi": 15800
-        },
-        {
-          "brand": "Samsung",
           "model": "Galaxy S25 Ultra",
           "storage": "256",
           "color": "Black/Gray/Silver",
@@ -13165,14 +13157,6 @@
           "color": "คละสี",
           "lo": 17000,
           "hi": 17500
-        },
-        {
-          "brand": "Vivo",
-          "model": "Vivo Y04s",
-          "storage": "4/64",
-          "color": "คละสี",
-          "lo": 2000,
-          "hi": 2300
         },
         {
           "brand": "Vivo",

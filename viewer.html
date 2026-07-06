@@ -610,12 +610,12 @@ function itemKey(r) {
 }
 
 function getPrevItem(item) {
-  if (curSnap === 0) return null;
-  const prev = DB.snapshots[curSnap - 1];
-  const sameKey = prev.items.filter(p => itemKey(p) === itemKey(item));
-  if (!sameKey.length) return null;
-  // prefer same color, fallback to first
-  return sameKey.find(p => p.color === item.color) || sameKey[0];
+  // ย้อนหาในรอบก่อนหน้าเรื่อยๆ จนกว่าจะเจอรุ่นเดิม (เผื่อร้านหยุดรับซื้อไปหลายรอบแล้วกลับมา)
+  for (let i = curSnap - 1; i >= 0; i--) {
+    const sameKey = DB.snapshots[i].items.filter(p => itemKey(p) === itemKey(item));
+    if (sameKey.length) return sameKey.find(p => p.color === item.color) || sameKey[0];
+  }
+  return null;
 }
 
 function getPriceChange(item) {

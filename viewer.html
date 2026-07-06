@@ -570,6 +570,13 @@ function storageBytes(s) {
   return u === 'TB' ? n * 1024 * 1024 : u === 'GB' ? n * 1024 : n;
 }
 
+function storageConnRank(s) {
+  // WiFi ทุกความจุมาก่อน แล้วค่อย SIM (ไม่มี conn prefix ถือเป็น WiFi/ปกติ)
+  if (!s) return 0;
+  if (/^SIM/i.test(s)) return 1;
+  return 0;
+}
+
 function storageDisplay(s) {
   // Separate connectivity (SIM/WiFi) from size (128GB etc.)
   // Input may be "WiFi 128GB" or "WIFI128GB" (normStorage concatenates without space)
@@ -649,6 +656,8 @@ function renderAll() {
     if (bc !== 0) return bc;
     const mc = a.model.localeCompare(b.model, 'th');
     if (mc !== 0) return mc;
+    const cc = storageConnRank(a.storage) - storageConnRank(b.storage);
+    if (cc !== 0) return cc;
     return storageBytes(a.storage) - storageBytes(b.storage);
   });
   else if (sort === 'lo') rows.sort((a, b) => { const bc = brandRank(a)-brandRank(b); return bc !== 0 ? bc : a.lo - b.lo; });
@@ -966,6 +975,8 @@ function renderTrend() {
     if (bc !== 0) return bc;
     const mc = a.model.localeCompare(b.model, 'th');
     if (mc !== 0) return mc;
+    const cc = storageConnRank(a.storage) - storageConnRank(b.storage);
+    if (cc !== 0) return cc;
     return storageBytes(a.storage) - storageBytes(b.storage);
   });
 

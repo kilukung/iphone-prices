@@ -75,7 +75,9 @@ body{font-family:-apple-system,sans-serif;background:var(--bg2);color:var(--text
 .range-btn{flex:1;padding:6px 4px;font-size:11px;font-weight:500;border:none;border-radius:14px;background:var(--bg2);color:var(--text2);cursor:pointer;text-align:center}
 .range-btn.on{background:var(--text);color:var(--bg);font-weight:600}
 .trend-sum{display:flex;gap:8px;margin-bottom:12px}
-.trend-sum-cell{flex:1;padding:10px 12px;border-radius:var(--rl);background:var(--bg);box-shadow:var(--shadow);text-align:center}
+.trend-sum-cell{flex:1;padding:10px 12px;border-radius:var(--rl);background:var(--bg);box-shadow:var(--shadow);text-align:center;border:1.5px solid transparent;cursor:pointer;touch-action:manipulation;font-family:inherit}
+.trend-sum-cell:active{transform:scale(0.97)}
+.trend-sum-cell.on{border-color:var(--text)}
 .trend-sum-n{font-size:18px;font-weight:700;letter-spacing:-0.3px}
 .trend-sum-l{font-size:10.5px;color:var(--text3);margin-top:2px}
 /* ── Overflow menu ── */
@@ -940,25 +942,48 @@ function quickCalc(brand, model, storage) {
 }
 
 // ======== TREND ========
-function renderTrendSummary() {
+let trendStatFilter = null; // null | 'up' | 'down' | 'new'
+
+function setTrendStatFilter(cat) {
+  trendStatFilter = trendStatFilter === cat ? null : cat;
+  renderTrend();
+}
+
+function getEntryStatus(entry) {
+  const curDate = DB.snapshots[curSnap].date;
+  const n = entry.points.length;
+  const last = entry.points[n - 1];
+  if (!last || last.date !== curDate) return null; // ไม่มีขายรอบนี้
+  if (n < 2) return 'new';
+  const d = mid(last) - mid(entry.points[n - 2]);
+  if (d > 0) return 'up';
+  if (d < 0) return 'down';
+  return null; // ราคาเท่าเดิม ไม่นับ
+}
+
+function renderTrendSummary(entriesForCount) {
   const el = document.getElementById('trend-summary');
   if (curSnap === 0) { el.innerHTML = ''; return; }
   let up = 0, down = 0, newCount = 0;
-  DB.snapshots[curSnap].items.forEach(r => {
-    const chg = getPriceChange(r);
-    if (chg === null) newCount++;
-    else if (chg > 0) up++;
-    else if (chg < 0) down++;
+  entriesForCount.forEach(e => {
+    const st = getEntryStatus(e);
+    if (st === 'up') up++;
+    else if (st === 'down') down++;
+    else if (st === 'new') newCount++;
   });
+  const cell = (cat, n, color, label) =>
+    `<button class="trend-sum-cell ${trendStatFilter === cat ? 'on' : ''}" onclick="setTrendStatFilter('${cat}')">
+      <div class="trend-sum-n" style="color:${color}">${cat === 'up' ? '↑ ' : cat === 'down' ? '↓ ' : ''}${n}</div>
+      <div class="trend-sum-l">${label}</div>
+    </button>`;
   el.innerHTML = `<div class="trend-sum">
-    <div class="trend-sum-cell"><div class="trend-sum-n" style="color:var(--g-t)">↑ ${up}</div><div class="trend-sum-l">รุ่นราคาขึ้น</div></div>
-    <div class="trend-sum-cell"><div class="trend-sum-n" style="color:var(--r-t)">↓ ${down}</div><div class="trend-sum-l">รุ่นราคาลง</div></div>
-    <div class="trend-sum-cell"><div class="trend-sum-n" style="color:var(--text3)">${newCount}</div><div class="trend-sum-l">รุ่นใหม่/กลับมา</div></div>
+    ${cell('up', up, 'var(--g-t)', 'รุ่นราคาขึ้น')}
+    ${cell('down', down, 'var(--r-t)', 'รุ่นราคาลง')}
+    ${cell('new', newCount, 'var(--text3)', 'รุ่นใหม่/กลับมา')}
   </div>`;
 }
 
 function renderTrend() {
-  renderTrendSummary();
   const q = (document.getElementById('tq').value || '').toLowerCase();
 
   // Strip color keywords from storage to get base size (e.g. "256GB Orange" → "256GB")
@@ -1026,6 +1051,9 @@ function renderTrend() {
     if (cc !== 0) return cc;
     return storageBytes(a.storage) - storageBytes(b.storage);
   });
+
+  renderTrendSummary(entries);
+  if (trendStatFilter) entries = entries.filter(e => getEntryStatus(e) === trendStatFilter);
 
   // Store globally for chart access (avoid JSON.stringify in onclick)
   window._trendEntries = entries;

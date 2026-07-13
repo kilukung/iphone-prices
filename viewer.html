@@ -71,6 +71,13 @@ body{font-family:-apple-system,sans-serif;background:var(--bg2);color:var(--text
 .sort-pills{display:flex;gap:6px;margin-bottom:10px}
 .sp{flex:1;padding:7px 4px;font-size:11px;font-weight:500;border:none;border-radius:20px;background:var(--bg);color:var(--text2);cursor:pointer;box-shadow:var(--shadow);white-space:nowrap;text-align:center}
 .sp.on{background:#555;color:#fff;font-weight:600}
+.range-row{display:flex;gap:6px;margin-bottom:10px}
+.range-btn{flex:1;padding:6px 4px;font-size:11px;font-weight:500;border:none;border-radius:14px;background:var(--bg2);color:var(--text2);cursor:pointer;text-align:center}
+.range-btn.on{background:var(--text);color:var(--bg);font-weight:600}
+.trend-sum{display:flex;gap:8px;margin-bottom:12px}
+.trend-sum-cell{flex:1;padding:10px 12px;border-radius:var(--rl);background:var(--bg);box-shadow:var(--shadow);text-align:center}
+.trend-sum-n{font-size:18px;font-weight:700;letter-spacing:-0.3px}
+.trend-sum-l{font-size:10.5px;color:var(--text3);margin-top:2px}
 /* ── Overflow menu ── */
 .menu-wrap{position:relative;display:inline-block}
 .menu-btn{background:var(--bg2);border:none;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer;color:var(--text2);display:flex;align-items:center;justify-content:center;line-height:1}
@@ -119,6 +126,9 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
 .pw{margin-bottom:8px}
 .pw .pr{margin-bottom:0}
 .pw.open .pr{border-radius:var(--rl) var(--rl) 0 0}
+.pw.disc .pr{opacity:0.5}
+.pw.disc .pm{color:var(--text2)}
+.disc-note{font-size:10px;color:var(--text3);margin-top:2px;white-space:nowrap}
 .ic{display:none;background:var(--bg2);border-radius:0 0 var(--rl) var(--rl);padding:12px 14px;border:0.5px solid var(--bd);border-top:none}
 .ic.open{display:block}
 .ic-inp{width:100%;padding:8px 28px 8px 26px;font-size:14px;border:0.5px solid var(--bd2);border-radius:10px;background:var(--bg);color:var(--text);outline:none}
@@ -284,6 +294,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 
 <!-- ราคาย้อนหลัง -->
 <div id="pg-trend" class="pg">
+  <div id="trend-summary"></div>
   <div style="display:flex;gap:8px;margin-bottom:10px">
     <div class="sw" style="flex:1;margin-bottom:0"><span class="si"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg></span><input type="search" id="tq" placeholder="ค้นหารุ่น..." oninput="renderTrend()"></div>
   </div>
@@ -319,6 +330,7 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
       </div>
       <button onclick="closeChart()" style="background:var(--bg2);border:none;color:var(--text2);cursor:pointer;touch-action:manipulation;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/></svg></button>
     </div>
+    <div class="range-row" id="chart-range"></div>
     <div id="chart-svg" style="margin-bottom:12px"></div>
     <div id="chart-data"></div>
     <button onclick="closeChart()" style="width:100%;margin-top:16px;padding:14px;font-size:15px;font-weight:600;background:var(--text);color:var(--bg);border:none;border-radius:var(--rl);cursor:pointer;touch-action:manipulation">ปิด</button>
@@ -649,6 +661,21 @@ function renderAll() {
     const wOk = selB ? true : (!wishOnly || wishlist.has(itemKey(r)));
     return bOk && qOk && wOk;
   });
+  // รุ่นที่เคยมีในรอบก่อนหน้าแต่รอบนี้ร้านไม่รับซื้อแล้ว → แสดงจางๆ พร้อม note ราคาล่าสุด
+  if (curSnap > 0 && !wishOnly) {
+    const prevSnap = DB.snapshots[curSnap - 1];
+    const currentKeys = new Set(items.map(itemKey));
+    const seenDiscKeys = new Set();
+    prevSnap.items.forEach(p => {
+      if (currentKeys.has(itemKey(p))) return;
+      const dk = itemKey(p) + '|' + p.color;
+      if (seenDiscKeys.has(dk)) return; // กันรายการซ้ำถ้ามีสีเดียวกันหลายแถว
+      seenDiscKeys.add(dk);
+      const bOk = !selB || p.brand === selB;
+      const qOk = !q || (p.model + ' ' + p.storage + ' ' + p.brand + ' ' + p.color).toLowerCase().includes(q);
+      if (bOk && qOk) rows.push({ ...p, _disc: true, _discDate: prevSnap.date });
+    });
+  }
   // Brand order always applied first
   const brandRank = r => { const i = BRAND_ORDER.indexOf(r.brand); return i < 0 ? 99 : i; };
   if (sort === 'name') rows.sort((a, b) => {
@@ -678,9 +705,11 @@ function renderAll() {
       html += `<div class="sec-hdr">${r.brand}</div>`;
       lastBrand = r.brand;
     }
-    const chg = getPriceChange(r);
+    const chg = r._disc ? null : getPriceChange(r);
     let chgHtml = '';
-    if (chg !== null && chg !== 0) {
+    if (r._disc) {
+      chgHtml = `<span class="disc-note">ราคา ณ ${r._discDate}</span>`;
+    } else if (chg !== null && chg !== 0) {
       chgHtml = `<span class="chg ${chg > 0 ? 'chg-up' : 'chg-dn'}">${chg > 0 ? '↑' : '↓'}${fmt(Math.abs(chg))}</span>`;
     } else if (chg === null && curSnap > 0) {
       chgHtml = `<span class="chg" style="color:var(--text3)">ใหม่</span>`;
@@ -691,8 +720,8 @@ function renderAll() {
     const priceHtml = r.lo === r.hi ? `฿${fmt(r.lo)}` : `฿${fmt(r.lo)}–${fmt(r.hi)}`;
     const h = port.find(e => e.model === r.model && e.storage === r.storage);
     const savedCost = h ? h.cost : '';
-    html += `<div class="pw" id="pw-${i}">
-      <div class="pr" onclick="toggleIC(${i})">
+    html += `<div class="pw${r._disc ? ' disc' : ''}" id="pw-${i}">
+      <div class="pr" onclick="${r._disc ? '' : `toggleIC(${i})`}">
         <div class="pi">
           <div class="pm">${r.model} <span style="font-weight:400;color:var(--text3)">${storageDisplay(r.storage)}</span></div>
           <div class="ps" style="display:flex;align-items:center;gap:4px">${colorInfo}${h ? `<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="0" y="6" width="2.5" height="6" rx="0.8" fill="#b5ea00"/><rect x="4.5" y="3.5" width="2.5" height="8.5" rx="0.8" fill="#b5ea00"/><rect x="9" y="0" width="2.5" height="12" rx="0.8" fill="#b5ea00"/></svg>` : ''}</div>
@@ -911,7 +940,25 @@ function quickCalc(brand, model, storage) {
 }
 
 // ======== TREND ========
+function renderTrendSummary() {
+  const el = document.getElementById('trend-summary');
+  if (curSnap === 0) { el.innerHTML = ''; return; }
+  let up = 0, down = 0, newCount = 0;
+  DB.snapshots[curSnap].items.forEach(r => {
+    const chg = getPriceChange(r);
+    if (chg === null) newCount++;
+    else if (chg > 0) up++;
+    else if (chg < 0) down++;
+  });
+  el.innerHTML = `<div class="trend-sum">
+    <div class="trend-sum-cell"><div class="trend-sum-n" style="color:var(--g-t)">↑ ${up}</div><div class="trend-sum-l">รุ่นราคาขึ้น</div></div>
+    <div class="trend-sum-cell"><div class="trend-sum-n" style="color:var(--r-t)">↓ ${down}</div><div class="trend-sum-l">รุ่นราคาลง</div></div>
+    <div class="trend-sum-cell"><div class="trend-sum-n" style="color:var(--text3)">${newCount}</div><div class="trend-sum-l">รุ่นใหม่/กลับมา</div></div>
+  </div>`;
+}
+
 function renderTrend() {
+  renderTrendSummary();
   const q = (document.getElementById('tq').value || '').toLowerCase();
 
   // Strip color keywords from storage to get base size (e.g. "256GB Orange" → "256GB")
@@ -1451,10 +1498,50 @@ function toggleWish(key) {
 }
 
 // ======== CHART ========
+let currentChartEntry = null;
+let currentChartRange = 'all';
+const CHART_RANGES = [['1m', '1 เดือน'], ['3m', '3 เดือน'], ['all', 'ทั้งหมด']];
+
+function parseThaiDate(d) {
+  // "24/06/2569" (พ.ศ.) → Date object จริง
+  const [dd, mm, yy] = d.split('/').map(Number);
+  return new Date(yy - 543, mm - 1, dd);
+}
+
+function filterPointsByRange(allPts, range) {
+  if (range === 'all' || allPts.length === 0) return allPts;
+  const days = range === '1m' ? 30 : 90;
+  const lastDate = parseThaiDate(allPts[allPts.length - 1].date);
+  const cutoff = new Date(lastDate);
+  cutoff.setDate(cutoff.getDate() - days);
+  const filtered = allPts.filter(p => parseThaiDate(p.date) >= cutoff);
+  return filtered.length >= 2 ? filtered : allPts.slice(-2);
+}
+
+function setChartRange(r) {
+  currentChartRange = r;
+  renderChartBody();
+}
+
 function showChart(entry) {
+  currentChartEntry = entry;
+  currentChartRange = 'all';
   document.getElementById('chart-title').innerHTML = entry.model + ' <span style="font-weight:400;color:var(--text3)">' + storageDisplay(entry.storage) + '</span>';
-  document.getElementById('chart-sub').textContent = entry.brand + ' · ' + entry.points.length + ' รอบราคา';
-  const pts = entry.points;
+  document.getElementById('chart-range').innerHTML = CHART_RANGES.map(([k, label]) =>
+    `<button class="range-btn ${currentChartRange === k ? 'on' : ''}" data-range="${k}" onclick="setChartRange('${k}')">${label}</button>`
+  ).join('');
+  renderChartBody();
+  document.getElementById('chart-overlay').classList.add('open');
+}
+
+function renderChartBody() {
+  const entry = currentChartEntry;
+  const allPts = entry.points;
+  const pts = filterPointsByRange(allPts, currentChartRange);
+  document.querySelectorAll('#chart-range .range-btn').forEach(btn =>
+    btn.classList.toggle('on', btn.dataset.range === currentChartRange));
+  document.getElementById('chart-sub').textContent = entry.brand + ' · ' + pts.length + ' รอบราคา' +
+    (pts.length !== allPts.length ? ` (จากทั้งหมด ${allPts.length})` : '');
   const W = 360, H = 220, PL = 54, PR = 16, PT = 24, PB = 44;
   const IW = W - PL - PR, IH = H - PT - PB;
   const vals = pts.flatMap(p => [p.lo, p.hi]);
@@ -1521,10 +1608,10 @@ function showChart(entry) {
     </svg>`;
 
   const rows = [...pts].reverse().map(p => {
-    const idx = pts.indexOf(p);
-    const prev = pts[idx - 1];
+    const idxAll = allPts.indexOf(p);
+    const prev = idxAll > 0 ? allPts[idxAll - 1] : null;
     const d = prev ? mid(p) - mid(prev) : 0;
-    const deltaHtml = idx > 0
+    const deltaHtml = prev
       ? (d === 0
           ? `<span style="color:var(--text3);font-size:11px;font-weight:600;min-width:44px;display:inline-block">—</span>`
           : `<span style="color:${d > 0 ? 'var(--g-t)' : 'var(--r-t)'};font-size:11px;font-weight:600;min-width:44px;display:inline-block">${d > 0 ? '↑' : '↓'}${fmt(Math.abs(d))}</span>`)
@@ -1532,7 +1619,6 @@ function showChart(entry) {
     return `<div class="chart-row"><span class="chart-date">${p.date}</span>${deltaHtml}<span style="font-weight:500">฿${fmt(p.lo)} – ฿${fmt(p.hi)}</span></div>`;
   }).join('');
   document.getElementById('chart-data').innerHTML = rows;
-  document.getElementById('chart-overlay').classList.add('open');
 }
 function closeChart() { document.getElementById('chart-overlay').classList.remove('open'); }
 function closeChartOutside(e) { if (e.target.id === 'chart-overlay') closeChart(); }
@@ -1569,6 +1655,13 @@ fetchRemoteDB().then(remote => {
     init();
   }
 }).catch(() => {});
+
+// ======== PWA: offline support ========
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
 </script>
 <div id="toast"></div>
 </body>

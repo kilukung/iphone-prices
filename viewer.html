@@ -273,9 +273,8 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
   <div class="sw"><span class="si"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg></span><input type="search" id="q" placeholder="ค้นหา..." oninput="renderAll();document.getElementById('q-clr').style.display=this.value?'block':'none'"><button class="sw-clr" id="q-clr" onclick="document.getElementById('q').value='';renderAll();this.style.display='none'" style="display:none">×</button></div>
   <div class="frow" id="bfilters"></div>
   <div class="sort-pills" id="sort-pills">
-    <button class="sp on" onclick="setSort('name')">Name</button>
-    <button class="sp" onclick="setSort('lo')">Price ↑</button>
-    <button class="sp" onclick="setSort('hi')">Price ↓</button>
+    <button class="sp on" id="sort-name" onclick="setSort('name')">Name</button>
+    <button class="sp" id="sort-price" onclick="togglePriceSort()">Price ↑</button>
   </div>
   <div id="all-list"></div>
 </div>
@@ -499,10 +498,19 @@ function renderDateRow() {
 let curSort = 'name';
 function setSort(s) {
   curSort = s;
-  document.querySelectorAll('#sort-pills .sp').forEach(b => b.classList.remove('on'));
-  const idx = ['name','lo','hi','profit'].indexOf(s);
-  document.querySelectorAll('#sort-pills .sp')[idx]?.classList.add('on');
+  updateSortUI();
   renderAll();
+}
+function togglePriceSort() {
+  curSort = curSort === 'lo' ? 'hi' : 'lo';
+  updateSortUI();
+  renderAll();
+}
+function updateSortUI() {
+  document.getElementById('sort-name').classList.toggle('on', curSort === 'name');
+  const priceBtn = document.getElementById('sort-price');
+  priceBtn.classList.toggle('on', curSort === 'lo' || curSort === 'hi');
+  priceBtn.textContent = curSort === 'hi' ? 'Price ↓' : 'Price ↑';
 }
 
 const BRAND_ORDER = ['iPhone','iPad','Accessories','Samsung','OPPO','Vivo','Redmi','Realme','Poco','Infinix'];

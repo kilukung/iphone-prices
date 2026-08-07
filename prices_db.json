@@ -15119,6 +15119,838 @@
           "hi": 3000
         }
       ]
+    },
+    {
+      "id": "2026-08-07",
+      "date": "07/08/2569",
+      "date_iso": "2026-08-07",
+      "source": "ร้าน A",
+      "items": [
+        {
+          "brand": "iPhone",
+          "model": "iPhone 13",
+          "storage": "128GB",
+          "color": "White/Black",
+          "lo": 17500,
+          "hi": 17800
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 14",
+          "storage": "128GB",
+          "color": "Blue/White/Black",
+          "lo": 18700,
+          "hi": 19200
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 15",
+          "storage": "128GB",
+          "color": "Blue/Pink/Black",
+          "lo": 21000,
+          "hi": 21500
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 16",
+          "storage": "128GB",
+          "color": "Blue/Green/Pink/White/Black",
+          "lo": 23500,
+          "hi": 24200
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 16+",
+          "storage": "128GB",
+          "color": "Pink/Blue/Green/White",
+          "lo": 26500,
+          "hi": 27000
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 16+",
+          "storage": "256GB",
+          "color": "Pink/Blue/Green/Black/White",
+          "lo": 28000,
+          "hi": 28500
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17e",
+          "storage": "8/256GB",
+          "color": "Black/White/Pink",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17",
+          "storage": "256GB",
+          "color": "Green/Blue/Black/Purple/White",
+          "lo": 27300,
+          "hi": 27900
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 Pro",
+          "storage": "256GB",
+          "color": "Orange",
+          "lo": 36800,
+          "hi": 37300
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 Pro",
+          "storage": "256GB",
+          "color": "Silver/Blue",
+          "lo": 36500,
+          "hi": 37000
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 Pro",
+          "storage": "512GB",
+          "color": "Orange/Blue/Silver",
+          "lo": 43000,
+          "hi": 43800
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 Pro Max",
+          "storage": "256GB",
+          "color": "Orange/Blue/Silver",
+          "lo": 41000,
+          "hi": 41700
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 Pro Max",
+          "storage": "512GB",
+          "color": "Blue/Orange",
+          "lo": 48700,
+          "hi": 49200
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 Pro Max",
+          "storage": "512GB",
+          "color": "Silver",
+          "lo": 48500,
+          "hi": 48800
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 Pro Max",
+          "storage": "1TB",
+          "color": "Blue",
+          "lo": 55500,
+          "hi": 56000
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone 17 Pro Max",
+          "storage": "1TB",
+          "color": "Silver/Orange",
+          "lo": 55500,
+          "hi": 56000
+        },
+        {
+          "brand": "iPhone",
+          "model": "iPhone Air",
+          "storage": "256GB",
+          "color": "White/Gold/Black/Blue",
+          "lo": 26500,
+          "hi": 27000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Pink",
+          "lo": 15000,
+          "hi": 15200
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 128GB",
+          "color": "Blue/Silver",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "WiFi 256GB",
+          "color": "Blue/Pink/Silver",
+          "lo": 17000,
+          "hi": 17700
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Gen 11",
+          "storage": "SIM 128GB",
+          "color": "Blue/Pink/Silver",
+          "lo": 18500,
+          "hi": 19000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 128GB",
+          "color": "Purple/White/Blue/Black",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Mini 7",
+          "storage": "WiFi 256GB",
+          "color": "Purple/Black/White/Blue",
+          "lo": 20000,
+          "hi": 20500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11\"",
+          "storage": "SIM 128GB",
+          "color": "Black/Blue/White/Purple",
+          "lo": 27000,
+          "hi": 27800
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 11\"",
+          "storage": "SIM 256GB",
+          "color": "Black/White/Blue/Purple",
+          "lo": 31000,
+          "hi": 31500
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 13\"",
+          "storage": "WiFi 128GB",
+          "color": "White/Purple/Blue",
+          "lo": 26000,
+          "hi": 27000
+        },
+        {
+          "brand": "iPad",
+          "model": "iPad Air 8 M4 13\"",
+          "storage": "WiFi 256GB",
+          "color": "Black/White/Purple/Blue",
+          "lo": 29000,
+          "hi": 30000
+        },
+        {
+          "brand": "Accessories",
+          "model": "อะแดปเตอร์",
+          "storage": "-",
+          "color": "-",
+          "lo": 430,
+          "hi": 470
+        },
+        {
+          "brand": "Accessories",
+          "model": "สาย C to C (IP15)",
+          "storage": "-",
+          "color": "-",
+          "lo": 480,
+          "hi": 500
+        },
+        {
+          "brand": "Accessories",
+          "model": "หูฟัง IP15",
+          "storage": "-",
+          "color": "-",
+          "lo": 480,
+          "hi": 520
+        },
+        {
+          "brand": "Accessories",
+          "model": "อะแดปเตอร์ Samsung 25W",
+          "storage": "-",
+          "color": "-",
+          "lo": 250,
+          "hi": 320
+        },
+        {
+          "brand": "Accessories",
+          "model": "Pen USB-C",
+          "storage": "-",
+          "color": "-",
+          "lo": 1500,
+          "hi": 1800
+        },
+        {
+          "brand": "Accessories",
+          "model": "Apple Pencil Pro",
+          "storage": "-",
+          "color": "-",
+          "lo": 2500,
+          "hi": 2900
+        },
+        {
+          "brand": "Accessories",
+          "model": "AirPods 4th",
+          "storage": "-",
+          "color": "-",
+          "lo": 2300,
+          "hi": 2700
+        },
+        {
+          "brand": "Accessories",
+          "model": "AirPods 4th ANC",
+          "storage": "-",
+          "color": "-",
+          "lo": 3500,
+          "hi": 3900
+        },
+        {
+          "brand": "Accessories",
+          "model": "AirPods Pro 3",
+          "storage": "-",
+          "color": "-",
+          "lo": 5500,
+          "hi": 5800
+        },
+        {
+          "brand": "Accessories",
+          "model": "Apple Watch SE3",
+          "storage": "40mm",
+          "color": "คละสี",
+          "lo": 5200,
+          "hi": 5800
+        },
+        {
+          "brand": "Accessories",
+          "model": "Apple Watch SE3",
+          "storage": "44mm",
+          "color": "คละสี",
+          "lo": 6200,
+          "hi": 6700
+        },
+        {
+          "brand": "Accessories",
+          "model": "Apple Watch 11",
+          "storage": "42mm",
+          "color": "คละสี",
+          "lo": 9000,
+          "hi": 9200
+        },
+        {
+          "brand": "Accessories",
+          "model": "Apple Watch 11",
+          "storage": "46mm",
+          "color": "คละสี",
+          "lo": 10000,
+          "hi": 10200
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A06 5G",
+          "storage": "4/64",
+          "color": "Black/Green",
+          "lo": 2500,
+          "hi": 2800
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A06 5G",
+          "storage": "6/128",
+          "color": "Black/Green",
+          "lo": 3000,
+          "hi": 3500
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A07",
+          "storage": "4/64",
+          "color": "Black/Purple",
+          "lo": 2700,
+          "hi": 2900
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A07",
+          "storage": "4/128",
+          "color": "Black/Purple",
+          "lo": 2800,
+          "hi": 3200
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A07 5G",
+          "storage": "6/128",
+          "color": "Black/Purple",
+          "lo": 4500,
+          "hi": 4700
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A17 5G",
+          "storage": "8/128",
+          "color": "Black/Blue",
+          "lo": 5500,
+          "hi": 5800
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A17",
+          "storage": "8/256",
+          "color": "Black/Blue",
+          "lo": 6700,
+          "hi": 6900
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy Tab A11",
+          "storage": "4/64 SIM",
+          "color": "Gray",
+          "lo": 3300,
+          "hi": 3500
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy Tab A11",
+          "storage": "8/128 SIM",
+          "color": "Gray",
+          "lo": 4000,
+          "hi": 4500
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy Tab A11+",
+          "storage": "WiFi",
+          "color": "คละสี",
+          "lo": 4700,
+          "hi": 5200
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy Tab A11+",
+          "storage": "SIM",
+          "color": "คละสี",
+          "lo": 6700,
+          "hi": 7000
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A27",
+          "storage": "8/128",
+          "color": "คละสี",
+          "lo": 7500,
+          "hi": 7800
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A37",
+          "storage": "8/256",
+          "color": "Black/Green/Purple",
+          "lo": 9700,
+          "hi": 10200
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A57",
+          "storage": "8/256",
+          "color": "Purple/Gray/Blue",
+          "lo": 10500,
+          "hi": 10900
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy A57",
+          "storage": "12/256",
+          "color": "Purple/Blue/Gray",
+          "lo": 12000,
+          "hi": 12300
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy S25 Ultra",
+          "storage": "256",
+          "color": "Gray/Silver",
+          "lo": 24000,
+          "hi": 24500
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy S26 Ultra",
+          "storage": "256",
+          "color": "Black/Grey/Jetblack/White/Silver/Purple/Pink",
+          "lo": 32000,
+          "hi": 32500
+        },
+        {
+          "brand": "Samsung",
+          "model": "Galaxy S26 Ultra",
+          "storage": "512",
+          "color": "Black/White/Silver/Pink/Purple/Blue",
+          "lo": 35500,
+          "hi": 36000
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6x",
+          "storage": "4/64",
+          "color": "คละสี",
+          "lo": 2600,
+          "hi": 3000
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6x",
+          "storage": "4/128",
+          "color": "คละสี",
+          "lo": 3200,
+          "hi": 3500
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6t 4G",
+          "storage": "4/64",
+          "color": "คละสี",
+          "lo": 2400,
+          "hi": 2600
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6t",
+          "storage": "4/128",
+          "color": "Blue/Purple",
+          "lo": 2900,
+          "hi": 3100
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6c",
+          "storage": "4/64",
+          "color": "คละสี",
+          "lo": 3000,
+          "hi": 3500
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6 4G",
+          "storage": "6/128",
+          "color": "คละสี",
+          "lo": 4500,
+          "hi": 4800
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6t Pro 4G",
+          "storage": "8/128",
+          "color": "คละสี",
+          "lo": 5500,
+          "hi": 5800
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6 Pro 5G",
+          "storage": "6/128",
+          "color": "คละสี",
+          "lo": 5800,
+          "hi": 6000
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO A6 Pro 5G",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 6500,
+          "hi": 7200
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO Reno 15f",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 8700,
+          "hi": 9200
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO Reno 15f",
+          "storage": "12/256",
+          "color": "คละสี",
+          "lo": 10500,
+          "hi": 11000
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO Reno 15",
+          "storage": "12/256",
+          "color": "คละสี",
+          "lo": 12500,
+          "hi": 13500
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO Reno 16f",
+          "storage": "8/128",
+          "color": "คละสี",
+          "lo": 12000,
+          "hi": 12300
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO Reno 16f",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 12500,
+          "hi": 12800
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO Reno 16 5G",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 14000,
+          "hi": 14500
+        },
+        {
+          "brand": "OPPO",
+          "model": "OPPO Reno 16 5G",
+          "storage": "12/256",
+          "color": "คละสี",
+          "lo": 16000,
+          "hi": 16500
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y05 4G",
+          "storage": "4/64",
+          "color": "คละสี",
+          "lo": 2700,
+          "hi": 3000
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y05 4G",
+          "storage": "4/128",
+          "color": "คละสี",
+          "lo": 2800,
+          "hi": 3400
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y21d",
+          "storage": "4/128",
+          "color": "คละสี",
+          "lo": 3000,
+          "hi": 3300
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y21d",
+          "storage": "6/128",
+          "color": "คละสี",
+          "lo": 3500,
+          "hi": 3700
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y21d",
+          "storage": "6/256",
+          "color": "คละสี",
+          "lo": 4000,
+          "hi": 4200
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y11d",
+          "storage": "4/128",
+          "color": "คละสี",
+          "lo": 3500,
+          "hi": 3800
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y31d",
+          "storage": "6/128",
+          "color": "คละสี",
+          "lo": 5400,
+          "hi": 5600
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo Y31d",
+          "storage": "6/256",
+          "color": "คละสี",
+          "lo": 6400,
+          "hi": 6600
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo V70 fe",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 9000,
+          "hi": 9300
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo V70 fe",
+          "storage": "12/256",
+          "color": "คละสี",
+          "lo": 10500,
+          "hi": 11000
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo V70",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 13000,
+          "hi": 13800
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo V70",
+          "storage": "12/256",
+          "color": "คละสี",
+          "lo": 14500,
+          "hi": 15000
+        },
+        {
+          "brand": "Vivo",
+          "model": "Vivo X300 5G",
+          "storage": "12/256",
+          "color": "Black/Purple/Pink",
+          "lo": 19000,
+          "hi": 19500
+        },
+        {
+          "brand": "Redmi",
+          "model": "Redmi Note 80",
+          "storage": "4/64",
+          "color": "คละสี",
+          "lo": 2300,
+          "hi": 2600
+        },
+        {
+          "brand": "Redmi",
+          "model": "Redmi A5",
+          "storage": "3/64",
+          "color": "คละสี",
+          "lo": 1500,
+          "hi": 2000
+        },
+        {
+          "brand": "Redmi",
+          "model": "Redmi 15c",
+          "storage": "6/128",
+          "color": "คละสี",
+          "lo": 2700,
+          "hi": 3000
+        },
+        {
+          "brand": "Redmi",
+          "model": "Redmi 15c",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 3300,
+          "hi": 3600
+        },
+        {
+          "brand": "Redmi",
+          "model": "Redmi Note 15 4G",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 4500,
+          "hi": 5000
+        },
+        {
+          "brand": "Redmi",
+          "model": "Redmi Note 15 5G",
+          "storage": "8/256",
+          "color": "คละสี",
+          "lo": 5500,
+          "hi": 6000
+        },
+        {
+          "brand": "Poco",
+          "model": "Poco C71",
+          "storage": "3/64",
+          "color": "คละสี",
+          "lo": 1800,
+          "hi": 2100
+        },
+        {
+          "brand": "Poco",
+          "model": "Poco C81 Pro",
+          "storage": "4/64",
+          "color": "คละสี",
+          "lo": 2100,
+          "hi": 2300
+        },
+        {
+          "brand": "Poco",
+          "model": "Poco X8 Pro",
+          "storage": "8/256",
+          "color": "White/Black/Green",
+          "lo": 7500,
+          "hi": 8000
+        },
+        {
+          "brand": "Poco",
+          "model": "Poco X8 Pro",
+          "storage": "8/512",
+          "color": "White/Black/Green",
+          "lo": 9000,
+          "hi": 9500
+        },
+        {
+          "brand": "Poco",
+          "model": "Poco X8 Pro",
+          "storage": "12/256",
+          "color": "White/Black/Green",
+          "lo": 9000,
+          "hi": 9500
+        },
+        {
+          "brand": "Poco",
+          "model": "Poco X8 Pro",
+          "storage": "12/512",
+          "color": "White/Black/Green",
+          "lo": 10000,
+          "hi": 10500
+        },
+        {
+          "brand": "Poco",
+          "model": "Poco X8 Pro Max",
+          "storage": "12/256",
+          "color": "White/Black/Blue",
+          "lo": 12000,
+          "hi": 12700
+        },
+        {
+          "brand": "Poco",
+          "model": "Poco X8 Pro Max",
+          "storage": "12/512",
+          "color": "White/Black/Blue",
+          "lo": 13000,
+          "hi": 13700
+        },
+        {
+          "brand": "Infinix",
+          "model": "Infinix Smart 20",
+          "storage": "4/64",
+          "color": "คละสี",
+          "lo": 2300,
+          "hi": 2500
+        },
+        {
+          "brand": "Infinix",
+          "model": "Infinix Smart 20",
+          "storage": "4/128",
+          "color": "คละสี",
+          "lo": 2700,
+          "hi": 3000
+        }
+      ]
     }
   ]
 }

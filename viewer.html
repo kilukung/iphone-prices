@@ -2,6 +2,8 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
 <script>if(!location.search.includes('v=17'))location.replace(location.pathname+'?v=17');</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -237,6 +239,52 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
 </style>
 </head>
 <body>
+<div id="pin-gate" style="position:fixed;inset:0;z-index:99999;background:#1a1a18;color:#f2f2ef;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="font-size:34px">&#128274;</div>
+  <div style="font-size:17px;font-weight:600">ใส่รหัสเพื่อเข้าใช้งาน</div>
+  <input id="pin-input" type="password" inputmode="numeric" autocomplete="off" placeholder="รหัส"
+         style="width:200px;padding:12px 14px;border-radius:12px;border:1px solid #444;background:#26262380;color:#f2f2ef;font-size:20px;text-align:center;letter-spacing:4px">
+  <button id="pin-btn" style="width:200px;padding:12px;border:0;border-radius:12px;background:#c8a86b;color:#1a1a18;font-size:16px;font-weight:700">เข้าสู่ระบบ</button>
+  <div id="pin-err" style="color:#e06c6c;font-size:13px;height:16px"></div>
+</div>
+<script>
+(function(){
+  var HASH = 'c85a0be1e8374b97e92ab88f798938fecd7e0d274141c5d7d0f404741a752b10';
+  var SALT = 'iphone-prices-gate-v1';
+  var KEY  = 'pin_ok_v1';
+  var gate = document.getElementById('pin-gate');
+  var inp  = document.getElementById('pin-input');
+  var err  = document.getElementById('pin-err');
+
+  function digest(pin){
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(SALT+pin)).then(function(b){
+      return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('');
+    });
+  }
+  function open_(){ gate.remove(); document.documentElement.style.overflow=''; }
+
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY)||'null');
+    if (saved && saved.h === HASH) { open_(); return; }
+  } catch(e){}
+
+  document.documentElement.style.overflow='hidden';
+  function submit(){
+    digest(inp.value.trim()).then(function(h){
+      if (h === HASH) {
+        try { localStorage.setItem(KEY, JSON.stringify({h:HASH})); } catch(e){}
+        open_();
+      } else {
+        err.textContent='รหัสไม่ถูกต้อง';
+        inp.value=''; inp.focus();
+      }
+    });
+  }
+  document.getElementById('pin-btn').addEventListener('click', submit);
+  inp.addEventListener('keydown', function(e){ if(e.key==='Enter') submit(); });
+  setTimeout(function(){ inp.focus(); }, 100);
+})();
+</script>
 <div class="app">
 <div class="hdr" onclick="if(!event.target.closest('.menu-wrap'))window.scrollTo({top:0,behavior:'smooth'})">
   <div style="display:flex;justify-content:space-between;align-items:center">

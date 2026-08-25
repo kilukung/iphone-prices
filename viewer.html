@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="googlebot" content="noindex, nofollow">
-<script>if(!location.search.includes('v=17'))location.replace(location.pathname+'?v=17');</script>
+<script>if(!location.search.includes('v=17')){var _q=new URLSearchParams(location.search);_q.set('v','17');location.replace(location.pathname+'?'+_q.toString());}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -269,6 +269,26 @@ select.full,input.full{width:100%;padding:11px 14px;font-size:15px;border:none;b
   } catch(e){}
 
   document.documentElement.style.overflow='hidden';
+
+  // ?k=<รหัส> : ปลดล็อกอัตโนมัติจากลิงก์ แล้วลบรหัสออกจาก URL ทันที
+  var kParam = new URLSearchParams(location.search).get('k');
+  if (kParam) {
+    gate.style.visibility = 'hidden';
+    digest(kParam.trim()).then(function(h){
+      var u = new URL(location.href);
+      u.searchParams.delete('k');
+      history.replaceState(null, '', u.pathname + (u.search ? u.search : '') + u.hash);
+      if (h === HASH) {
+        try { localStorage.setItem(KEY, JSON.stringify({h:HASH})); } catch(e){}
+        open_();
+      } else {
+        gate.style.visibility = '';
+        err.textContent = 'ลิงก์นี้ใช้รหัสไม่ถูกต้อง';
+        inp.focus();
+      }
+    });
+  }
+
   function submit(){
     digest(inp.value.trim()).then(function(h){
       if (h === HASH) {
